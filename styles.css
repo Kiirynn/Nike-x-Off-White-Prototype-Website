@@ -8,15 +8,16 @@
     } */
 
     .bkgd-container{
-        background-color: (linear-gradient(to right, #d9e3db, #949794 ));
-      
+        background-image: linear-gradient(to left, #d9e3db, #949794 );
+        z-index: 1;
         height: 100vh;
+        
     }
 
     section{
         scroll-snap-align: start;
      
-        height: 100vh;
+        height: 111vh;
         
     }
 
@@ -28,8 +29,10 @@
     scroll-snap-type: y mandatory;
     overflow-y: scroll ;
     height:100vh;
+   
     
 }
+
 /* 
 html{
     scroll-behavior: smooth;
@@ -201,7 +204,7 @@ align-items: center;
     }
 
     .prev-arrow, .forward-arrow{
-      
+        position: relative;
         width:50px;
         top: 90%;
         
@@ -255,4 +258,43 @@ align-items: center;
         width: 20px;
     }
 
+
+    #shoe2{
+       
+        width: 700px;
+      
+        rotate: -25deg;
+        filter: drop-shadow(10px 10px 10px black);
+    }
+
+    #shoe3, #shoe4, #shoe5, #shoe6{
+        width: 350px;
+        filter: drop-shadow(10px 10px 10px black);
+        
+        rotate: -25deg;
+        
+    }
+
+    .shoes{
+        /* visibility: hidden; */
+        position: fixed;
+        top: 35%;
+        left: 8%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fade-in{
+        opacity: 0;
+        transition: opacity 750ms ease-in;
+        
+    }
+
+    .fade-in.appear{
+        opacity: 1;
+       
+    }
+
+   
  
