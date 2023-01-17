@@ -15,6 +15,13 @@ const appearOptions = {
     rootMargin: "0px 0px -100px 0px",
 };
 
+const appearOptions2 = {
+    threshold: 1, 
+    rootMargin: "0px 0px -100px 0px",
+};
+
+
+
 
 
        
@@ -23,29 +30,48 @@ const appearOnScroll = new IntersectionObserver
     entries,appearOnScroll
 ){
     entries.forEach(entry => {
-        if(!entry.isIntersecting){
-           return;
-        }
-        
-        else{
-            entry.target.classList.add('appear')
-            appearOnScroll.unobserve(entry.target);
-            
-           }
+        entry.target.classList.toggle('appear', entry.isIntersecting)
+    
            
     })
     
     
 }, appearOptions);
 
+
+
+
 faders.forEach(fader => {
     appearOnScroll.observe(fader);
+    
    
 });
 
 
+const shoes = document.querySelector('.shoes');
+const prevArrow = document.querySelector('.prev-arrow');
+const nextArrow = document.querySelector('.forward-arrow');
+const sneakerImages = ['Content/shoe 1.png','Content/snkrs-special-off-white-dunk-5-e1623680402966.png','Content/shoe 2 flip.png','Content/Vigil-Nike-Inline02-GQ-07022019_3x2 trans.png', 'Content/blue nike ow sneaker.png' ];
+let i = 0;
 
 
+
+
+
+
+
+
+prevArrow.addEventListener('click', () => {
+     if(prevArrow){
+        i++
+     }
+
+     shoes.image.classList.toggle('active')
+})
+
+nextArrow.addEventListener('click', () => {
+
+})
 
 
 

@@ -267,22 +267,36 @@ align-items: center;
         filter: drop-shadow(10px 10px 10px black);
     }
 
-    #shoe3, #shoe4, #shoe5, #shoe6{
+    .shoe{
         width: 350px;
         filter: drop-shadow(10px 10px 10px black);
-        
         rotate: -25deg;
+        overflow: hidden;
+
         
     }
 
     .shoes{
-        /* visibility: hidden; */
+       
         position: fixed;
         top: 35%;
         left: 8%;
         display:flex;
         justify-content: center;
         align-items: center;
+        scroll-behavior: smooth;
+        overflow: auto;
+    }
+
+    .shoes:active {
+        width: 700px;
+      
+        rotate: -25deg;
+        filter: drop-shadow(10px 10px 10px black);
+    }
+
+    .shoe::-webkit-scrollbar{
+        -webkit-appearance: none;
     }
 
     .fade-in{
