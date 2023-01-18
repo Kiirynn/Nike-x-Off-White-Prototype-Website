@@ -7,6 +7,10 @@
     height: 100vh;
     } */
 
+:root{
+    --clr1: #f4931b; 
+}
+
     .bkgd-container{
         background-image: linear-gradient(to left, #d9e3db, #949794 );
         z-index: 1;
@@ -54,6 +58,12 @@ nav{
     height:50px;
    
     box-sizing: border-box;
+   }
+
+   nav li a:hover {
+    filter: drop-shadow(3px 3px 10px black);
+    transition: .3s ease;
+    color: var(--clr1);
    }
 
 .space{
@@ -218,12 +228,14 @@ align-items: center;
         position: fixed;
         left: 22%;
         box-shadow: black 4px -4px 4px;
+        cursor: pointer;
     }
 
     .forward-arrow{
         position: fixed;
         box-shadow: black 4px 4px 4px;
         right: 22%;
+        cursor: pointer;
     }
 
 
@@ -259,45 +271,55 @@ align-items: center;
     }
 
 
-    #shoe2{
-       
-        width: 700px;
-      
-        rotate: -25deg;
-        filter: drop-shadow(10px 10px 10px black);
-    }
 
     .shoe{
-        width: 350px;
+        width: 500px;
         filter: drop-shadow(10px 10px 10px black);
         rotate: -25deg;
-        overflow: hidden;
+        transition: transform 1s;
+      
+         }
 
-        
-    }
+         .shoe:hover{
+            transform: translateY(20px);
+        }
+
+      
+    
+    
 
     .shoes{
        
         position: fixed;
         top: 35%;
-        left: 8%;
+        left: 38%;
         display:flex;
         justify-content: center;
         align-items: center;
         scroll-behavior: smooth;
-        overflow: auto;
+        /* overflow: hidden; */
+        perspective: 100px;
+       /* animation: scroll 40s linear infinite; */
     }
 
-    .shoes:active {
-        width: 700px;
+
+    /* #shoe2{
+       
       
         rotate: -25deg;
         filter: drop-shadow(10px 10px 10px black);
+    } */
+
+  
+
+    .shoes:active {
+        /* width: 700px; */
+        transform: scale(1.1);
+        /* rotate: -25deg; */
+        filter: drop-shadow(10px 10px 10px black);
     }
 
-    .shoe::-webkit-scrollbar{
-        -webkit-appearance: none;
-    }
+ 
 
     .fade-in{
         opacity: 0;
