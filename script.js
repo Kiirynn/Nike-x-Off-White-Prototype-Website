@@ -6,57 +6,90 @@ const sections = document.querySelectorAll(".page");
 
 const appear = document.querySelector(".appear")
 const navUl = document.querySelector("nav ul")
+const navLi = document.querySelector("nav li a")
+const li1 = document.querySelector(".li1 a")
+const li2 = document.querySelector(".li2 a")
+const li3 = document.querySelector(".li3 a")
+const li4 = document.querySelector(".li4 a")
+
+const sliders = document.querySelectorAll('.slide-in');
 
 // page1.style.visibility = "visible"
 const faders = document.querySelectorAll('.fade-in');
 const faders2 = document.querySelector('.fade-in .appear #page1');
 let currentItem = 0;
 let currentPage = 0;
-const pages = [page1, page2, page3]
+const pages = [page1, page2, page3];
 
 
 // navBar animation
 
 // function navBarAnime(){
-//     if(currentPage >= 0){
-//         currentPage = pages.length;
-        
-//         navUl.style.background = `linear-gradient(to right, black , transparent 25%)`;
+//     if(currentPage = 0){
+//         currentPage = pages.length - 2;
+//           navUl.style.background = `linear-gradient(to right, black , transparent 15%)`;
 //         }
     
-//     if(currentPage = pages.length - 1){
-         
-//         navUl.style.background = `linear-gradient(to right, black , transparent 50%)`;
+//     if(currentPage = 1){
+//         currentPage = pages.length;
+//           navUl.style.background = `linear-gradient(to right, black , transparent 30%)`;
 //     }
-//     // if(currentPage <= 2){
-//     //     navUl.style.background = `linear-gradient(to right, black , transparent 75%)`;
-//     // }
+
+//     if(currentPage = 2){
+//         currentPage = pages.length;
+//           navUl.style.background = `linear-gradient(to right, black , transparent 55%)`;
+//     }
 //   }
 
 // navBarAnime()
 
 function navBarAnime(){
-    switch(currentPage){
+    
+        switch(currentPage){
+            
         
-        case currentPage = 0:
-            currentPage = pages.length ;
-                navUl.style.background = `linear-gradient(to right, black , transparent 15%)`; 
-                    break;
-        
-        case currentPage = 1:
-            currentPage = pages.length - 1;
-                navUl.style.background = `linear-gradient(to right, black , transparent 30%)`;
+            case currentPage = 0 :
+                currentPage = pages.length - 2 ;
+                    navUl.style.background = `linear-gradient(to right, black , transparent 15%)`; 
+                    // li1.style.color = "#f4931b";
                     break;
 
-        // case currentPage = 2:
-        //         currentPage = pages.length - 2;
-        //             navUl.style.background = `linear-gradient(to right, black , transparent 55%)`;
-        //                 break;    
-    }
-  
+            case currentPage = 1:
+                currentPage = pages.length;
+                    navUl.style.background = `linear-gradient(to right, black , transparent 30%)`;
+                    // li2.style.color = "#f4931b";
+                    break;
+
+            case currentPage = 2:
+                currentPage = pages.length;
+                    navUl.style.background = `linear-gradient(to right, black , transparent 55%)`;
+                    // li3.style.color = "#f4931b";
+                    break;
+      
+            
+      
+      }
+     
   }
 
 
+// function updateProgressBar() {
+//     const { scrollTop, scrollHeight} = document.documentElement;
+    
+//     const scrollPercent = `${(scrollTop / (scrollHeight -  window.innerHeight)) * 100}%`;
+
+//         document.querySelector('.progress').style.setProperty('--progress', scrollPercent);
+//     }
+
+
+
+
+
+// document.addEventListener('scroll', updateProgressBar);
+
+
+
+  
 
 
 
@@ -65,10 +98,7 @@ const appearOptions = {
     rootMargin: "0px 0px -100px 0px",
 };
 
-const appearOptions2 = {
-    threshold: 1, 
-    rootMargin: "0px 0px -100px 0px",
-};
+
 
 
 
@@ -81,23 +111,47 @@ const appearOnScroll = new IntersectionObserver
 ){
     entries.forEach(entry => {
         
-        entry.target.classList.toggle('appear', entry.isIntersecting)
-        navBarAnime()
+       
+         entry.target.classList.toggle('appear', entry.isIntersecting)
            
-    })
-   
-    
+         
+         })
+       
+        navBarAnime();
+
+       
+
+
+      
 }, appearOptions);
 
 
 // fader forEach
 
+
 faders.forEach(fader => {
-   
+    
     appearOnScroll.observe(fader);
     
-   
+    
 });
+
+
+sliders.forEach(slider => {
+    
+        appearOnScroll.observe(slider);
+        
+    
+    })
+
+
+
+
+
+   
+
+
+
 
 
 
@@ -123,6 +177,7 @@ const prevArrow = document.querySelector('.prev-arrow');
 const nextArrow = document.querySelector('.forward-arrow');
 const sneakerImages = ['Content/shoe 1.png','Content/snkrs-special-off-white-dunk-5-e1623680402966.png','Content/shoe 2 flip.png','Content/Vigil-Nike-Inline02-GQ-07022019_3x2 trans.png', 'Content/blue nike ow sneaker.png' ];
 const animate = document.querySelector('.animate');
+
 let i = 0;
 
 
@@ -188,24 +243,7 @@ function setImg(){
 
 
 
-// function pagesDisappear() {
-//     if(!isIntersecting){
-//         sections.style.visibility = "none";
-//     }
-//    }
-// pagesDisappear();
 
-
-// function disappearScrollTop(){
-      
-//     if(isIntersecting){
-//         sections.style.visibility = "hidden";
-        
-//     }
-//     else {
-        
-//     }
-// }
 
 
 
