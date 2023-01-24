@@ -118,6 +118,7 @@ const appearOnScroll = new IntersectionObserver
          })
        
         navBarAnime();
+        
 
        
 
@@ -129,12 +130,17 @@ const appearOnScroll = new IntersectionObserver
 // fader forEach
 
 
-faders.forEach(fader => {
+   
+    faders.forEach(fader => {
     
-    appearOnScroll.observe(fader);
-    
-    
-});
+        appearOnScroll.observe(fader);
+        
+        
+    });
+
+
+
+
 
 
 sliders.forEach(slider => {
@@ -232,6 +238,23 @@ function setImg(){
 
 
 
+//circles
+
+const circle = Array.from(document.querySelector('.circle'));
+const circle1 = document.querySelector('.g1');
+const circle2 = document.querySelector('.g2');
+const circle3 = document.querySelector('.g3');
+const circle4 = document.querySelector('.g4');
+const circle5 = document.querySelector('.g5');
+
+const circles = [circle1, circle2, circle3, circle4, circle5]
+
+
+// function changeColor(color){
+    
+//     color.target.classList.toggle('active-circ');
+     
+// }
 
 
 
@@ -239,11 +262,22 @@ function setImg(){
 
 
 
+    for(i = 0; i < circles.length; i++){
+      
+        circles[i].addEventListener('click', (color)  => {
+    
+        
+            color.target.classList.toggle('active-circ');
+      
+     } );
+
+    }
 
 
 
 
+// function circFunc(color){
+//    circle[i].classList.toggle('active-circ');
+// }
 
-
-
-
+// circFunc();

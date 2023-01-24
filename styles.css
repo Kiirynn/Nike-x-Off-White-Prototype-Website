@@ -335,6 +335,13 @@ nav{
     }
 
 
+
+.forward-arrow:hover, .prev-arrow:hover{
+    transform: scale(1.1);
+    transition: ease-in 0.3s;
+}
+
+
 .circles{
     position: fixed;
     left: 45%;
@@ -344,12 +351,26 @@ nav{
   
 }
 
+.circle:hover{
+    transform: scale(1.1);
+    transition: ease-in 0.2s;
+    cursor: pointer;
+    
 
-    .circle1, .circle2, .circle4, .circle5{
+}
+
+.active-circ{
+    -webkit-filter: brightness(10%);
+    transform: scale(1.1);
+}
+
+
+
+    .g1, .g2, .g3, .g4, .g5{
         margin: 10px;
         margin-top: 90%;
         border-radius: 50%;
-        background-color: beige;
+        
         opacity: 0.8;
         width: 20px;
         box-shadow: black 2px 2px 5px;
@@ -358,13 +379,14 @@ nav{
     }
 
 
-.circle3{
+
+
+/* .g3{
         margin: 10px;
         border-radius: 50%;
-        background-color: black;
         box-shadow: black 2px 2px 5px;
         width: 20px;
-    }
+    } */
 
 
 
