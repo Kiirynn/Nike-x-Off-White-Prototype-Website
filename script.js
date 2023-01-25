@@ -1,7 +1,7 @@
 const page1 = document.getElementById("page1");
 const page2 = document.getElementById("page2");
 const page3 = document.getElementById("page3");
-const sections = document.querySelectorAll(".page");
+
 // const active = document.getElementById("active")
 
 const appear = document.querySelector(".appear")
@@ -118,7 +118,7 @@ const appearOnScroll = new IntersectionObserver
          })
        
         navBarAnime();
-        
+       
 
        
 
@@ -240,38 +240,84 @@ function setImg(){
 
 //circles
 
-const circle = Array.from(document.querySelector('.circle'));
+const circle = document.querySelectorAll('.circle');
 const circle1 = document.querySelector('.g1');
 const circle2 = document.querySelector('.g2');
 const circle3 = document.querySelector('.g3');
 const circle4 = document.querySelector('.g4');
 const circle5 = document.querySelector('.g5');
 
-const circles = [circle1, circle2, circle3, circle4, circle5]
+const sections = document.querySelectorAll(".page");
+// const section1 = document.querySelector('section1');
+// const section2 = document.querySelector('section2');
+// const section3 = document.querySelector('section3');
+
+const circles = [circle1, circle2, circle3, circle4, circle5];
+const sectionId = document.querySelector('.page').id;
+const activePage = window.location.pathname;
 
 
-// function changeColor(color){
+
+
+
+// circle2.addEventListener('click', () => {
     
-//     color.target.classList.toggle('active-circ');
-     
-// }
-
-
-
-
-
-
-
-    for(i = 0; i < circles.length; i++){
-      
-        circles[i].addEventListener('click', (color)  => {
     
+
+//     sections.classList.add('page2x') ;
+ 
+
+// });
+
+
+    // function darkCirc(){
+    //     darkCirc()
+    //  }
+
+    //  for(let link of circle){
+         
+    //     if(link.dataset.active == sectionId){
+    //         link.classList.add('active-circ');
+    //     }
+       
+
         
-            color.target.classList.toggle('active-circ');
-      
-     } );
+    
+    // }
 
-    }
+    circle.forEach(link => {
+        if(link.href.includes(`${activePage}`)){
+            link.classList.add('active-circ')
+            
+        }
+    })
+  
+
+// sections.forEach((e) =>{
+   
+//     appearOnScroll.observe(e)
+    
+ 
+// })
+
+// circle.forEach( e => {
+//     appearOnScroll.observe(e);
+// })
+   
+
+
+
+
+// for(i = 0; i < circles.length; i++){
+      
+//         circles[i].addEventListener('click', (color)  => {
+            
+        
+//             color.target.classList.toggle('active-circ');
+      
+//      } );
+
+//     }
 
 
 
