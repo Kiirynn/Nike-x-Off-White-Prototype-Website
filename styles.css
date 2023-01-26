@@ -361,7 +361,7 @@ nav{
 
 .active-circ{
     -webkit-filter: brightness(10%);
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 
@@ -448,7 +448,7 @@ nav{
 
     .fade-in {
         opacity: 0;
-        transition: opacity 750ms ease-in;
+        transition: opacity 250ms ease-in;
         
     }
 

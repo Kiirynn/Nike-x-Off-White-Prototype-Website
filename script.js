@@ -240,7 +240,7 @@ function setImg(){
 
 //circles
 
-const circle = document.querySelectorAll('.circle');
+
 const circle1 = document.querySelector('.g1');
 const circle2 = document.querySelector('.g2');
 const circle3 = document.querySelector('.g3');
@@ -254,7 +254,10 @@ const sections = document.querySelectorAll(".page");
 
 const circles = [circle1, circle2, circle3, circle4, circle5];
 const sectionId = document.querySelector('.page').id;
-const activePage = window.location.pathname;
+
+const circlesContainer = document.getElementById('circBar');
+const circle = circlesContainer.getElementsByClassName('circle');
+
 
 
 
@@ -285,12 +288,7 @@ const activePage = window.location.pathname;
     
     // }
 
-    circle.forEach(link => {
-        if(link.href.includes(`${activePage}`)){
-            link.classList.add('active-circ')
-            
-        }
-    })
+
   
 
 // sections.forEach((e) =>{
@@ -308,16 +306,18 @@ const activePage = window.location.pathname;
 
 
 
-// for(i = 0; i < circles.length; i++){
+for(i = 0; i < circles.length; i++){
       
-//         circles[i].addEventListener('click', (color)  => {
+        circles[i].addEventListener('click', function(){
             
-        
-//             color.target.classList.toggle('active-circ');
+            let current = document.getElementsByClassName('active-circ');
+            current[0].className = current[0].className.replace(' active-circ');
+            // color.target.classList.toggle('active-circ');
+            this.className += ' active-circ';
       
-//      } );
+     } );
 
-//     }
+    }
 
 
 
