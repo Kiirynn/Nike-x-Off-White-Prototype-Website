@@ -19,51 +19,79 @@ const faders = document.querySelectorAll('.fade-in');
 const faders2 = document.querySelector('.fade-in .appear #page1');
 let currentItem = 0;
 let currentPage = 0;
+let i = 0;
 const pages = [page1, page2, page3];
 
 
-// navBar animation
+//circles
 
-// function navBarAnime(){
-//     if(currentPage = 0){
-//         currentPage = pages.length - 2;
-//           navUl.style.background = `linear-gradient(to right, black , transparent 15%)`;
-//         }
+
+const circle1 = document.querySelector('.g1');
+const circle2 = document.querySelector('.g2');
+const circle3 = document.querySelector('.g3');
+const circle4 = document.querySelector('.g4');
+const circle5 = document.querySelector('.g5');
+
+const sections = document.querySelectorAll(".page");
+// const section1 = document.querySelector('section1');
+// const section2 = document.querySelector('section2');
+// const section3 = document.querySelector('section3');
+
+const circles = [circle1, circle2, circle3, circle4, circle5];
+const sectionId = document.querySelector('.page').id;
+
+const circlesContainer = document.getElementById('circBar');
+const circle = circlesContainer.getElementsByClassName('circle');
+
+
+
+
+function darkCirc(){
+
+    let current = document.getElementsByClassName('active-circ');
+    current[0].className = current[0].className.replace(' active-circ');
+    // color.target.classList.toggle('active-circ');
+    this.className += ' active-circ';
     
-//     if(currentPage = 1){
-//         currentPage = pages.length;
-//           navUl.style.background = `linear-gradient(to right, black , transparent 30%)`;
-//     }
+}
 
-//     if(currentPage = 2){
-//         currentPage = pages.length;
-//           navUl.style.background = `linear-gradient(to right, black , transparent 55%)`;
-//     }
-//   }
 
-// navBarAnime()
+for(i = 0; i < circles.length; i++){
+      
+    circles[i].addEventListener('click', darkCirc);
+    
+}
+
+
+
+
 
 function navBarAnime(){
-    
+    let current = document.getElementsByClassName('active-circ');
         switch(currentPage){
             
         
             case currentPage = 0 :
                 currentPage = pages.length - 2 ;
                     navUl.style.background = `linear-gradient(to right, black , transparent 15%)`; 
-                    // li1.style.color = "#f4931b";
+                    // current[0].className = current[0].className.replace(' active-circ');
+                    // this.className += ' active-circ';
                     break;
 
+            
             case currentPage = 1:
                 currentPage = pages.length;
                     navUl.style.background = `linear-gradient(to right, black , transparent 30%)`;
-                    // li2.style.color = "#f4931b";
+                    // current[1].className = current[1].className.replace(' active-circ');
+                    // this.className += ' active-circ';
                     break;
 
+            
             case currentPage = 2:
                 currentPage = pages.length;
                     navUl.style.background = `linear-gradient(to right, black , transparent 55%)`;
-                    // li3.style.color = "#f4931b";
+                    // current[2].className = current[2].className.replace(' active-circ');
+                    // this.className += ' active-circ';
                     break;
       
             
@@ -73,19 +101,6 @@ function navBarAnime(){
   }
 
 
-// function updateProgressBar() {
-//     const { scrollTop, scrollHeight} = document.documentElement;
-    
-//     const scrollPercent = `${(scrollTop / (scrollHeight -  window.innerHeight)) * 100}%`;
-
-//         document.querySelector('.progress').style.setProperty('--progress', scrollPercent);
-//     }
-
-
-
-
-
-// document.addEventListener('scroll', updateProgressBar);
 
 
 
@@ -118,7 +133,7 @@ const appearOnScroll = new IntersectionObserver
          })
        
         navBarAnime();
-       
+        
 
        
 
@@ -184,7 +199,15 @@ const nextArrow = document.querySelector('.forward-arrow');
 const sneakerImages = ['Content/shoe 1.png','Content/snkrs-special-off-white-dunk-5-e1623680402966.png','Content/shoe 2 flip.png','Content/Vigil-Nike-Inline02-GQ-07022019_3x2 trans.png', 'Content/blue nike ow sneaker.png' ];
 const animate = document.querySelector('.animate');
 
-let i = 0;
+
+
+const backgroundImages = ['Content/jezael-melgoza-RXYmwmz-NiA-unsplash.jpg','Content/off white background 5.jpeg', 'Content/off white background 6.jpeg','Content/off white background 8.jpg', 'Content/off-white-china-strategy 2.jpeg' ];
+const bkgdPhoto = document.querySelector('.bkgd-photo');
+const bkgdContainer = document.querySelector('.bkgd-container');
+const animateBkgd = document.querySelector('.animateBkgd');
+const mPrevArrow = document.querySelector('.Mprev-arrow');
+const mNextArrow = document.querySelector('.Mforward-arrow');
+const mainOverlay = document.querySelector('.overlay');
 
 
 
@@ -193,7 +216,7 @@ let i = 0;
 //       shoe.classList.toggle('active')
 // })
 
-
+// shoe nav
 
 function reFireAnime(animate){
     shoe.classList.remove('animate');
@@ -212,12 +235,12 @@ prevArrow.addEventListener('click', () => {
     }
     
     reFireAnime();
-    return setImg();
+    setImg();
         
     });
 
 
-
+   
 
 nextArrow.addEventListener('click', () => {
     i++;
@@ -226,7 +249,7 @@ nextArrow.addEventListener('click', () => {
     }
     
     reFireAnime();
-    return setImg();
+    setImg();
         
 });
 
@@ -238,92 +261,56 @@ function setImg(){
 
 
 
-//circles
 
+// bkgd screen photos
 
-const circle1 = document.querySelector('.g1');
-const circle2 = document.querySelector('.g2');
-const circle3 = document.querySelector('.g3');
-const circle4 = document.querySelector('.g4');
-const circle5 = document.querySelector('.g5');
-
-const sections = document.querySelectorAll(".page");
-// const section1 = document.querySelector('section1');
-// const section2 = document.querySelector('section2');
-// const section3 = document.querySelector('section3');
-
-const circles = [circle1, circle2, circle3, circle4, circle5];
-const sectionId = document.querySelector('.page').id;
-
-const circlesContainer = document.getElementById('circBar');
-const circle = circlesContainer.getElementsByClassName('circle');
-
-
-
-
-
-
-// circle2.addEventListener('click', () => {
-    
-    
-
-//     sections.classList.add('page2x') ;
- 
-
-// });
-
-
-    // function darkCirc(){
-    //     darkCirc()
-    //  }
-
-    //  for(let link of circle){
-         
-    //     if(link.dataset.active == sectionId){
-    //         link.classList.add('active-circ');
-    //     }
-       
-
+function reFireAnime2(animate){
+    bkgdPhoto.classList.remove('animateBkgd');
+   
         
+  setTimeout(function (){
+        bkgdPhoto.classList.add('animateBkgd');
+       
+        
+    }, 0);
+}
+
+
+mPrevArrow.addEventListener('click', () => {
     
-    // }
-
-
-  
-
-// sections.forEach((e) =>{
-   
-//     appearOnScroll.observe(e)
-    
- 
-// })
-
-// circle.forEach( e => {
-//     appearOnScroll.observe(e);
-// })
-   
-
-
-
-
-for(i = 0; i < circles.length; i++){
-      
-        circles[i].addEventListener('click', function(){
-            
-            let current = document.getElementsByClassName('active-circ');
-            current[0].className = current[0].className.replace(' active-circ');
-            // color.target.classList.toggle('active-circ');
-            this.className += ' active-circ';
-      
-     } );
-
+    i--;
+    if(i < 0){
+     i = backgroundImages.length -1;
     }
+   
+    reFireAnime2();
+    setImg2();
+    
+    });
 
 
 
 
-// function circFunc(color){
-//    circle[i].classList.toggle('active-circ');
-// }
+mNextArrow.addEventListener('click', () => {
+    i++;
+    if(i > backgroundImages.length - 1){
+        i = 0;
+    }
+    
+    reFireAnime2();
+    setImg2();
+   
+});
 
-// circFunc();
+
+function setImg2(){
+    
+    return bkgdPhoto.setAttribute('src', backgroundImages[i]);
+    
+}
+
+
+
+
+
+
