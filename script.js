@@ -1,6 +1,7 @@
 const page1 = document.getElementById("page1");
 const page2 = document.getElementById("page2");
 const page3 = document.getElementById("page3");
+const page4 = document.getElementById("page4");
 
 // const active = document.getElementById("active")
 
@@ -20,7 +21,7 @@ const faders2 = document.querySelector('.fade-in .appear #page1');
 let currentItem = 0;
 let currentPage = 0;
 let i = 0;
-const pages = [page1, page2, page3];
+const pages = [page1, page2, page3, page4];
 
 
 //circles
@@ -37,7 +38,7 @@ const sections = document.querySelectorAll(".page");
 // const section2 = document.querySelector('section2');
 // const section3 = document.querySelector('section3');
 
-const circles = [circle1, circle2, circle3, circle4, circle5];
+const circles = [circle1, circle2, circle3, circle4];
 const sectionId = document.querySelector('.page').id;
 
 const circlesContainer = document.getElementById('circBar');
@@ -72,31 +73,37 @@ function navBarAnime(){
             
         
             case currentPage = 0 :
-                currentPage = pages.length - 2 ;
+                currentPage = pages.length   ;
                     navUl.style.background = `linear-gradient(to right, black , transparent 15%)`; 
                     // current[0].className = current[0].className.replace(' active-circ');
                     // this.className += ' active-circ';
                     break;
 
+            case currentPage = 3:
+                currentPage = pages.length - 2;
+                    navUl.style.background = `linear-gradient(to right, black , transparent 80%)`;
+                    // current[2].className = current[2].className.replace(' active-circ');
+                    // this.className += ' active-circ';
+                    break;
+
+           
+            case currentPage = 2:
+                    currentPage = pages.length - 1 ;
+                            navUl.style.background = `linear-gradient(to right, black , transparent 55%)`;
+                            // current[2].className = current[2].className.replace(' active-circ');
+                            // this.className += ' active-circ';
+                            break;
+        
+
             
             case currentPage = 1:
-                currentPage = pages.length;
+                currentPage = pages.length - 1  ;
                     navUl.style.background = `linear-gradient(to right, black , transparent 30%)`;
                     // current[1].className = current[1].className.replace(' active-circ');
                     // this.className += ' active-circ';
                     break;
 
-            
-            case currentPage = 2:
-                currentPage = pages.length;
-                    navUl.style.background = `linear-gradient(to right, black , transparent 55%)`;
-                    // current[2].className = current[2].className.replace(' active-circ');
-                    // this.className += ' active-circ';
-                    break;
-      
-            
-      
-      }
+         }
      
   }
 
@@ -129,10 +136,10 @@ const appearOnScroll = new IntersectionObserver
        
          entry.target.classList.toggle('appear', entry.isIntersecting)
            
-         
+        
          })
-       
-        navBarAnime();
+         navBarAnime();
+        
         
 
        

@@ -32,9 +32,7 @@
         z-index: 1;
     }
 
-    .bkgd-photo{
-     
-    }
+  
 
     .animateBkgd{
         animation: bkgdImageAnimate .3s ease backwards;
@@ -178,6 +176,10 @@ html{
     
 }
 
+a{
+    padding: 0px 5px 0px 5px;
+}
+
 
 nav{
     position: fixed;
@@ -203,19 +205,26 @@ nav{
       
     display: flex;
     float: left;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
-    margin: 0;
+    margin-left: 25px;
+    margin-top: 40px;
 }
+
+
 
 .nike{
-    width: 300px;
+    width: 125px;
+    padding: 20px;
+}
     
    
-}
+
 
 .ow {
-    width: 75px;
+   width: 50px;
+   padding: 5px;
+   margin-right: 40px;
     
  }
 
@@ -284,6 +293,7 @@ nav{
     .c1{
         background-color: #f4931b;
         border-radius: 35%;
+        
     }
 
     .c2{
@@ -422,7 +432,7 @@ nav{
 
 .circles{
     position: fixed;
-    left: 45%;
+    left: 45.3%;
     top:75%;
     padding:20px;
     
@@ -612,7 +622,7 @@ nav{
     left: 34.5%;
     color: black;
     text-align: center;
-    text-shadow: 2px 2px 4px white;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -648,6 +658,7 @@ h2{
     padding:10px;
     font-size: 1rem;
     font-weight: bolder;
+    text-shadow: 2px 2px 4px white;
 }
 
 p{
@@ -660,7 +671,7 @@ p{
 #off-white{
     width:300px;
     position: fixed;
-    top: 5%;
+    top: 15%;
     left: 45%; 
     
 }
@@ -693,3 +704,21 @@ p{
     box-shadow: black 4px 4px 7px;
 }
 
+/* Login page */
+
+input{
+    background-color: white;
+    color: black;
+    padding: 20px;
+    font-size: 1.3rem;
+    border-radius: 20px;
+    width: 500px;
+    height: 50px;
+    box-shadow: 4px 4px 8px black;
+}
+
+h1{
+    color: white;
+    font-size: 1rem;
+    padding: 20px;
+}
