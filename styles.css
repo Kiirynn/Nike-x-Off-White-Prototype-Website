@@ -7,12 +7,17 @@
     height: 100vh;
     } */
 
+    body{
+
+    }
+
     .main-container{
         scroll-behavior: smooth;
         scroll-snap-type: y mandatory;
-        overflow-y: scroll ;
-        height:100vh;
-       
+        /* overflow-y: scroll; */
+        overflow: visible;
+        height: 100vh;
+      
         
     }
 
@@ -131,7 +136,7 @@
     @keyframes virgilFade1{
         from {
             transform: translateX(-50%);
-            transition: opacity 250ms ease-in, transform 400ms ease-in;
+            transition: opacity 250ms ease-in, transform 200ms ease-in;
             opacity: 0;
           }
           to {
@@ -143,7 +148,7 @@
     @keyframes virgilFade2{
         from {
             transform: translateX(50%);
-            transition: opacity 250ms ease-in, transform 400ms ease-in;
+            transition: opacity 250ms ease-in, transform 200ms ease-in;
             opacity: 0;
           }
           to {
@@ -175,6 +180,7 @@ html{
     margin: 0;
     
 }
+
 
 a{
     padding: 0px 5px 0px 5px;
@@ -578,7 +584,7 @@ nav{
 
     .fade-in {
         opacity: 0;
-        transition: opacity 250ms ease-in;
+        transition: opacity 150ms ease-in-out;
         
     }
 
@@ -644,13 +650,13 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top:60px ;
+    padding-top:40px ;
     width: 800px
 }
 
 h2{
     padding: 50px;
-    text-shadow: 1px 1px 5px black;
+    
     font-weight: bolder;
 }
 
@@ -664,6 +670,7 @@ h2{
 p{
     font-weight: 550;
     text-align: center;
+    
 }
 
 
@@ -721,4 +728,31 @@ h1{
     color: white;
     font-size: 1rem;
     padding: 20px;
+}
+
+.althead{
+    color: white;
+    font-size: 1.5rem;
+    padding-top: 40px;
+}
+
+.loginBtn, .registerBtn{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: white;
+    background-color: transparent  ;
+    /* border-width: 4px;
+    border-style: solid;
+    border-image: linear-gradient(to right, white, black) 1; */
+    border: 3px solid white;
+    border-radius: 10px;
+    width: 200px;
+    cursor: pointer;
+    padding: 5px;
+    box-shadow: black 4px 4px 7px;
+    
+}
+.loginBtn:hover, .registerBtn:hover{
+    transform: scale(0.95);
+    transition: ease 0.3s;
 }
