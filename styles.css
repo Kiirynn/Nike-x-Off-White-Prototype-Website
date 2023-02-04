@@ -14,8 +14,8 @@
     .main-container{
         scroll-behavior: smooth;
         scroll-snap-type: y mandatory;
-        /* overflow-y: scroll; */
-        overflow: visible;
+        overflow-y: scroll;
+        /* overflow-y: visible; */
         height: 100vh;
       
         
@@ -543,12 +543,23 @@ nav{
         margin-left: 50px;
     }
 
-    .sbtn-div:hover, .cbtn-div:hover{
+    .sbtn-div:hover, .cbtn-div:hover, #ATB:hover{
         transform: scale(0.95);
         transition: ease 0.3s;
     }
 
-    #select{
+    .shoebtn-div{
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 50px;
+    }
+
+
+
+    #select, #ATB{
         font-size: 1.5rem;
         font-weight: bolder;
         color: black;
@@ -559,7 +570,39 @@ nav{
         cursor: pointer;
         padding: 5px;
         box-shadow: black 4px 4px 7px;
+        text-decoration: none;
+        text-align: center; font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 25px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;
 
+    }
+
+    
+    .price{
+        font-size: 1.5rem;
+        font-weight: bolder;
+        color: black;
+        background-color: transparent;
+        border: black 3px solid ;
+        border-radius: 10px;
+        width: 200px;
+        cursor: pointer;
+        padding: 5px;
+        border: none;
+        text-align: center;
+        margin-bottom: 20px;
+
+    }
+    .shoeBigger{
+        
+            margin-left: -150px;
+            width: 700px;
+            filter: drop-shadow(10px 10px 10px black);
+            rotate: -25deg;
+            transition: transform 1s;
+            /* animation: sneakerImageFade .3s ease forwards; */
+            transform-origin: 0 0;
+           
+          
+           
     }
 
 
@@ -655,7 +698,7 @@ nav{
 }
 
 h2{
-    padding: 50px;
+   
     
     font-weight: bolder;
 }
@@ -682,6 +725,18 @@ p{
     left: 45%; 
     
 }
+
+#off-white1{
+    width:300px;
+    position: fixed;
+    top: 7%;
+    left: 45%; 
+    
+}
+
+
+
+
 
 .blur{
     filter: blur(4px); ; 
@@ -755,4 +810,130 @@ h1{
 .loginBtn:hover, .registerBtn:hover{
     transform: scale(0.95);
     transition: ease 0.3s;
+}
+
+
+/* add to cart */
+
+.main-bag{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    top: 15%;
+    left: 550px;
+    height: 1000px;
+    width: 1500px;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 8px black;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+}
+
+#subtitlebag{
+    text-align: left;
+}
+
+#infobag{
+text-align: left;
+width:700px;
+}
+
+.shoe-info1{
+    
+    flex-direction: column;
+    
+    
+}
+
+.shoe-info2{
+    padding:50px;
+}
+
+
+
+
+#cart-shoe{
+    width:400px;
+    rotate: -25deg;
+    padding: 50px;
+}
+
+.order-div, .title-bag, .totaldiv, .purchasebtn, .removebtn, .shoe-info1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.order-div{
+  
+}
+
+
+.order-number{
+
+}
+
+.delivery-date{
+    padding: 20px;
+}
+
+.bottomrow{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 200px;
+}
+
+.title-bag{
+    
+}
+
+.ship{
+    
+    float: right;
+}
+
+.totaldiv{
+   
+    margin-left: 700px;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 8px black;
+    border-radius: 7px;
+    backdrop-filter: blur(10px);
+    height: 80px;
+    width: 300px;
+    
+}
+
+
+
+.purchasebtn, .removebtn{
+    height: 60px;
+    width: 200px;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.purchasebtn{
+    border: 3px solid #f4931b;
+    
+}
+
+.removebtn{
+    border: 3px solid white;
+    margin-top: 20px;;
+}
+
+.psbtn{
+    border: 3px solid white;
+    border-radius: 30px;
+    padding: 3px;
+   
+}
+
+#subtitlebag{
+    padding-bottom: 20px;
 }
