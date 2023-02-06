@@ -29,17 +29,54 @@
                   src="Content/shopping_cart_FILL0_wght400_GRAD0_opsz48.png"
                   alt=""
               /></a>
-              <a href="#"
-                ><img width="48px"
+             <img onclick="navCartSlide()" width="48px"
                   class="icon c2"
                   src="Content/menu_FILL0_wght400_GRAD0_opsz48.png"
                   alt=""
-              /></a>
+             >
               <a href="Login.html"><p>Login</p></a>
               
             </ul>
               
         </nav>
+
+        <div class="navCart">
+          
+          <div class="navTitle">
+            <h2>YOUR BAG</h2>
+            
+            <img onclick="navCartSlide()" width="48px"
+            class="icon c2"
+            src="Content/exit 2 white .png"
+            alt="">
+          </div>
+           
+            <div class="cart-row">
+               
+                <div class="cart-item cart-column">
+                     <img class="cart-img" width="100px" src="" alt="" >
+                     <span class="cart-item-title">NIKE VAPOR MAX OW</span>
+                     <span class="price cart-column">$</span>
+                </div>
+                  
+               
+                
+                <div class="cart-quantity cart-column">
+                    <input type="number" class="quantity-input">
+                    <button class="removeBtn">REMOVE</button>
+
+                  </div>
+
+                  
+               
+            </div>
+            <div class="cart-total">
+              <strong class="total-title">TOTAL</strong>
+              <span class="cart-total-price">$</span>
+            </div>
+            <button class="purchaseBtn">PURCHASE</button>
+
+        </div>
     
   
          
@@ -73,13 +110,13 @@
           
           <div class="shoes">
     
-            <img class="shoeBigger" id="shoe3"  src="Content/shoe 1.png" alt="">
+            <img class="shoe" id="shoe3"  src="Content/shoe 1.png" alt="">
             <h3 id="subtitle">Nike Air VaporMax</h3>
             <p id="info">This sneaker features a black colorway with a clean, transparent VaporMax Air-Sole unit, matching black laces written ‘Shoe Laces’ in white, and a white Swoosh logo accented by a red zip tie. It has an exposed-foam tongue with a black Nike logo and orange Swoosh. To complete the look, the medial side of the shoe displays Abloh's signature ‘Off-White’ for Nike lettering.</p>
             
             <div class="shoebtn-div">
            <div class="price">$1524</div>
-           <a id="ATB" href="ATB.html">ADD TO BAG</a>
+          <div id="ATB">ADD TO BAG</div>
            
             </div>
       
@@ -94,6 +131,6 @@
 
     </div>
     
-    <script src="script.js"></script>
+    <script src="script2.js"></script>
 </body>
 </html>

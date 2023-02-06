@@ -265,26 +265,34 @@ const price = document.querySelector('.price');
 function showShoe(sneaker) {
     const item = sneakerImages[sneaker];
        shoe.src = item.shoe;
-       shoeBigger.src = item.shoeBigger;
        subtitle.textContent = item.subtitle ;
        info.textContent = item.info;
-       price.textContent = item.price;
+       
 
     }
 
 
 // shoe nav
 
+// function reFireAnime3(){
+//     shoeBigger.classList.remove('animate')
+
+//     setTimeout(function (){
+        
+//         shoeBigger.classList.add('animate');
+     
+        
+//     }, 0);
+// }
+
 function reFireAnime(animate){
     shoe.classList.remove('animate');
-    shoeBigger.classList.remove('animate')
     subtitle.classList.remove('animate');
     info.classList.remove('animate');
     selectBtn.classList.remove('animate');
    
   setTimeout(function (){
         shoe.classList.add('animate');
-        shoeBigger.classList.add('animate');
         subtitle.classList.add('animate');
         info.classList.add('animate');
         selectBtn.classList.add('animate');
@@ -301,7 +309,6 @@ prevArrow.addEventListener('click', () => {
     
     reFireAnime();
     setImg();
-    // setImg3();
     showShoe(i);
    
     });
@@ -318,7 +325,7 @@ nextArrow.addEventListener('click', () => {
     reFireAnime();
     setImg();
     showShoe(i);
-    // setImg3();
+   
         
 });
 
@@ -326,16 +333,6 @@ nextArrow.addEventListener('click', () => {
 function setImg(){
     return shoe.setAttribute('src', sneakerImages[i]);
 }
-    
-
-
-function setImg3(){
-     return shoeBigger.setAttribute('src', sneakerImages[i]);
-
-}
-
-
-
 
 
 
