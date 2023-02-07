@@ -1,3 +1,27 @@
+if(document.readyState = 'loading') {
+    document.addEventListener('DOMContentLoaded', ready)
+} else{
+    ready()
+}
+
+function ready(){
+    const removeBtns = document.getElementsByClassName('removeBtn');
+    for(let i = 0; i < removeBtns.length; i++ ){
+        let button1 = removeBtns[i];
+        button1.addEventListener('click', removeCartItem)
+      
+       
+    }
+}
+
+function removeCartItem(e){
+    let buttonClicked = e.target;
+    buttonClicked.parentElement.parentElement.remove();
+    updateCartTotal();
+}
+
+
+
 const shoes = document.querySelector('.shoes');
 const shoe = document.querySelector('.shoe');
 const shoeBigger = document.querySelector('.shoeBigger');
@@ -44,16 +68,20 @@ const sneakerImages = [
 
 
 
-const atbBtn = document.querySelector('#ATB')
+const atbBtn = document.querySelector('#ATB');
 const animate = document.querySelector('.animate');
 const subtitle = document.getElementById('subtitle');
 const info = document.getElementById('info');
 const selectBtn = document.querySelector('#select');
 const price = document.querySelector('.price');
 const burger = document.querySelector('.c2');
-const cartImg = document.querySelector('.img-cart')
-const cartItemTitle = document.querySelector('.cart-item-title')
-const itemPrice = document.querySelector('.item-price')
+
+
+const cartImg = document.querySelector('.img-cart');
+const cartItemTitle = document.querySelector('.cart-item-title');
+const navCart = document.querySelector('.navCart');
+
+
 
 const navRowHTML = `<div class="cart-row">
                
@@ -76,7 +104,7 @@ const navRowHTML = `<div class="cart-row">
 function showShoe(sneaker) {
     const item = sneakerImages[sneaker];
        shoe.src = item.shoe;
-       subtitle.textContent = item.subtitle ;
+       subtitle.textContent = item.subtitle;
        info.textContent = item.info;
        price.textContent = item.price;
 
@@ -97,29 +125,36 @@ function navCartSlide(){
      
 
 
-atbBtn.addEventListener('click', () => {
-    switch(sneakerImages){
+// atbBtn.addEventListener('click', () => {
+//     navCartRow.insertAdjacentHTML("beforeend", navRowHTML );
        
-        case id = 1: 
-            cartImg.src = 'Content/shoe 1.png';
-            break;
-        
-        case id = 2: 
-            break;
-        
-        case id = 3: 
-            break;
-        
-        case id = 4: 
-            break;
-        
-        case id = 5: 
-            break;
+     
 
-    }
-        
        
-})
+// })
+
+
+
+function updateCartTotal(){
+    let cartItemContainer = document.querySelector('.cart-items')
+    let navCartRow = cartItemContainer.getElementsByClassName('.cart-row');
+    let total = 0;
+      
+    
+   for(let i = 0; i < navCartRow.length; i++ ){
+        navCartRow = navCartRow[i];
+        const itemPrice = navCartRow.getElementsByClassName('cart-item-price')[0];
+        const rowQuantity = navCartRow.getElementsByClassName('quantity-input')[0];
+       
+        totalPrice = parseFloat(itemPrice.innerText.replace('$', ''));
+        let quantity = rowQuantity.value;
+        total = total + (totalPrice * quantity);
+   }
+
+   document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total ;
+}
+
+
 
 
 // shoe nav

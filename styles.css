@@ -942,6 +942,8 @@ width:700px;
 }
 
 .navCart{
+    overflow: scroll;
+    scroll-behavior: smooth;
     z-index: 1;
     position: fixed;
     display: flex;
@@ -980,6 +982,7 @@ width:700px;
 
 .cart-row{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 40px;
