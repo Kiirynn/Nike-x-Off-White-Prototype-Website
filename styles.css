@@ -1004,3 +1004,23 @@ width:700px;
  .cart-total{
     
  }
+
+ .shop-item-active{
+/* animation: itemActive .3s ease forwards; */
+ }
+ 
+ @keyframes itemActive{
+    from {
+      opacity: 0 ;
+      transform: translateX(0%);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(100%);
+     }
+    }
+
+    .shop-item{
+        
+    }
