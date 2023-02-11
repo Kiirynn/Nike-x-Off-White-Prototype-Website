@@ -545,7 +545,7 @@ nav{
         margin-left: 50px;
     }
 
-    .sbtn-div:hover, .cbtn-div:hover, #ATB:hover{
+    .sbtn-div:hover, .cbtn-div:hover, .ATB:hover{
         transform: scale(0.95);
         transition: ease 0.3s;
     }
@@ -561,7 +561,7 @@ nav{
 
 
 
-    #select, #ATB{
+    #select, .ATB{
         font-size: 1.5rem;
         font-weight: bolder;
         color: black;
@@ -1006,7 +1006,7 @@ width:700px;
  }
 
  .shop-item-active{
-/* animation: itemActive .3s ease forwards; */
+    visibility: visible;
  }
  
  @keyframes itemActive{
@@ -1022,5 +1022,9 @@ width:700px;
     }
 
     .shop-item{
-        
+        visibility: hidden;
+    }
+    
+    .w1, .w2, .w3, .w4, .w5 {
+        position: fixed;
     }

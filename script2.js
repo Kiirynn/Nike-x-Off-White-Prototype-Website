@@ -10,7 +10,7 @@ const shoeBigger = document.querySelector('.shoeBigger');
 const prevArrow = document.querySelector('.prev-arrow');
 const nextArrow = document.querySelector('.forward-arrow');
 
-const atbBtn = document.querySelector('#ATB');
+const atbBtn = document.getElementsByClassName('ATB')[0];
 const animate = document.querySelector('.animate');
 const subtitle = document.getElementById('subtitle');
 const info = document.getElementById('info');
@@ -22,6 +22,23 @@ const burger = document.querySelector('.c2');
 const cartImg = document.querySelector('.img-cart');
 const cartItemTitle = document.querySelector('.cart-item-title');
 const navCart = document.querySelector('.navCart');
+
+const w1 = document.querySelector('.w1');
+const w2 = document.querySelector('.w2');
+const w3 = document.querySelector('.w3');
+const w4 = document.querySelector('.w4');
+const w5 = document.querySelector('.w5');
+
+const ws = [w1, w2, w3, w4, w5];
+const ws2 = [w2, w3, w4, w5];
+
+let currentItem = 0;
+let currentPage = 0;
+let i = 0;
+let n = 0;
+let o = 0;
+
+
 
 
 function ready(){
@@ -46,16 +63,18 @@ function ready(){
         let navCartRows = cartItemContainer.getElementsByClassName('cart-row');  
         let navCartRow = navCartRows[i];
 
-atbBtn.addEventListener('click', addToCartClicked) 
+
+
+atbBtn.addEventListener('click', () =>{
+
+    navCartRow.insertAdjacentHTML("beforeend", navRowHTML );
+
+    // addToCartClicked()
+}) 
    
-    // navCartRow.insertAdjacentHTML("beforeend", navRowHTML );
+
    
-     
-
-       
-
-
-    }
+}
 
 
 function addToCartClicked(){
@@ -87,9 +106,7 @@ function quantityChanged(e) {
 
 
 
-let currentItem = 0;
-let currentPage = 0;
-let i = 0;
+
 
 const sneakerImages = [
     {id:1,
@@ -135,7 +152,7 @@ const navRowHTML = `<div class="cart-row">
                
 <div class="cart-item cart-column">
      <img width="100px" src="${sneakerImages[i]}" alt="" class="cart-img">
-     <span class="cart-item-title">${cartItemTitle[i]}</span>
+     <span class="cart-item-title">${subtitle[i]}</span>
      <span class="item-price cart-column">${price[i]}</span>
 </div>
   
@@ -209,22 +226,33 @@ function updateCartTotal(){
 //     }, 0);
 // }
 
-const shopItem = document.getElementsByClassName('shop-item')
+
+
+
+
+const shopItemAlt = document.querySelectorAll('.g');
+
 
 
 function shopItemActive(){
-   
-    // shopItem.classList.toggle('shop-item-active');
+   let currentShopItemActive = document.getElementsByClassName('shop-item-active');
+   let currentShopItem = document.getElementsByClassName('shop-item');
 
 
-    let currentShopItem = document.getElementsByClassName(' shop-item-active');
+  
+   ws.forEach(()=>{
     
-    currentShopItem[0].className = currentShopItem[0].className.replace(' shop-item-active');
-    // color.target.classList.toggle('active-circ');
+    currentShopItemActive[0].className = currentShopItemActive[0].className.replace('shop-item-active', 'shop-item');
     this.className += ' shop-item-active';
+    shopItemAlt[i].classList.toggle('shop-item-active');
+
+    })
    
+   ws[i].classList.remove('shop-item')
 
 }
+
+
 
 
 
@@ -250,7 +278,7 @@ function reFireAnime(animate){
 prevArrow.addEventListener('click', () => {
     i--;
     if(i < 0){
-     i = shopItem.length - 1;
+     i = ws.length - 1;
     }
     
     // reFireAnime();
@@ -258,6 +286,7 @@ prevArrow.addEventListener('click', () => {
     // showShoe(i);
     
     shopItemActive();
+
    
     });
 
@@ -266,7 +295,7 @@ prevArrow.addEventListener('click', () => {
 
 nextArrow.addEventListener('click', () => {
     i++;
-    if(i > shopItem.length - 1){
+    if(i > shopItemAlt.length - 1){
         i = 0;
     }
     
@@ -274,8 +303,9 @@ nextArrow.addEventListener('click', () => {
     // setImg();
     // showShoe(i);
     shopItemActive();
-   
-        
+    
+  
+    
 });
 
 
