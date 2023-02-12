@@ -507,7 +507,7 @@ nav{
         }
 
       
-    #info, #subtitle {
+    .info, .subtitle {
         display: flex;
         justify-content: center;
         align-items: center ;
@@ -517,7 +517,7 @@ nav{
         margin-left: 60px;
     }
     
-    #subtitle{
+    .subtitle{
         font-size: 1.3rem;
         color: black;
         padding-bottom: 20px;

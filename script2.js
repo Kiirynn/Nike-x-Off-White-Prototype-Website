@@ -3,19 +3,19 @@ if(document.readyState = 'loading') {
 } else{
     ready()
 }
-
+let i = 0;
 const shoes = document.querySelector('.shoes');
-const shoe = document.querySelector('.shoe');
+const shoe = document.getElementsByClassName('shoe');
 const shoeBigger = document.querySelector('.shoeBigger');
 const prevArrow = document.querySelector('.prev-arrow');
 const nextArrow = document.querySelector('.forward-arrow');
 
-const atbBtn = document.getElementsByClassName('ATB')[0];
+const atbBtn = document.querySelectorAll('.ATB');
 const animate = document.querySelector('.animate');
-const subtitle = document.getElementById('subtitle');
-const info = document.getElementById('info');
+const subtitle = document.getElementsByClassName('subtitle');
+const info = document.getElementsByClassName('info');
 const selectBtn = document.querySelector('#select');
-const price = document.querySelector('.price');
+const price = document.getElementsByClassName('price'); //shop price
 const burger = document.querySelector('.c2');
 
 
@@ -30,80 +30,9 @@ const w4 = document.querySelector('.w4');
 const w5 = document.querySelector('.w5');
 
 const ws = [w1, w2, w3, w4, w5];
-const ws2 = [w2, w3, w4, w5];
 
 let currentItem = 0;
 let currentPage = 0;
-let i = 0;
-let n = 0;
-let o = 0;
-
-
-
-
-function ready(){
-    const removeBtns = document.getElementsByClassName('removeBtn');
-    for(let i = 0; i < removeBtns.length; i++ ){
-        let button1 = removeBtns[i];
-        button1.addEventListener('click', removeCartItem)
-      
-       
-    }
-    updateCartTotal();
-
-    let quantityInputs = document.getElementsByClassName('quantity-input');
-        for(let i = 0; i < quantityInputs.length; i++){
-            let input = quantityInputs[i]
-            input.addEventListener('change', quantityChanged)
-        }
-
-
-
-        let cartItemContainer = document.getElementsByClassName('cart-items')[0]    
-        let navCartRows = cartItemContainer.getElementsByClassName('cart-row');  
-        let navCartRow = navCartRows[i];
-
-
-
-atbBtn.addEventListener('click', () =>{
-
-    navCartRow.insertAdjacentHTML("beforeend", navRowHTML );
-
-    // addToCartClicked()
-}) 
-   
-
-   
-}
-
-
-function addToCartClicked(){
-    subtitle[0].innerText;
-    info[0].innerText;
-    price[0].innerText;
-    
-}
-
-
-function removeCartItem(e){
-    let buttonClicked = e.target;
-    buttonClicked.parentElement.parentElement.remove();
-    updateCartTotal();
-}
-
-function quantityChanged(e) {
-    let input = e.target;
-    if(isNaN(input.value) || input.value <= 0 ){
-        input.value = 1;
-    }
-    updateCartTotal();
-
-  
-
-}
-
-
-
 
 
 
@@ -145,24 +74,128 @@ const sneakerImages = [
 
 
 
+function ready(){
+    const removeBtns = document.getElementsByClassName('removeBtn');
+    for(let i = 0; i < removeBtns.length; i++ ){
+        let button1 = removeBtns[i];
+        button1.addEventListener('click', removeCartItem)
+       
+       
+    }
+    updateCartTotal();
+
+    let quantityInputs = document.getElementsByClassName('quantity-input');
+        for(let i = 0; i < quantityInputs.length; i++){
+            let input = quantityInputs[i]
+            input.addEventListener('change', quantityChanged)
+        }
 
 
 
-const navRowHTML = `<div class="cart-row">
+        let cartItemContainer = document.getElementsByClassName('cart-items')[0];    
+        let navCartRows = cartItemContainer.getElementsByClassName('cart-row');  
+        let navCartRow = navCartRows[i];
+
+
+    }     
+
+
+
+// atbBtn.addEventListener('click', () =>{
+
+//     cartRow1.insertAdjacentHTML("beforeend", navRowHTML );
+
+//     // addToCartClicked()
+// }) 
+   
+
+atbBtn.forEach((event) => {
+    event.addEventListener('click', addToCartClicked)
+})
+
+
+function addToCartClicked(event){
+
+
+    let button2 = event.target;
+    let shopItem = button2.parentElement.parentElement
+    let cartTitle = subtitle[i].innerText
+    let cartPrice = price[i].innerText
+    let imgSrc = shoe[i].src;
+    
+    
+    
+    addToBag(cartTitle, cartPrice, imgSrc)
+    // updateCartTotal();
+}
+
+
+
+
+function addToBag(cartTitle, cartPrice, imgSrc ){
+    let cartRow1 = document.createElement('div')
+    cartRow1.classList.add('cart-row')
+    let cartItems = document.getElementsByClassName('cart-items')[0]
+    let cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+        for(let i = 0; i < cartItemNames.length; i++){    
+            if(cartItemNames[i].innerText == cartTitle){
+                alert('this Item is already in your bag !')
+                return
+            }
+       
+    }
+   
+    const navRowHTML = 
                
-<div class="cart-item cart-column">
-     <img width="100px" src="${sneakerImages[i]}" alt="" class="cart-img">
-     <span class="cart-item-title">${subtitle[i]}</span>
-     <span class="item-price cart-column">${price[i]}</span>
-</div>
+           `<div class="cart-item cart-column">
+                <img width="100px" src="${imgSrc}" alt="" class="cart-img">
+                <span class="cart-item-title">${cartTitle}</span>
+                <span class="item-price cart-column">${cartPrice}</span>
+            </div>
+            
+
+
+            <div class="cart-quantity cart-column">
+                <input type="number" class="quantity-input">
+                <button class="removeBtn">REMOVE</button>
+
+            </div>`;
+            cartRow1.innerHTML = navRowHTML;
+            cartItems.append(cartRow1);
+                
+            
+            const removeBtns = document.getElementsByClassName('removeBtn');
+                for(let i = 0; i < removeBtns.length; i++ ){
+                    let button1 = removeBtns[i];
+                    button1.addEventListener('click', removeCartItem)}
+
+            let quantityInputs = document.getElementsByClassName('quantity-input');
+                    for(let i = 0; i < quantityInputs.length; i++){
+                        let input = quantityInputs[i]
+                        input.addEventListener('change', quantityChanged)
+                    }
+                
+}
+
+
+function removeCartItem(e){
+    let buttonClicked = e.target;
+    buttonClicked.parentElement.parentElement.remove();
+    updateCartTotal();
+}
+
+function quantityChanged(e) {
+    let input = e.target;
+    if(isNaN(input.value) || input.value <= 0 ){
+        input.value = 1;
+    }
+    updateCartTotal();
+
   
 
+}
 
-<div class="cart-quantity cart-column">
-    <input type="number" class="quantity-input">
-    <button class="removeBtn">REMOVE</button>
 
-  </div>`
 
 
 
