@@ -256,8 +256,8 @@ const mNextArrow = document.querySelector('.Mforward-arrow');
 const mainOverlay = document.querySelector('.overlay');
 
 
-const subtitle = document.getElementById('subtitle');
-const info = document.getElementById('info');
+const subtitle = document.querySelector('.subtitle');
+const info = document.querySelector('.info');
 const selectBtn = document.querySelector('#select');
 const price = document.querySelector('.price');
 

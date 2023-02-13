@@ -401,6 +401,7 @@ nav{
     position: relative;
     width:30px;
     top: 40%;
+    filter: drop-shadow(1px 1px 6px white);
     }
 
 
@@ -954,10 +955,11 @@ width:700px;
     width: 500px;
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 20px;
+    animation: navFade .3s ease forwards;
 }
 
 .navCart-active{
-   animation: navFade .3s ease forwards;
+   animation: navFade2 .3s ease forwards;
 }
 
 
@@ -972,6 +974,18 @@ width:700px;
       transform: translateX(100%);
      }
     }
+
+@keyframes navFade2{
+        from {
+          opacity: 0 ;
+          transform: translateX(100%);
+        }
+    
+        to {
+          opacity: 1;
+          transform: translateX(0%);
+         }
+        }
 
 
 .navTitle{

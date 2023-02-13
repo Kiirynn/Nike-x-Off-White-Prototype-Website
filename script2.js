@@ -1,8 +1,11 @@
+
+
 if(document.readyState = 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
 } else{
     ready()
 }
+
 let i = 0;
 const shoes = document.querySelector('.shoes');
 const shoe = document.getElementsByClassName('shoe');
@@ -86,7 +89,7 @@ function ready(){
 
     let quantityInputs = document.getElementsByClassName('quantity-input');
         for(let i = 0; i < quantityInputs.length; i++){
-            let input = quantityInputs[i]
+            let input = quantityInputs[i];
             input.addEventListener('change', quantityChanged)
         }
 
@@ -107,11 +110,24 @@ function ready(){
 
 //     // addToCartClicked()
 // }) 
-   
+
 
 atbBtn.forEach((event) => {
     event.addEventListener('click', addToCartClicked)
+    event.addEventListener('click', navCartSlideAtb)
+
 })
+
+function navCartSlideAtb(){
+   
+    const navCart = document.querySelector('.navCart');
+    navCart.classList.add('navCart-active');
+    
+      
+    // e.target.style.animate = `navFade .3s ease forwards `
+
+
+}
 
 
 function addToCartClicked(event){
@@ -126,7 +142,7 @@ function addToCartClicked(event){
     
     
     addToBag(cartTitle, cartPrice, imgSrc)
-    // updateCartTotal();
+    updateCartTotal();
 }
 
 
@@ -156,7 +172,7 @@ function addToBag(cartTitle, cartPrice, imgSrc ){
 
 
             <div class="cart-quantity cart-column">
-                <input type="number" class="quantity-input">
+                <input type="number" value="1" class="quantity-input">
                 <button class="removeBtn">REMOVE</button>
 
             </div>`;
@@ -171,10 +187,15 @@ function addToBag(cartTitle, cartPrice, imgSrc ){
 
             let quantityInputs = document.getElementsByClassName('quantity-input');
                     for(let i = 0; i < quantityInputs.length; i++){
-                        let input = quantityInputs[i]
+                        let input = quantityInputs[i];
                         input.addEventListener('change', quantityChanged)
                     }
-                
+
+
+        //    cartRow1.getElementsByClassName('quantity-input')[i].addEventListener('change', quantityChanged)  
+           
+                  
+                                
 }
 
 
@@ -189,6 +210,7 @@ function quantityChanged(e) {
     if(isNaN(input.value) || input.value <= 0 ){
         input.value = 1;
     }
+   
     updateCartTotal();
 
   
@@ -225,22 +247,25 @@ function navCartSlide(){
 
 
 function updateCartTotal(){
-    let cartItemContainer = document.getElementsByClassName('cart-items')[0];
-    let navCartRows = cartItemContainer.getElementsByClassName('cart-row');
-    let total = 0;
-      
+   
+        let cartItemContainer = document.getElementsByClassName('cart-items')[0];
+        let navCartRows = cartItemContainer.getElementsByClassName('cart-row');
+        let total = 0;
+          
+        
+       for(let i = 0; i < navCartRows.length; i++){
+            let navCartRow = navCartRows[i];
+            const itemPrice = document.getElementsByClassName('item-price')[0];
+            const rowQuantity = document.getElementsByClassName('quantity-input')[i];
+           
+            totalPrice = parseFloat(itemPrice.innerText.replace('$', ''));
+            let quantity = rowQuantity.value;
+            total = total + (totalPrice * quantity);
+       }
     
-   for(let i = 0; i < navCartRows.length; i++){
-        let navCartRow = navCartRows[i];
-        const itemPrice = navCartRow.getElementsByClassName('cart-item-price')[0];
-        const rowQuantity = navCartRow.getElementsByClassName('quantity-input')[0];
-       
-        totalPrice = parseFloat(itemPrice.innerText.replace('$', ''));
-        let quantity = rowQuantity.value;
-        total = total + (totalPrice * quantity);
-   }
+       document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total;
+  
 
-   document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total;
 }
 
 
