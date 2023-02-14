@@ -51,7 +51,7 @@ const circle = document.querySelectorAll('.circle');
 function darkCirc(){
 
     let current = document.getElementsByClassName('active-circ');
-    current[0].className = current[0].className.replace(' active-circ');
+    current[0].className = current[0].className.replace(' active-circ', ' ');
     // color.target.classList.toggle('active-circ');
     this.className += ' active-circ';
     
@@ -74,14 +74,14 @@ function navBarAnime(){
             
         
             case currentPage = 0 :
-                currentPage = pages.length   ;
+                currentPage = pages.length[i]   ;
                     navUl.style.background = `linear-gradient(to right, black , transparent 15%)`; 
                     // current[0].className = current[0].className.replace(' active-circ');
                     // this.className += ' active-circ';
                     break;
 
             case currentPage = 3:
-                currentPage = pages.length - 2;
+                currentPage = pages.length[i] - 2;
                     navUl.style.background = `linear-gradient(to right, black , transparent 80%)`;
                     // current[2].className = current[2].className.replace(' active-circ');
                     // this.className += ' active-circ';
@@ -89,7 +89,7 @@ function navBarAnime(){
 
            
             case currentPage = 2:
-                    currentPage = pages.length - 1 ;
+                    currentPage = pages.length[i] - 1 ;
                             navUl.style.background = `linear-gradient(to right, black , transparent 55%)`;
                             // current[2].className = current[2].className.replace(' active-circ');
                             // this.className += ' active-circ';
@@ -98,7 +98,7 @@ function navBarAnime(){
 
             
             case currentPage = 1:
-                currentPage = pages.length - 1  ;
+                currentPage = pages.length[i] - 1  ;
                     navUl.style.background = `linear-gradient(to right, black , transparent 30%)`;
                     // current[1].className = current[1].className.replace(' active-circ');
                     // this.className += ' active-circ';
@@ -140,7 +140,7 @@ const appearOnScroll = new IntersectionObserver
         
          })
          navBarAnime();
-        
+         
      
 
        
@@ -260,6 +260,11 @@ const subtitle = document.querySelector('.subtitle');
 const info = document.querySelector('.info');
 const selectBtn = document.querySelector('#select');
 const price = document.querySelector('.price');
+
+
+
+
+
 
 
 function showShoe(sneaker) {

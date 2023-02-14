@@ -34,6 +34,7 @@ const w5 = document.querySelector('.w5');
 
 const ws = [w1, w2, w3, w4, w5];
 
+
 let currentItem = 0;
 let currentPage = 0;
 
@@ -303,6 +304,12 @@ function shopItemActive(){
     currentShopItemActive[0].className = currentShopItemActive[0].className.replace('shop-item-active', 'shop-item');
     this.className += ' shop-item-active';
     shopItemAlt[i].classList.toggle('shop-item-active');
+    
+    ws[i].classList.remove('animate');
+
+    setTimeout(() => {
+        ws[i].classList.add('animate');
+    }, 0);
 
     })
    
@@ -310,26 +317,54 @@ function shopItemActive(){
 
 }
 
+const preShoeRight = document.querySelector('.preShoeRight')
+const preShoeLeft = document.querySelector('.preShoeLeft')
+const innerRight = document.querySelector('.innerRight')
+const innerLeft = document.querySelector('.innerLeft')
+const preShoePhoto = document.getElementsByClassName('preShoePhoto')[0];
+
+const photoSrc = ['Content/shoe 1.png', 'Content/snkrs-special-off-white-dunk-5-e1623680402966.png', 'Content/shoe 2 flip.png', 'Content/Vigil-Nike-Inline02-GQ-07022019_3x2 trans.png', 'Content/blue nike ow sneaker.png']
+
+function bkgdShoes(){
+    
+        let imgSrc1 = photoSrc.length[i] ;
+        const preShoeHTMLLeft = `<img width="400px" class="preShoePhoto" src="${imgSrc1}" alt="">`
+        innerLeft.innerHTML = preShoeHTMLLeft;
+        preShoeLeft.append(innerLeft);
+  
+
+   
+        let imgSrc2 = photoSrc.length[i];
+        const preShoeHTMLRight = `<img width="400px" class="preShoePhoto" src="${imgSrc2}" alt="">`
+        innerRight.innerHTML = preShoeHTMLRight;
+        preShoeRight.append(innerRight);
+        
+
+
+    
+    
+
+
+
+}
 
 
 
 
-
-
-function reFireAnime(animate){
-    shoe.classList.remove('animate');
-    subtitle.classList.remove('animate');
-    info.classList.remove('animate');
+// function reFireAnime(animate){
+//     shoe.classList.remove('animate');
+//     subtitle.classList.remove('animate');
+//     info.classList.remove('animate');
     
    
-  setTimeout(function (){
-        shoe.classList.add('animate');
-        subtitle.classList.add('animate');
-        info.classList.add('animate');
+//   setTimeout(function (){
+//         shoe.classList.add('animate');
+//         subtitle.classList.add('animate');
+//         info.classList.add('animate');
         
         
-    }, 0);
-}
+//     }, 0);
+// }
 
 
 
@@ -344,7 +379,7 @@ prevArrow.addEventListener('click', () => {
     // showShoe(i);
     
     shopItemActive();
-
+    bkgdShoes()
    
     });
 
@@ -360,8 +395,8 @@ nextArrow.addEventListener('click', () => {
     // reFireAnime();
     // setImg();
     // showShoe(i);
-    shopItemActive();
-    
+     shopItemActive();
+    bkgdShoes()
   
     
 });
