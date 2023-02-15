@@ -593,14 +593,21 @@ nav{
         margin-left: 50px;
     }
 
-
-
     #select, .ATB{
+        color: black;
+        border: black 3px solid ;
+    }
+
+    .bagBtn{
+        color:white;
+        border: white 3px solid ;
+    }
+
+    #select, .ATB, .bagBtn{
         font-size: 1.5rem;
         font-weight: bolder;
-        color: black;
         background-color: transparent;
-        border: black 3px solid ;
+      
         border-radius: 10px;
         width: 200px;
         cursor: pointer;
@@ -738,6 +745,7 @@ h2{
    
     
     font-weight: bolder;
+    color: white;
 }
 
 .case h3, h5{
@@ -898,7 +906,7 @@ width:700px;
     padding: 50px;
 }
 
-.order-div, .title-bag, .totaldiv, .purchasebtn, .removebtn, .shoe-info1 {
+.order-div, .title-bag, .totaldiv, .purchasebtn, .removebtn, .shoe-info1, .purchase-message {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -956,6 +964,7 @@ width:700px;
 
 .purchasebtn{
     border: 3px solid #f4931b;
+   
     
 }
 
@@ -1048,9 +1057,7 @@ width:700px;
  .quantity-input{
     width: 100px;
  }
- .cart-total{
-    
- }
+
 
  .shop-item-active{
     visibility: visible;
@@ -1074,4 +1081,8 @@ width:700px;
     
     .w1, .w2, .w3, .w4, .w5 {
         position: fixed;
+    }
+
+    .purchase-message, .cart-total, .purchase-message, .grand-total {
+        padding-top: 20px;
     }

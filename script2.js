@@ -12,6 +12,7 @@ const shoe = document.getElementsByClassName('shoe');
 const shoeBigger = document.querySelector('.shoeBigger');
 const prevArrow = document.querySelector('.prev-arrow');
 const nextArrow = document.querySelector('.forward-arrow');
+const purchaseBtn = document.querySelector('.purchaseBtn')
 
 const atbBtn = document.querySelectorAll('.ATB');
 const animate = document.querySelector('.animate');
@@ -100,11 +101,62 @@ function ready(){
         let navCartRows = cartItemContainer.getElementsByClassName('cart-row');  
         let navCartRow = navCartRows[i];
 
+    
+    purchaseBtn.addEventListener('click', purchaseClicked)
 
-    }     
+
+    function purchaseClicked(){
+        let cartItemContainer = document.getElementsByClassName('cart-items')[0];
+        let navCartRows = cartItemContainer.getElementsByClassName('cart-row');
+        let total = 0;
+          
+        
+       for(let i = 0; i < navCartRows.length; i++){
+            let navCartRow = navCartRows[i];
+            const itemPrice = document.getElementsByClassName('item-price')[0];
+            const rowQuantity = document.getElementsByClassName('quantity-input')[i];
+           
+            totalPrice = parseFloat(itemPrice.innerText.replace('$', ''));
+            let quantity = rowQuantity.value;
+            total = total + (totalPrice * quantity);
+       }
+    
+       document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total;
+       
+       // tax calc
+
+     
+
+       let salesTax = 0.15;
+       let prePrice =  total * (salesTax / 1)  ;
+       let add = prePrice + total;
+       const gTotalTitle = document.querySelector('.GtotalTitle')
+       const grandTotal = document.querySelector('.grand-total')
+       const grandInput = document.querySelector('.grand-input');
+    //    grandInput.innerHTML = '$' + add;
+
+       const grandTotalHTML = 
+       
+       `<strong class="Gtotal-title">GRAND TOTAL</strong>
+       <span class="grand-input">${'$' + add}</span>`
+       
+       const pMessage = document.querySelector('.purchase-message')
+       const thankYouMsg = `<h1>Thank you for your purchase !</h1>`
+       grandTotal.innerHTML = grandTotalHTML;
+       
+       setTimeout(() => {
+        
+        pMessage.innerHTML = thankYouMsg;
+       }, 200);
+       
+       
+       
+       
+
+    }   
 
 
-
+}
 // atbBtn.addEventListener('click', () =>{
 
 //     cartRow1.insertAdjacentHTML("beforeend", navRowHTML );
@@ -210,6 +262,7 @@ function quantityChanged(e) {
     let input = e.target;
     if(isNaN(input.value) || input.value <= 0 ){
         input.value = 1;
+       
     }
    
     updateCartTotal();
@@ -217,8 +270,6 @@ function quantityChanged(e) {
   
 
 }
-
-
 
 
 
@@ -317,36 +368,29 @@ function shopItemActive(){
 
 }
 
-const preShoeRight = document.querySelector('.preShoeRight')
-const preShoeLeft = document.querySelector('.preShoeLeft')
-const innerRight = document.querySelector('.innerRight')
-const innerLeft = document.querySelector('.innerLeft')
-const preShoePhoto = document.getElementsByClassName('preShoePhoto')[0];
+// const preShoeRight = document.querySelector('.preShoeRight')
+// const preShoeLeft = document.querySelector('.preShoeLeft')
+// const innerRight = document.querySelector('.innerRight')
+// const innerLeft = document.querySelector('.innerLeft')
+// const preShoePhoto = document.getElementsByClassName('preShoePhoto');
 
-const photoSrc = ['Content/shoe 1.png', 'Content/snkrs-special-off-white-dunk-5-e1623680402966.png', 'Content/shoe 2 flip.png', 'Content/Vigil-Nike-Inline02-GQ-07022019_3x2 trans.png', 'Content/blue nike ow sneaker.png']
+// const photoSrc = [{preShoePhoto: src='Content/shoe 1.png'}, {preShoePhoto: src='Content/snkrs-special-off-white-dunk-5-e1623680402966.png'}, {preShoePhoto: src='Content/shoe 2 flip.png'}, {preShoePhoto: src='Content/Vigil-Nike-Inline02-GQ-07022019_3x2 trans.png'}, {preShoePhoto: src='Content/blue nike ow sneaker.png'}]
 
-function bkgdShoes(){
+// function bkgdShoes(){
     
-        let imgSrc1 = photoSrc.length[i] ;
-        const preShoeHTMLLeft = `<img width="400px" class="preShoePhoto" src="${imgSrc1}" alt="">`
-        innerLeft.innerHTML = preShoeHTMLLeft;
-        preShoeLeft.append(innerLeft);
+//         let imgSrc1 = photoSrc.length[i] - 1;
+//         const preShoeHTMLLeft = `<img width="400px" class="preShoePhoto" src="${imgSrc1}" alt="">`
+//         innerLeft.innerHTML = preShoeHTMLLeft;
+//         preShoeLeft.append(innerLeft);
   
 
    
-        let imgSrc2 = photoSrc.length[i];
-        const preShoeHTMLRight = `<img width="400px" class="preShoePhoto" src="${imgSrc2}" alt="">`
-        innerRight.innerHTML = preShoeHTMLRight;
-        preShoeRight.append(innerRight);
+//         let imgSrc2 = photoSrc.length[i] - 3;
+//         const preShoeHTMLRight = `<img width="400px" class="preShoePhoto" src="${imgSrc2}" alt="">`
+//         innerRight.innerHTML = preShoeHTMLRight;
+//         preShoeRight.append(innerRight);
         
-
-
-    
-    
-
-
-
-}
+// }
 
 
 
@@ -379,7 +423,7 @@ prevArrow.addEventListener('click', () => {
     // showShoe(i);
     
     shopItemActive();
-    bkgdShoes()
+    // bkgdShoes()
    
     });
 
@@ -396,7 +440,7 @@ nextArrow.addEventListener('click', () => {
     // setImg();
     // showShoe(i);
      shopItemActive();
-    bkgdShoes()
+    // bkgdShoes()
   
     
 });
