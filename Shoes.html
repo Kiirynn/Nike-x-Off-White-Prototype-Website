@@ -52,7 +52,7 @@
           </div>
            
           <div class="cart-items">
-    
+  
               
                   </div>
        
@@ -70,9 +70,14 @@
             <div class="purchase-message">
               
             </div>
+           
+            <form action="ATB.html">
+
+              <div class="bagBtn" onclick="seeBag()">SEE BAG</div>
+
+            </form>
             
-            
-            <a class="bagBtn" href="ATB.html">SEE BAG</a>
+           
         </div>
 
       
@@ -198,6 +203,26 @@
 
     </div>
     
-    <script src="script2.js"></script>
+    <script src="script2.js">
+      
+    </script>
+
+    <script>
+const bagBtn = document.querySelector('.bagBtn')
+bagBtn.addEventListener('click', totalCartHTML)
+      
+
+function totalCartHTML(){
+    setTimeout(() => {
+        let cartItems = document.querySelector('.cart-items');
+        let cartHTML = cartItems.innerHTML;
+        localStorage.setItem("key", cartHTML) 
+        return false
+    }, 0);
+
+    
+
+    }
+    </script>
 </body>
 </html>

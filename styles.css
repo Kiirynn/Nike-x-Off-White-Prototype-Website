@@ -8,13 +8,13 @@
     } */
 
     body{
-
+overflow: hidden;
     }
 
     .main-container{
-        scroll-behavior: smooth;
+        /* scroll-behavior: smooth;
         scroll-snap-type: y mandatory;
-        overflow-y: scroll;
+        overflow-y: scroll; */
         /* overflow-y: visible; */
         height: 100vh;
       
@@ -579,7 +579,7 @@ nav{
         margin-left: 50px;
     }
 
-    .sbtn-div:hover, .cbtn-div:hover, .ATB:hover{
+    .sbtn-div:hover, .cbtn-div:hover, .ATB:hover, .bagBtn:hover{
         transform: scale(0.95);
         transition: ease 0.3s;
     }

@@ -30,7 +30,7 @@
                   alt=""
               /></a>
               <a href="#"
-                ><img width="48px"
+                ><img onclick="navCartSlide()" width="48px"
                   class="icon c2"
                   src="Content/menu_FILL0_wght400_GRAD0_opsz48.png"
                   alt=""
@@ -40,7 +40,40 @@
             </ul>
               
         </nav>
+        <div class="navCart">
+          
+          <div class="navTitle">
+            <h2>YOUR BAG</h2>
+            
+            <img onclick="navCartSlide()" width="48px"
+            class="icon c2"
+            src="Content/exit 2 white .png"
+            alt="">
+          </div>
+           
+          <div class="cart-items">
     
+              
+                  </div>
+       
+       <div class="cart-total">
+              <strong class="total-title">TOTAL</strong>
+              <span class="cart-total-price">$</span>
+            </div>
+            <button class="purchaseBtn">PURCHASE</button>
+
+            <div class="grand-total">
+   
+             
+            </div>
+
+            <div class="purchase-message">
+              
+            </div>
+            
+            
+            <div class="bagBtn" onclick="seeBag()">SEE BAG</div>
+        </div>
   
          
       </div>
@@ -71,7 +104,7 @@
             </p>
           </div>
 
-          <div class="main-bag">
+ <div class="main-bag">
             
             <div class="title-bag">
                 <h2>YOUR BAG</h2>
@@ -83,7 +116,7 @@
            
         <div class="order-div">
 
-                <div class="shoe-info1">
+                <!-- <div class="shoe-info1">
                     <div class="order-number">Order Number <span class="order">#0923-05354-05643-0583</span></div>
                     <div class="delivery-date">Delivery Date <span class="date">December 28th, 2023</span></div>
                     <img id="cart-shoe" src="Content/shoe 1.png" alt="">
@@ -96,42 +129,47 @@
             <div class="shoe-info2">
                 <h2 id="subtitlebag">NIKE AIR MAX OFF WHITE</h2>
                 <p id="infobag">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit veritatis similique aperiam pariatur dolorum neque, cumque quaerat ut animi eligendi voluptatum, voluptatem dolores architecto rerum.</p>
-              </div>
+                <p id="bagShoePrice">$2250</p>
+           </div> -->
+
+          </div>
              
            <div class="rmbuybtns">
                 
-            <div class="purchasebtn">
-                    <h2>Purchase</h2>
-                </div>
-           
-            
-            
+                <div class="purchasebtn">
+                        <h2>Purchase</h2>
+                    </div>
                 <div class="removebtn">
-                    <h2>Remove</h2>
-                </div>
+                        <h2>Remove</h2>
+                    </div>
+          </div>
+     
+        
+
+          
+            <div class="bottomrow">
+              <h2>ARCHIVE ORDER</h2>
+              <div class="totaldiv">TOTAL CDN $ <span class="total"></span></div>
             </div>
+       
+                
+          </div>
+       </section>
      </div>
 
-          
-      <div class="bottomrow">
-        <h2>ARCHIVE ORDER</h2>
-        <div class="totaldiv">TOTAL CDN $ <span class="total"></span></div>
-      </div>
-                
-            </div>
-            
-          </div>
-          
-      
-      
-        </div>
-          
-      
-          
-      </section>
-
-    </div>
+    <div class="arrows">
+      <img class="prev-arrow" style="visibility: hidden;" src="Content/pngkey.com-curvy-arrow-png-1982127 black.png" alt="">
+      <img class="forward-arrow" style="visibility: hidden;" src="Content/pngkey.com-curvy-arrow-png-1982127 black.png" alt="">
+  </div>
     
-    <script src="script.js"></script>
+    <script src="script2.js">
+  
+    </script>
+
+    <script>
+          // const orderDiv = document.querySelector('.order-div');
+
+          document.querySelector('.order-div').innerHTML = localStorage.getItem("key")
+    </script>
 </body>
 </html>

@@ -14,6 +14,7 @@ const prevArrow = document.querySelector('.prev-arrow');
 const nextArrow = document.querySelector('.forward-arrow');
 const purchaseBtn = document.querySelector('.purchaseBtn')
 
+// const bagBtn = document.querySelector('.bagBtn')
 const atbBtn = document.querySelectorAll('.ATB');
 const animate = document.querySelector('.animate');
 const subtitle = document.getElementsByClassName('subtitle');
@@ -21,6 +22,7 @@ const info = document.getElementsByClassName('info');
 const selectBtn = document.querySelector('#select');
 const price = document.getElementsByClassName('price'); //shop price
 const burger = document.querySelector('.c2');
+
 
 
 const cartImg = document.querySelector('.img-cart');
@@ -78,7 +80,6 @@ const sneakerImages = [
 
 
 
-
 function ready(){
     const removeBtns = document.getElementsByClassName('removeBtn');
     for(let i = 0; i < removeBtns.length; i++ ){
@@ -94,7 +95,6 @@ function ready(){
             let input = quantityInputs[i];
             input.addEventListener('change', quantityChanged)
         }
-
 
 
         let cartItemContainer = document.getElementsByClassName('cart-items')[0];    
@@ -116,7 +116,7 @@ function ready(){
             const itemPrice = document.getElementsByClassName('item-price')[0];
             const rowQuantity = document.getElementsByClassName('quantity-input')[i];
            
-            totalPrice = parseFloat(itemPrice.innerText.replace('$', ''));
+            let totalPrice = parseFloat(itemPrice.innerText.replace('$', ''));
             let quantity = rowQuantity.value;
             total = total + (totalPrice * quantity);
        }
@@ -149,27 +149,25 @@ function ready(){
         pMessage.innerHTML = thankYouMsg;
        }, 200);
        
-       
-       
-       
+    }  
 
-    }   
+   
+   
 
 
 }
-// atbBtn.addEventListener('click', () =>{
-
-//     cartRow1.insertAdjacentHTML("beforeend", navRowHTML );
-
-//     // addToCartClicked()
-// }) 
 
 
-atbBtn.forEach((event) => {
-    event.addEventListener('click', addToCartClicked)
-    event.addEventListener('click', navCartSlideAtb)
 
-})
+// localStorage.setItem(cartItems, cartHTML)
+
+
+
+
+
+
+
+
 
 function navCartSlideAtb(){
    
@@ -182,6 +180,74 @@ function navCartSlideAtb(){
 
 }
 
+
+
+// bagBtn.addEventListener('click', bagAdded)
+// bagBtn.addEventListener('click', bagPageClicked)
+
+
+
+
+function bagPageClicked(){
+    let cartTitle = subtitle[i].innerText
+    let cartPrice = price[i].innerText
+    let imgSrc = shoe[i].src;
+
+    bagAdded(imgSrc, cartTitle, cartPrice)
+}
+
+
+    
+    
+
+    function seeBag(){
+        window.location.href="ATB.html"
+        
+    }
+    
+
+
+
+
+
+
+function bagAdded(imgSrc, cartTitle, cartPrice){
+   
+    const bagRow = document.createElement('div')
+    bagRow.classList.add('bag-row')
+
+
+const bagRowHTML =  
+    
+    `<div class="shoe-info1">
+        <div class="order-number">Order Number <span class="order">#0923-05354-05643-0583</span></div>
+            <div class="delivery-date">Delivery Date <span class="date">December 28th, 2023</span></div>
+                 <img id="cart-shoe" src="${imgSrc}" alt="">
+                    <div class="psbtn">
+                        <h5>Product Support</h5>
+        </div>
+
+            </div>
+
+            <div class="shoe-info2">
+                    <h2 id="subtitlebag">${cartTitle}</h2>
+                        <p id="infobag">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit veritatis similique aperiam pariatur dolorum neque, cumque quaerat ut animi eligendi voluptatum, voluptatem dolores architecto rerum.</p>
+                        <p id="bagPrice">${cartPrice}</p>
+            </div>`
+
+    bagRow.innerHTML = cart;
+    orderDiv.append(bagRow);
+
+} 
+
+
+
+
+atbBtn.forEach((event) => {
+    event.addEventListener('click', addToCartClicked)
+    event.addEventListener('click', navCartSlideAtb)
+
+})
 
 function addToCartClicked(event){
 
@@ -197,8 +263,6 @@ function addToCartClicked(event){
     addToBag(cartTitle, cartPrice, imgSrc)
     updateCartTotal();
 }
-
-
 
 
 function addToBag(cartTitle, cartPrice, imgSrc ){
@@ -449,3 +513,4 @@ nextArrow.addEventListener('click', () => {
 function setImg(){
     return shoe.setAttribute('src', sneakerImages[i]);
 }
+
