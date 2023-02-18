@@ -98,7 +98,7 @@ function ready(){
         }
 
 
-        let cartItemContainer = document.getElementsByClassName('cart-items')[0];    
+        let cartItemContainer = document.getElementsByClassName('cart-items2')[0];    
         let navCartRows = cartItemContainer.getElementsByClassName('cart-row');  
         let navCartRow = navCartRows[i];
 
@@ -107,7 +107,7 @@ function ready(){
     // purchaseBtnATB.addEventListener('click', purchaseClicked)
 
     function purchaseClicked(){
-        let cartItemContainer = document.getElementsByClassName('cart-items')[0];
+        let cartItemContainer = document.getElementsByClassName('cart-items2')[0];
         let navCartRows = cartItemContainer.getElementsByClassName('cart-row');
         let total = 0;
           
@@ -269,7 +269,7 @@ function addToCartClicked(event){
 function addToBag(cartTitle, cartPrice, imgSrc ){
     let cartRow1 = document.createElement('div')
     cartRow1.classList.add('cart-row')
-    let cartItems = document.getElementsByClassName('cart-items')[0]
+    let cartItems = document.getElementsByClassName('cart-items2')[0]
     let cartItemNames = cartItems.getElementsByClassName('cart-item-title')
         for(let i = 0; i < cartItemNames.length; i++){    
             if(cartItemNames[i].innerText == cartTitle){
@@ -282,7 +282,7 @@ function addToBag(cartTitle, cartPrice, imgSrc ){
     const navRowHTML = 
                
            `<div class="cart-item cart-column">
-                <img src="${imgSrc}" alt="" class="cart-img">
+                <img width="100px" src="${imgSrc}" alt="" class="cart-img">
                 <span class="cart-item-title">${cartTitle}</span>
                 <span class="item-price cart-column">${cartPrice}</span>
             </div>
@@ -365,7 +365,7 @@ function navCartSlide(){
 
 function updateCartTotal(){
    
-        let cartItemContainer = document.getElementsByClassName('cart-items')[0];
+        let cartItemContainer = document.getElementsByClassName('cart-items2')[0];
         let navCartRows = cartItemContainer.getElementsByClassName('cart-row');
         let total = 0;
           

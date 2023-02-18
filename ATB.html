@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+       .cart-img{
+        width: 350px;
+        }
+    </style>
 </head>
 <body>
     <div class="main-container">
@@ -51,7 +56,7 @@
             alt="">
           </div>
            
-          <div class="cart-items">
+          <!-- <div class="cart-items">
     
               
                   </div>
@@ -74,7 +79,7 @@
             
             <div class="bagBtn" onclick="seeBag()">SEE BAG</div>
         </div>
-  
+   -->
          
       </div>
 
@@ -89,7 +94,7 @@
           
           <img id="off-white1" src="Content/pngwing.com (2).png" alt="">
          
-          <h1>Choose A Sneaker</h1>
+          <!-- <h1>Choose A Sneaker</h1> -->
           
           <div class="orange-square">
             <h2 id="tag1">"CART"</h2>
@@ -115,7 +120,7 @@
                 </div>
            
         <div class="order-div">
-
+                   <div class="cart-items2">
                 <!-- <div class="shoe-info1">
                     <div class="order-number">Order Number <span class="order">#0923-05354-05643-0583</span></div>
                     <div class="delivery-date">Delivery Date <span class="date">December 28th, 2023</span></div>
@@ -131,14 +136,28 @@
                 <p id="infobag">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit veritatis similique aperiam pariatur dolorum neque, cumque quaerat ut animi eligendi voluptatum, voluptatem dolores architecto rerum.</p>
                 <p id="bagShoePrice">$2250</p>
            </div> -->
-
           </div>
+     
+
+      
+
+  </div>
              
            <div class="rmbuybtns">
+
+            <div class="cart-total">
+              <strong class="total-title"></strong>
+              
+            </div>
+  
+        
+  
+        <div class="purchase-message">
+              
+            </div>
                 
-                <div class="purchasebtn">
-                        <h2>Purchase</h2>
-                    </div>
+            <div class="purchasebtn"><h1>PURCHASE</h1></div>
+                
                 <div class="removebtn">
                         <h2>Remove</h2>
                     </div>
@@ -148,8 +167,10 @@
 
           
             <div class="bottomrow">
-              <h2>ARCHIVE ORDER</h2>
-              <div class="totaldiv">TOTAL CDN $ <span class="total"></span></div>
+                  <h2>ARCHIVE ORDER</h2>
+                  <div class="totaldiv">
+                  <div class="grand-total">TOTAL CDN  <span class="cart-total-price">$</span></div>
+                </div>
             </div>
        
                 
@@ -162,14 +183,15 @@
       <img class="forward-arrow" style="visibility: hidden;" src="Content/pngkey.com-curvy-arrow-png-1982127 black.png" alt="">
   </div>
     
-    <script src="script2.js">
-  
-    </script>
+    <script src="script3.js"></script>
 
-    <script>
-          // const orderDiv = document.querySelector('.order-div');
+   
+   
+   <script>
+   // const orderDiv = document.querySelector('.order-div');
+   
+        document.querySelector('.cart-items2').innerHTML = localStorage.getItem("key")
 
-          document.querySelector('.order-div').innerHTML = localStorage.getItem("key")
-    </script>
+      </script>
 </body>
 </html>
