@@ -16,6 +16,7 @@ const purchaseBtn = document.querySelector('.purchasebtn')
 // const purchaseBtnATB = document.querySelector('.purchasebtn')
 
 // const bagBtn = document.querySelector('.bagBtn')
+const removeAllBtn = document.querySelector('.removebtn')
 const atbBtn = document.querySelectorAll('.ATB');
 const animate = document.querySelector('.animate');
 const subtitle = document.getElementsByClassName('subtitle');
@@ -86,10 +87,14 @@ function ready(){
     for(let i = 0; i < removeBtns.length; i++ ){
         let button1 = removeBtns[i];
         button1.addEventListener('click', removeCartItem)
-       
+        
        
     }
-    updateCartTotal();
+
+    removeAllBtn.addEventListener('click', removeAllCart)
+
+
+updateCartTotal();
 
     let quantityInputs = document.getElementsByClassName('quantity-input');
         for(let i = 0; i < quantityInputs.length; i++){
@@ -151,6 +156,10 @@ function ready(){
        }, 200);
        
     }  
+
+
+
+
 
    
    
@@ -317,9 +326,21 @@ function addToBag(cartTitle, cartPrice, imgSrc ){
 }
 
 
+function removeAllCart(){
+   
+    let cartItems2 = document.querySelector('.cart-items2');
+    cartItems2.remove()
+    localStorage.clear("key1"[i])
+    localStorage.clear("key2")
+}
+
+
+
 function removeCartItem(e){
     let buttonClicked = e.target;
     buttonClicked.parentElement.parentElement.remove();
+    localStorage.clear("key1")
+    localStorage.clear("key2")
     updateCartTotal();
 }
 

@@ -159,7 +159,7 @@
             <div class="purchasebtn"><h1>PURCHASE</h1></div>
                 
                 <div class="removebtn">
-                        <h2>Remove</h2>
+                        <h2>Remove All</h2>
                     </div>
           </div>
      
@@ -190,7 +190,9 @@
    <script>
    // const orderDiv = document.querySelector('.order-div');
    
-        document.querySelector('.cart-items2').innerHTML = localStorage.getItem("key")
+        document.querySelector('.cart-items2').innerHTML = localStorage.getItem("key1");
+        document.querySelector('.quantity-input').value = localStorage.getItem("key2");
+      
 
       </script>
 </body>

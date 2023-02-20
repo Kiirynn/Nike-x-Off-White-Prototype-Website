@@ -218,9 +218,12 @@ bagBtn.addEventListener('click', totalCartHTML)
 function totalCartHTML(){
     setTimeout(() => {
         let cartItems = document.querySelector('.cart-items');
+        let quantityInputs = document.querySelector('.quantity-input');
+        let quantityInputsNumber = quantityInputs.value;
         let cartHTML = cartItems.innerHTML;
-        localStorage.setItem("key", cartHTML) 
-        return false
+        localStorage.setItem("key1", cartHTML) 
+        localStorage.setItem("key2", quantityInputsNumber) 
+       
     }, 0);
 
     
