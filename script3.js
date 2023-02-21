@@ -330,7 +330,7 @@ function removeAllCart(){
    
     let cartItems2 = document.querySelector('.cart-items2');
     cartItems2.remove()
-    localStorage.clear("key1"[i])
+    localStorage.clear("key1")
     localStorage.clear("key2")
 }
 

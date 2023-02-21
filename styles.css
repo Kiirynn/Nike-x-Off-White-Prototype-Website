@@ -193,6 +193,7 @@ a{
 
 
 nav{
+    z-index: 1;
     position: fixed;
     top: 0;
     left:0;
@@ -222,6 +223,9 @@ nav{
     margin-top: 40px;
 }
 
+.logo-img{
+    filter: drop-shadow(1px 1px 1px white);
+}
 
 
 .nike{
@@ -589,6 +593,8 @@ nav{
         transition: ease 0.3s;
     }
 
+
+
     .removebtn{
         cursor: pointer;
     }
@@ -730,6 +736,14 @@ nav{
     justify-content: center;
     align-items: center;
     padding-top: 20px;
+}
+
+#contact{
+    text-shadow: 2px 2px 4px black;
+}
+
+.cbtn-div{
+    
 }
 
 .case{
@@ -926,11 +940,47 @@ width:700px;
     padding: 50px;
 }
 
-.order-div, .title-bag, .totaldiv, .purchasebtn, .removebtn, .shoe-info1, .purchase-message, .cart-items2 {
+.order-div, .title-bag, .totaldiv, .purchasebtn, .removebtn, .shoe-info1, .purchase-message, .cart-items2  {
     display: flex;
     justify-content: center;
     align-items: center;
 } 
+
+.main-text{
+position: fixed;
+top: 15%;
+left: 12%;
+padding: 30px;
+width: 600px;
+display: flex;
+background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 8px black;
+    border-radius: 7px;
+    backdrop-filter: blur(2px);
+
+
+flex-direction: column;
+/* text-shadow: 2px 2px 5px white ; */
+}
+
+.header-div{
+padding: 20px;
+display: flex;
+flex-direction: column;
+
+
+}
+
+.h10{
+   color: white;
+   
+   text-align: left; font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;
+}
+
+.main-para{
+    color: white;
+    text-align: left;
+}
 
 .cart-items2{
     overflow-x: scroll;
