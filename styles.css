@@ -873,7 +873,8 @@ h1{
     font-size: 1.5rem;
     font-weight: bolder;
     color: white;
-    background-color: transparent  ;
+    background-color: transparent;
+    text-decoration: none;
     /* border-width: 4px;
     border-style: solid;
     border-image: linear-gradient(to right, white, black) 1; */
@@ -1171,6 +1172,14 @@ flex-direction: column;
 
     .purchase-message, .cart-total, .purchase-message, .grand-total {
         padding-top: 20px;
+    }
+
+    .uChar {
+       color: red;
+    }
+
+    .uSym, .uFoul{
+        color: green;
     }
 
   

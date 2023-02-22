@@ -45,6 +45,92 @@ const sectionId = document.querySelector('.page').id;
 const circlesContainer = document.getElementById('circBar');
 const circle = document.querySelectorAll('.circle');
 
+userNameInput = document.querySelector('#username');
+
+const upperCaseLetters  = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] 
+const lowerCaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+const symbols = ['~', '`', '!', '@' ,'#', '$', '%', '^' ,'&', '*', '(', ')' ,'-', '_', '=', '{' ,'}', '[', ']', '|' ,';', ':', '?', '>' ,'<', '.', ',', '/' ]
+
+// if(document.readyState = 'loading') {
+//     document.addEventListener('DOMContentLoaded', ready)
+// } else{
+//     ready()
+// }
+
+
+
+
+
+
+
+    document.querySelector('#username').addEventListener('click', uPrompt)
+
+    function uPrompt(){
+        userPromptHTML = `
+        <div>
+            <p class="uChar">Username Must Be Atleast 6 Characters</p>
+            <p class="uSym">No Symbols</p>
+            <p class="uFoul">No Foul Language</p>
+        </div>`
+      
+        document.querySelector('.userPrompt').innerHTML = userPromptHTML;
+      
+       
+      
+      
+      }
+
+      setInterval(() => {
+
+        const uChar = document.querySelector('.uChar')
+        const uSym = document.querySelector('.uSym')
+
+        if(userNameInput.value.length >= 6 ) {
+            
+            uChar.style.color = "green"
+        }
+
+        else if (userNameInput.value.length < 6){ 
+            
+            uChar.style.color = "red"
+        }
+
+        const value1 = userNameInput.value
+        
+        let ohMy = symbols.some(element => value1.includes(element))
+
+          if(ohMy){
+            uSym.style.color = "red"
+          }
+
+          else{
+            uSym.style.color = "green"
+          }
+          
+         console.log()
+
+    //   if(userNameInput.value == symbols[i]){
+    //     uSym.style.color = "red"
+    //   }
+     
+       
+        
+      }, 500);
+      
+     
+  // ~`!@#$%^&*()_+-={}[]|;:?>< /
+          
+      // if(userNameInput.value == upperCaseLetters[i]){
+      //     const uChar = document.querySelector('.uChar')
+      //     uChar.style.color = "green"
+      //   }
+      
+     
+
+
+
+
+
 
 
 
