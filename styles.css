@@ -726,7 +726,7 @@ nav{
 .contact-container2{
     
     position: fixed;
-    top: 20%; 
+    top: 13%; 
     left: 34.5%;
     color: black;
     text-align: center;
@@ -799,8 +799,9 @@ p{
 #off-white{
     width:300px;
     position: fixed;
-    top: 15%;
+    top: 5%;
     left: 45%; 
+   
     
 }
 
@@ -866,10 +867,11 @@ h1{
 .althead{
     color: white;
     font-size: 1.5rem;
-    padding-top: 40px;
+   
+    
 }
 
-.loginBtn, .registerBtn{
+.loginBtn, .registerBtn, .createAccountBtn{
     font-size: 1.5rem;
     font-weight: bolder;
     color: white;
@@ -886,7 +888,8 @@ h1{
     box-shadow: black 4px 4px 7px;
     
 }
-.loginBtn:hover, .registerBtn:hover{
+.loginBtn:hover, .registerBtn:hover, .createAccountBtn:hover {
+
     transform: scale(0.95);
     transition: ease 0.3s;
 }
@@ -1182,4 +1185,16 @@ flex-direction: column;
         color: green;
     }
 
-  
+  .userPrompt, .passPrompt, .confirmPronpt {
+   
+    
+  }
+
+  .promptBox{
+    padding: 5px;
+   
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 2px 2px 8px black;
+    border-radius: 7px;
+    backdrop-filter: blur(10px);
+  }

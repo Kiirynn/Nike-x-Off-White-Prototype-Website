@@ -45,48 +45,99 @@ const sectionId = document.querySelector('.page').id;
 const circlesContainer = document.getElementById('circBar');
 const circle = document.querySelectorAll('.circle');
 
-userNameInput = document.querySelector('#username');
+
 
 const upperCaseLetters  = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] 
 const lowerCaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+const numbers = [1,2,3,4,5,6,7,8,9,0]
 const symbols = ['~', '`', '!', '@' ,'#', '$', '%', '^' ,'&', '*', '(', ')' ,'-', '_', '=', '{' ,'}', '[', ']', '|' ,';', ':', '?', '>' ,'<', '.', ',', '/' ]
-
+const foulWords = ['fuck', 'shit', 'cunt', 'ass', 'bitch', 'fucker', 'cock', 'penis', 'vagina', 'nigger', 'nigga', 'pussy', 'cum', 'porn', 'blow', 'queer', 'fag', 'faggot','Fuck', 'Shit', 'Cunt', 'Ass', 'Bitch', 'Fucker', 'Cock', 'Penis', 'Vagina', 'Nigger', 'Nigga', 'Pussy', 'Cum', 'Porn', 'Blow', 'Queer', 'Fag', 'Faggot']
 // if(document.readyState = 'loading') {
 //     document.addEventListener('DOMContentLoaded', ready)
 // } else{
 //     ready()
 // }
 
-
-
-
-
-
+    const userNameInput = document.querySelector('#username');
+    const passwordInput = document.querySelector('#password');
+    const emailInput = document.querySelector('#email');
+    const confirmInput = document.querySelector('#confirm');
 
     document.querySelector('#username').addEventListener('click', uPrompt)
+    document.querySelector('#password').addEventListener('click', passPrompt)
+    document.querySelector('#confirm').addEventListener('click', confirmPrompt)
+    // document.querySelector('#confirm').addEventListener('click', createPrompt)
 
+    
+    
+    
+    // prompt functions
+    
     function uPrompt(){
-        userPromptHTML = `
-        <div>
+       let userPromptHTML = `
+        <div class="promptBox">
             <p class="uChar">Username Must Be Atleast 6 Characters</p>
             <p class="uSym">No Symbols</p>
             <p class="uFoul">No Foul Language</p>
         </div>`
       
         document.querySelector('.userPrompt').innerHTML = userPromptHTML;
-      
-       
-      
-      
-      }
+ 
+    }
+
+    function passPrompt(){
+       let  passPromptHTML = 
+    `<div class="promptBox">
+       <p class="pChar">Password Must Be Atleast 8 Characters</p>
+       <p class="pSym">Atleast 1 Symbols</p>
+       <p class="pNum">Atleast One Number</p>
+       <p class="pUpp">Atleast One Uppercase Letter</p>
+       <p class="pLow">Atleast One Lowercase Letter</p>
+
+    </div>`
+        
+        document.querySelector('.passPrompt').innerHTML = passPromptHTML;
+    }
+
+    function confirmPrompt(){
+        let  confirmPromptHTML = 
+        `<div class="promptBox">
+           <p class="match">Passwords Match</p>
+        </div>`
+
+        document.querySelector('.confirmPrompt').innerHTML = confirmPromptHTML;
+    }
+
+    // function createPrompt(){
+    //     let  createPromptHTML = 
+    //     `<div class="createBox">
+    //        <p class="create">Your Account Has Been Created !</p>
+    //     </div>`
+
+    //     document.querySelector('.createPrompt').innerHTML = createPromptHTML;
+    // }
+
+
+
+
+
+    //   username
+
 
       setInterval(() => {
 
+        const value1 = userNameInput.value
+
         const uChar = document.querySelector('.uChar')
         const uSym = document.querySelector('.uSym')
+        const uFoul = document.querySelector('.uFoul')
 
-        if(userNameInput.value.length >= 6 ) {
+        if(userNameInput.value.length === 6 ) {
             
+            uChar.style.color = "yellow"
+        }
+
+        if(userNameInput.value.length > 8 ){
             uChar.style.color = "green"
         }
 
@@ -95,9 +146,10 @@ const symbols = ['~', '`', '!', '@' ,'#', '$', '%', '^' ,'&', '*', '(', ')' ,'-'
             uChar.style.color = "red"
         }
 
-        const value1 = userNameInput.value
+       
         
         let ohMy = symbols.some(element => value1.includes(element))
+        let foul = foulWords.some(element => value1.includes(element))
 
           if(ohMy){
             uSym.style.color = "red"
@@ -106,30 +158,126 @@ const symbols = ['~', '`', '!', '@' ,'#', '$', '%', '^' ,'&', '*', '(', ')' ,'-'
           else{
             uSym.style.color = "green"
           }
-          
-         console.log()
 
-    //   if(userNameInput.value == symbols[i]){
-    //     uSym.style.color = "red"
-    //   }
+          if(foul){
+            uFoul.style.color = "red"
+          }
+
+          else {
+            uFoul.style.color = "green"
+          }
+          
+
+
+    //   password
+
+
      
-       
+  
+        const pChar = document.querySelector('.pChar')
+        const pSym = document.querySelector('.pSym')
+        const pNum = document.querySelector('.pNum')
+        const pUpp = document.querySelector('.pUpp')
+        const pLow = document.querySelector('.pLow')
+
+        const value2 = passwordInput.value
+
+        if(passwordInput.value.length === 8 ) {
+            
+            pChar.style.color = "yellow"
+        }
+
+        if(passwordInput.value.length >= 10 ){
+            pChar.style.color = "green"
+        }
+
+        else if (password.value.length < 6){ 
+            
+            pChar.style.color = "red"
+        }
+
         
-      }, 500);
-      
+
+        let pSymCheck = symbols.some(element => value2.includes(element))
+        let pNumCheck = numbers.some(element => value2.includes(element))
+        let pUppCheck = upperCaseLetters.some(element => value2.includes(element))
+        let pLowCheck = lowerCaseLetters.some(element => value2.includes(element))
+
+       if(pSymCheck){
+        pSym.style.color = "green"
+       } else{
+        pSym.style.color = "red"
+       }
+       
+       if(pNumCheck){
+        pNum.style.color = "green"
+       } else{
+        pNum.style.color = "red"
+       }
+
+       if(pUppCheck){
+        pUpp.style.color = "green"
+       } else{
+        pUpp.style.color = "red"
+       }
+
+       if(pLowCheck){
+        pLow.style.color = "green"
+       } else{
+        pLow.style.color = "red"
+       }
+
+ 
+    //   confirm password 
+
+
+            const value3 = confirmInput.value
+            
+       
+            
+            const pMatch = document.querySelector('.match')
+            
+            if(value3 === value2){
+                pMatch.style.color = "green"
+            } else{
+                pMatch.style.color = "red"
+            }
+
+
+               // create account btn
+
+               let  createPromptHTML = 
+               `<div class="createBox">
+                  <p class="create">Your Account Has Been Created !</p>
+               </div>`
+
+        document.querySelector('.creatAccountBtn').addEventListener('click', createAccount)
+
+        function createAccount(){
+            if((uChar.style.color = "green")
+             && (uSym.style.color = "green")
+              && (uFoul.style.color = "green")
+               && (pChar.style.color = "green") 
+               && (pSym.style.color = "green") 
+                && (pNum.style.color = "green") 
+                && (pUpp.style.color = "green") 
+                && (pLow.style.color = "green")
+                && (pMatch.style.color = "green") 
+               ){
+              
+        
+                document.querySelector('.createPrompt').innerHTML = createPromptHTML;
+            }
+           
+        }
+
+
+
+        }, 500);
+
+
      
-  // ~`!@#$%^&*()_+-={}[]|;:?>< /
-          
-      // if(userNameInput.value == upperCaseLetters[i]){
-      //     const uChar = document.querySelector('.uChar')
-      //     uChar.style.color = "green"
-      //   }
-      
      
-
-
-
-
 
 
 
