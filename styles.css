@@ -760,7 +760,7 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top:40px ;
+    padding-top: 25px ;
     width: 800px
 }
 
@@ -944,7 +944,7 @@ width:700px;
     padding: 50px;
 }
 
-.order-div, .title-bag, .totaldiv, .purchasebtn, .removebtn, .shoe-info1, .purchase-message, .cart-items2  {
+.order-div, .title-bag, .totaldiv, .purchasebtn, .removebtn, .shoe-info1, .purchase-message, .cart-items2, .createPrompt  {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1190,10 +1190,50 @@ flex-direction: column;
     
   }
 
-  .promptBox{
+  .createPrompt{
+    position: fixed;
+    flex-direction: column;
+    width: 1000px;
+    height: 500px;
+    padding: 50px;
+    top: 30%; 
+    left: 31%;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 2px 2px 8px black;
+    border-radius: 7px;
+    backdrop-filter: blur(10px);
+  }
+
+  .create{
+    color: white;
+    font-size: 1.5rem;
+    padding: 30px;
+  }
+
+  .create2{
+    color: white;
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .create3{
+    color: white;
+    font-size: .8rem;
+    padding: 10px;
+  }
+
+  .email{
+    color: red;
+  }
+
+  .newsCheckbox{
+     width: 20px;
+  }
+
+  .promptBox, .createBox{
     padding: 5px;
    
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 2px 2px 8px black;
     border-radius: 7px;
     backdrop-filter: blur(10px);

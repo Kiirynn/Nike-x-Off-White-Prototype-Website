@@ -52,6 +52,10 @@ const lowerCaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
 const numbers = [1,2,3,4,5,6,7,8,9,0]
 const symbols = ['~', '`', '!', '@' ,'#', '$', '%', '^' ,'&', '*', '(', ')' ,'-', '_', '=', '{' ,'}', '[', ']', '|' ,';', ':', '?', '>' ,'<', '.', ',', '/' ]
 const foulWords = ['fuck', 'shit', 'cunt', 'ass', 'bitch', 'fucker', 'cock', 'penis', 'vagina', 'nigger', 'nigga', 'pussy', 'cum', 'porn', 'blow', 'queer', 'fag', 'faggot','Fuck', 'Shit', 'Cunt', 'Ass', 'Bitch', 'Fucker', 'Cock', 'Penis', 'Vagina', 'Nigger', 'Nigga', 'Pussy', 'Cum', 'Porn', 'Blow', 'Queer', 'Fag', 'Faggot']
+const emailDomains = ['@gmail.com', '@outlook.com', '@hotmail.com', '@yahoo.com', 'aol.com']
+
+
+
 // if(document.readyState = 'loading') {
 //     document.addEventListener('DOMContentLoaded', ready)
 // } else{
@@ -65,13 +69,16 @@ const foulWords = ['fuck', 'shit', 'cunt', 'ass', 'bitch', 'fucker', 'cock', 'pe
 
     document.querySelector('#username').addEventListener('click', uPrompt)
     document.querySelector('#password').addEventListener('click', passPrompt)
-    document.querySelector('#confirm').addEventListener('click', confirmPrompt)
-    // document.querySelector('#confirm').addEventListener('click', createPrompt)
+    document.querySelector('#confirm').addEventListener('click', conPrompt)
+    document.querySelector('.createAccountBtn').addEventListener('click', domainPrompt)
 
     
     
     
     // prompt functions
+
+
+    // username prompt
     
     function uPrompt(){
        let userPromptHTML = `
@@ -84,6 +91,8 @@ const foulWords = ['fuck', 'shit', 'cunt', 'ass', 'bitch', 'fucker', 'cock', 'pe
         document.querySelector('.userPrompt').innerHTML = userPromptHTML;
  
     }
+
+    // password prompt
 
     function passPrompt(){
        let  passPromptHTML = 
@@ -99,7 +108,9 @@ const foulWords = ['fuck', 'shit', 'cunt', 'ass', 'bitch', 'fucker', 'cock', 'pe
         document.querySelector('.passPrompt').innerHTML = passPromptHTML;
     }
 
-    function confirmPrompt(){
+    // confirm prompt
+
+    function conPrompt(){
         let  confirmPromptHTML = 
         `<div class="promptBox">
            <p class="match">Passwords Match</p>
@@ -108,18 +119,10 @@ const foulWords = ['fuck', 'shit', 'cunt', 'ass', 'bitch', 'fucker', 'cock', 'pe
         document.querySelector('.confirmPrompt').innerHTML = confirmPromptHTML;
     }
 
-    // function createPrompt(){
-    //     let  createPromptHTML = 
-    //     `<div class="createBox">
-    //        <p class="create">Your Account Has Been Created !</p>
-    //     </div>`
-
-    //     document.querySelector('.createPrompt').innerHTML = createPromptHTML;
-    // }
+    
 
 
-
-
+    // Interval loops for all prompts
 
     //   username
 
@@ -132,7 +135,7 @@ const foulWords = ['fuck', 'shit', 'cunt', 'ass', 'bitch', 'fucker', 'cock', 'pe
         const uSym = document.querySelector('.uSym')
         const uFoul = document.querySelector('.uFoul')
 
-        if(userNameInput.value.length === 6 ) {
+        if(userNameInput.value.length == 6 ) {
             
             uChar.style.color = "yellow"
         }
@@ -182,7 +185,7 @@ const foulWords = ['fuck', 'shit', 'cunt', 'ass', 'bitch', 'fucker', 'cock', 'pe
 
         const value2 = passwordInput.value
 
-        if(passwordInput.value.length === 8 ) {
+        if(passwordInput.value.length == 8 ) {
             
             pChar.style.color = "yellow"
         }
@@ -227,56 +230,101 @@ const foulWords = ['fuck', 'shit', 'cunt', 'ass', 'bitch', 'fucker', 'cock', 'pe
         pLow.style.color = "red"
        }
 
+
+    //    email 
+        
+    
+        const value4 = emailInput.value
+        let emailDomainCheck = emailDomains.some(element => value4.includes(element))
+
  
     //   confirm password 
 
 
             const value3 = confirmInput.value
-            
-       
-            
             const pMatch = document.querySelector('.match')
             
-            if(value3 === value2){
+            if(value3 == value2){
                 pMatch.style.color = "green"
             } else{
                 pMatch.style.color = "red"
             }
 
-
-               // create account btn
-
-               let  createPromptHTML = 
-               `<div class="createBox">
-                  <p class="create">Your Account Has Been Created !</p>
-               </div>`
-
-        document.querySelector('.creatAccountBtn').addEventListener('click', createAccount)
-
-        function createAccount(){
-            if((uChar.style.color = "green")
-             && (uSym.style.color = "green")
-              && (uFoul.style.color = "green")
-               && (pChar.style.color = "green") 
-               && (pSym.style.color = "green") 
-                && (pNum.style.color = "green") 
-                && (pUpp.style.color = "green") 
-                && (pLow.style.color = "green")
-                && (pMatch.style.color = "green") 
-               ){
-              
-        
-                document.querySelector('.createPrompt').innerHTML = createPromptHTML;
-            }
-           
-        }
-
-
-
         }, 500);
 
 
+        let  denyEmailHTML = 
+        `<div class="promptBox">
+           <p class="email">This is NOT a valid Email</p>
+        </div>` 
      
+    
+    
+    function domainPrompt(){
+
+        const value4 = emailInput.value
+        
+        let emailDomainCheck = emailDomains.some(element => value4.includes(element))
+        if(emailDomainCheck){
+            
+        } else {
+            document.querySelector('.emailPromptDeny').innerHTML = denyEmailHTML;
+        }
+}
+
+         
+        
+        // create account btn
+
+               let  createPromptHTML = 
+               `  <div class="createPrompt">
+               
+               <p class="create">Your Account Has Been Created !</p>
+               <p class="create2">Thank You For Signing Up For An Official OFFWhite x Nike Account</p>
+               <p class="create2">Please Feel Free To Contact Us For Any Questions Or Concerns</p>
+               <input class="newsCheckbox" type="checkbox">
+               <p class="create3">SUBSCRIBE To Newsletter</p>
+               
+            </div>`
+
+               let denyHTML =  `<div class="createBox">
+               <p class="create">Make sure you have met all of the account security requirements</p>
+            </div>`
+
+
+
+        document.querySelector('.createAccountBtn').addEventListener('click', createAccount)
+
+        function createAccount(){
+            
+            const value1 = userNameInput.value
+            const value2 = passwordInput.value
+            const value3 = confirmInput.value
+            const value4 = emailInput.value
+            let ohMy = symbols.some(element => value1.includes(element))
+            let foul = foulWords.some(element => value1.includes(element))
+            let pSymCheck = symbols.some(element => value2.includes(element))
+            let pNumCheck = numbers.some(element => value2.includes(element))
+            let pUppCheck = upperCaseLetters.some(element => value2.includes(element))
+            let pLowCheck = lowerCaseLetters.some(element => value2.includes(element))
+            let emailDomainCheck = emailDomains.some(element => value4.includes(element))
+           
+
+           
+
+            if(emailDomainCheck && value3 == value2 && ohMy == false && foul == false && pSymCheck == true && pNumCheck == true && pUppCheck == true && pLowCheck == true){
+                document.querySelector('.createPromptDiv').innerHTML = createPromptHTML;
+                const extra = document.querySelector('.extra')
+                extra.remove();
+               
+            } else {
+                document.querySelector('.denyPrompt').innerHTML = denyHTML;
+            }
+         
+            
+            
+           
+        }
      
 
 
