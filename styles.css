@@ -1185,10 +1185,7 @@ flex-direction: column;
         color: green;
     }
 
-  .userPrompt, .passPrompt, .confirmPronpt {
-   
-    
-  }
+  
 
   .createPrompt{
     position: fixed;
@@ -1237,4 +1234,20 @@ flex-direction: column;
     box-shadow: 2px 2px 8px black;
     border-radius: 7px;
     backdrop-filter: blur(10px);
+  }
+
+  /* .prompt-active{
+    visibility: visible;
+  }
+
+  .prompt-off{
+    visibility: hidden;
+  }  */
+
+  .userPrompt{
+    
+  }
+
+  .collapse{
+
   }

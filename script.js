@@ -66,8 +66,10 @@ const emailDomains = ['@gmail.com', '@outlook.com', '@hotmail.com', '@yahoo.com'
     const passwordInput = document.querySelector('#password');
     const emailInput = document.querySelector('#email');
     const confirmInput = document.querySelector('#confirm');
+    let userPrompt = document.querySelector('.userPrompt');
 
     document.querySelector('#username').addEventListener('click', uPrompt)
+    document.querySelector('#email').addEventListener('click', emailRmUPrompt)
     document.querySelector('#password').addEventListener('click', passPrompt)
     document.querySelector('#confirm').addEventListener('click', conPrompt)
     document.querySelector('.createAccountBtn').addEventListener('click', domainPrompt)
@@ -79,8 +81,14 @@ const emailDomains = ['@gmail.com', '@outlook.com', '@hotmail.com', '@yahoo.com'
 
 
     // username prompt
+
+    const collapse = document.querySelector('.collapse')
+    let buttonClicks = 0
+    // const result = (buttonClicks % 2 == 0) ? "even" : "odd" ;
     
     function uPrompt(){
+
+       buttonClicks++
        let userPromptHTML = `
         <div class="promptBox">
             <p class="uChar">Username Must Be Atleast 6 Characters</p>
@@ -88,14 +96,48 @@ const emailDomains = ['@gmail.com', '@outlook.com', '@hotmail.com', '@yahoo.com'
             <p class="uFoul">No Foul Language</p>
         </div>`
       
-        document.querySelector('.userPrompt').innerHTML = userPromptHTML;
- 
+        let userPrompt = document.querySelector('.userPrompt');
+        let innerUPrompt = document.querySelector('.uPrompt-inner')
+
+            if(buttonClicks % 2 == 0) {
+                result =  true
+            }
+            else {
+                result =  false
+            }
+
+        // if(result === false){
+        //     innerUPrompt.innerHTML = userPromptHTML
+        // } 
+        // else if(result === true){
+        //     document.querySelector('.promptBox').remove();
+        // }
+
+        result ? document.querySelector('.promptBox').remove() :  innerUPrompt.innerHTML = userPromptHTML
     }
 
+
+   
+
+    
+
+
+
+    //email prompt
+    
+    function emailRmUPrompt(){
+        document.querySelector('.promptBox').remove()
+    }
+
+
+    // aria-hidden="true"
     // password prompt
 
     function passPrompt(){
-       let  passPromptHTML = 
+
+        buttonClicks++
+        const innerPPrompt = document.querySelector('.pPrompt-inner')
+        let  passPromptHTML = 
     `<div class="promptBox">
        <p class="pChar">Password Must Be Atleast 8 Characters</p>
        <p class="pSym">Atleast 1 Symbols</p>
@@ -104,8 +146,18 @@ const emailDomains = ['@gmail.com', '@outlook.com', '@hotmail.com', '@yahoo.com'
        <p class="pLow">Atleast One Lowercase Letter</p>
 
     </div>`
+
+        if(buttonClicks % 2 == 0) {
+            result =  true
+        }
+        else {
+            result =  false
+        }
+
+        result ? innerPPrompt.innerHTML = passPromptHTML : document.querySelector('.promptBox').remove()
+        // document.querySelector('.passPrompt').innerHTML = passPromptHTML;
+
         
-        document.querySelector('.passPrompt').innerHTML = passPromptHTML;
     }
 
     // confirm prompt
@@ -236,6 +288,9 @@ const emailDomains = ['@gmail.com', '@outlook.com', '@hotmail.com', '@yahoo.com'
     
         const value4 = emailInput.value
         let emailDomainCheck = emailDomains.some(element => value4.includes(element))
+        
+      
+
 
  
     //   confirm password 
