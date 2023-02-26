@@ -16,7 +16,6 @@ const purchaseBtn = document.querySelector('.purchasebtn')
 // const purchaseBtnATB = document.querySelector('.purchasebtn')
 
 // const bagBtn = document.querySelector('.bagBtn')
-const removeAllBtn = document.querySelector('.removebtn')
 const atbBtn = document.querySelectorAll('.ATB');
 const animate = document.querySelector('.animate');
 const subtitle = document.getElementsByClassName('subtitle');
@@ -87,14 +86,10 @@ function ready(){
     for(let i = 0; i < removeBtns.length; i++ ){
         let button1 = removeBtns[i];
         button1.addEventListener('click', removeCartItem)
-        
+       
        
     }
-
-    removeAllBtn.addEventListener('click', removeAllCart)
-
-
-updateCartTotal();
+    updateCartTotal();
 
     let quantityInputs = document.getElementsByClassName('quantity-input');
         for(let i = 0; i < quantityInputs.length; i++){
@@ -103,7 +98,7 @@ updateCartTotal();
         }
 
 
-        let cartItemContainer = document.getElementsByClassName('cart-items2')[0];    
+        let cartItemContainer = document.getElementsByClassName('cart-items')[0];    
         let navCartRows = cartItemContainer.getElementsByClassName('cart-row');  
         let navCartRow = navCartRows[i];
 
@@ -112,7 +107,7 @@ updateCartTotal();
     // purchaseBtnATB.addEventListener('click', purchaseClicked)
 
     function purchaseClicked(){
-        let cartItemContainer = document.getElementsByClassName('cart-items2')[0];
+        let cartItemContainer = document.getElementsByClassName('cart-items')[0];
         let navCartRows = cartItemContainer.getElementsByClassName('cart-row');
         let total = 0;
           
@@ -157,10 +152,6 @@ updateCartTotal();
        
     }  
 
-
-
-
-
    
    
 
@@ -170,11 +161,6 @@ updateCartTotal();
 
 
 // localStorage.setItem(cartItems, cartHTML)
-
-
-
-
-
 
 
 
@@ -190,65 +176,55 @@ function navCartSlideAtb(){
 
 }
 
+      function seeBag(){
+        window.location.href="ATB.html"
+        
+    }
 
-
-// bagBtn.addEventListener('click', bagAdded)
+    // bagBtn.addEventListener('click', bagAdded)
 // bagBtn.addEventListener('click', bagPageClicked)
 
 
 
+    // function bagPageClicked(){
+//     let cartTitle = subtitle[i].innerText
+//     let cartPrice = price[i].innerText
+//     let imgSrc = shoe[i].src;
 
-function bagPageClicked(){
-    let cartTitle = subtitle[i].innerText
-    let cartPrice = price[i].innerText
-    let imgSrc = shoe[i].src;
-
-    bagAdded(imgSrc, cartTitle, cartPrice)
-}
-
-
-    
-    
-
-    function seeBag(){
-        window.location.href="ATB.html"
-        
-    }
+//     bagAdded(imgSrc, cartTitle, cartPrice)
+// }
     
 
 
 
-
-
-
-function bagAdded(imgSrc, cartTitle, cartPrice){
+// function bagAdded(imgSrc, cartTitle, cartPrice){
    
-    const bagRow = document.createElement('div')
-    bagRow.classList.add('bag-row')
+//     const bagRow = document.createElement('div')
+//     bagRow.classList.add('bag-row')
 
 
-const bagRowHTML =  
+// const bagRowHTML =  
     
-    `<div class="shoe-info1">
-        <div class="order-number">Order Number <span class="order">#0923-05354-05643-0583</span></div>
-            <div class="delivery-date">Delivery Date <span class="date">December 28th, 2023</span></div>
-                 <img id="cart-shoe" src="${imgSrc}" alt="">
-                    <div class="psbtn">
-                        <h5>Product Support</h5>
-        </div>
+//     `<div class="shoe-info1">
+//         <div class="order-number">Order Number <span class="order">#0923-05354-05643-0583</span></div>
+//             <div class="delivery-date">Delivery Date <span class="date">December 28th, 2023</span></div>
+//                  <img id="cart-shoe" src="${imgSrc}" alt="">
+//                     <div class="psbtn">
+//                         <h5>Product Support</h5>
+//         </div>
 
-            </div>
+//             </div>
 
-            <div class="shoe-info2">
-                    <h2 id="subtitlebag">${cartTitle}</h2>
-                        <p id="infobag">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit veritatis similique aperiam pariatur dolorum neque, cumque quaerat ut animi eligendi voluptatum, voluptatem dolores architecto rerum.</p>
-                        <p id="bagPrice">${cartPrice}</p>
-            </div>`
+//             <div class="shoe-info2">
+//                     <h2 id="subtitlebag">${cartTitle}</h2>
+//                         <p id="infobag">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit veritatis similique aperiam pariatur dolorum neque, cumque quaerat ut animi eligendi voluptatum, voluptatem dolores architecto rerum.</p>
+//                         <p id="bagPrice">${cartPrice}</p>
+//             </div>`
 
-    bagRow.innerHTML = cart;
-    orderDiv.append(bagRow);
+//     bagRow.innerHTML = cart;
+//     orderDiv.append(bagRow);
 
-} 
+// } 
 
 
 
@@ -278,7 +254,7 @@ function addToCartClicked(event){
 function addToBag(cartTitle, cartPrice, imgSrc ){
     let cartRow1 = document.createElement('div')
     cartRow1.classList.add('cart-row')
-    let cartItems = document.getElementsByClassName('cart-items2')[0]
+    let cartItems = document.getElementsByClassName('cart-items')[0]
     let cartItemNames = cartItems.getElementsByClassName('cart-item-title')
         for(let i = 0; i < cartItemNames.length; i++){    
             if(cartItemNames[i].innerText == cartTitle){
@@ -291,7 +267,7 @@ function addToBag(cartTitle, cartPrice, imgSrc ){
     const navRowHTML = 
                
            `<div class="cart-item cart-column">
-                <img width="100px" src="${imgSrc}" alt="" class="cart-img">
+                <img src="${imgSrc}" alt="" class="cart-img">
                 <span class="cart-item-title">${cartTitle}</span>
                 <span class="item-price cart-column">${cartPrice}</span>
             </div>
@@ -326,21 +302,9 @@ function addToBag(cartTitle, cartPrice, imgSrc ){
 }
 
 
-function removeAllCart(){
-   
-    let cartItems2 = document.querySelector('.cart-items2');
-    cartItems2.remove()
-    localStorage.clear("key1")
-    localStorage.clear("key2")
-}
-
-
-
 function removeCartItem(e){
     let buttonClicked = e.target;
     buttonClicked.parentElement.parentElement.remove();
-    localStorage.clear("key1")
-    localStorage.clear("key2")
     updateCartTotal();
 }
 
@@ -386,7 +350,7 @@ function navCartSlide(){
 
 function updateCartTotal(){
    
-        let cartItemContainer = document.getElementsByClassName('cart-items2')[0];
+        let cartItemContainer = document.getElementsByClassName('cart-items')[0];
         let navCartRows = cartItemContainer.getElementsByClassName('cart-row');
         let total = 0;
           
