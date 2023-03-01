@@ -262,7 +262,7 @@ const emailDomains = ['@gmail.com', '@outlook.com', '@hotmail.com', '@yahoo.com'
                 pMatch.style.color = "red"
             }
 
-        }, 500);
+        }, 0);
 
 
         let  denyEmailHTML = 
@@ -337,4 +337,54 @@ const emailDomains = ['@gmail.com', '@outlook.com', '@hotmail.com', '@yahoo.com'
             
            
         }
-     
+
+        // practice
+
+        // const items = [
+        //     {name: 'bike', price: 100},
+        //     {name: 'TV', price: 200},
+        //     {name: 'Album', price: 25},
+        //     {name: 'Book', price: 163},
+        //     {name: 'Phone', price: 75},
+        //     {name: 'Computer', price: 500},
+        //     {name: 'Keyboard', price: 700},
+
+        // ]
+
+
+        // const arr1 = [1,2,3,5,7,4,8,5,2,6,4,7,1,3]
+        // const arr1Simp = [1,2,3,4,5]
+        // const arr2 = ["jeffdunam", "karlhoward", "jiggy", "dante", "gang", "GDK", "goofyisabicth"]
+        // const myString = "gotta get some of this old money you feel me"
+
+        // let i = 0
+
+
+        // const myArray = myString.indexOf()
+        
+    
+
+        // console.log(myArray)
+
+
+        
+        // const oneHundred = items.reduce((index, value) => index + value.price, 
+        // i);
+        // const output2 = arr.sort((a, b) => a - b)
+        // const output = new Set(output2)
+
+        // const twoHundred = 
+
+        // console.log(oneHundred)             
+        
+        
+
+
+        
+
+
+
+
+    //    const youKnowWhatToDo = arr.sort((a, b) => a - b)
+
+    //    console.log(youKnowWhatToDo)

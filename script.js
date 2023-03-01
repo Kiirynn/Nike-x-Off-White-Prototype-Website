@@ -109,17 +109,10 @@ function navBarAnime(){
 
 
 
-
-
-  
-
-
-
 const appearOptions = {
     threshold: 0, 
     rootMargin: "0px 0px -250px 0px",
 };
-
 
 
 
@@ -169,6 +162,12 @@ sliders.forEach(slider => {
     
         appearOnScroll.observe(slider);
         
+        
+        
+        // const virgil1 = document.querySelector('.virgil1')
+        // const virgil2 = document.querySelector('.virgil2')
+        // virgil1.classList.toggle('from-left')
+        // virgil2.classList.toggle('from-right')
     
     })
 
