@@ -45,6 +45,9 @@ const sectionId = document.querySelector('.page').id;
 const circlesContainer = document.getElementById('circBar');
 const circle = document.querySelectorAll('.circle');
 
+let mainContainer = document.querySelector('.main-container')
+
+
 
 
 function darkCirc(){
@@ -56,56 +59,125 @@ function darkCirc(){
     
 }
 
+// -webkit-filter: brightness(10%);
+// transform: scale(1.2);
 
-for(i = 0; i < circles.length; i++){
+
+// for(i = 0; i < circles.length; i++){
       
-    circles[i].addEventListener('click', darkCirc);
+//     circles[i].addEventListener('click', darkCirc)
+
+//     circles[i].addEventListener('scroll', circAnime)
     
-}
+    
+    
+// }
 
 
 
+   
+    function scrollPage(){
+        let winScroll = mainContainer.scrollTop
+        let height1 = mainContainer.scrollHeight - document.documentElement.clientHeight
+        let percent = (winScroll / height1) * 100
+    
+        navUl.style.background = `linear-gradient(to right, black , transparent ${percent}%)`;
+        function circAnime(){
+          
+           
+            if(percent <= 3.5){
+                
+                circle1.classList.add('active-circ')
 
+                circle2.classList.remove('active-circ')
+                circle3.classList.remove('active-circ')
+                circle4.classList.remove('active-circ')
+        
+            } 
+            
+             if(percent = 30.3 && percent > 4 ){
+                
+                circle2.classList.add('active-circ')
+                
+                circle1.classList.remove('active-circ')
+                circle3.classList.remove('active-circ')
+                circle4.classList.remove('active-circ')
+        
+            } 
+        
+             if(percent <= 60.5 && percent > 34 ){
+                
+                circle3.classList.add('active-circ')
+                
+                circle1.classList.remove('active-circ')
+                circle2.classList.remove('active-circ')
+                circle4.classList.remove('active-circ')
+                
+            }
+        
+            if(percent <= 90.7 && percent > 64){
+                
+                circle4.classList.add('active-circ')
 
-function navBarAnime(){
-    let current = document.getElementsByClassName('active-circ');
-        switch(currentPage){
+                circle1.classList.remove('active-circ')
+                circle2.classList.remove('active-circ')
+                circle3.classList.remove('active-circ')
+               
+            }
+           
+        }
+       
+            circAnime()
+
+       
+       console.log(percent)
+    }
+   
+
+   
+
+// function navBarAnime(){
+//     let current = document.getElementsByClassName('active-circ');
+//         switch(currentPage){
             
         
-            case currentPage = 0 :
-                currentPage = pages.length[i]   ;
-                    navUl.style.background = `linear-gradient(to right, black , transparent 15%)`; 
-                    // current[0].className = current[0].className.replace(' active-circ');
-                    // this.className += ' active-circ';
-                    break;
+//             case currentPage = 0 :
+//                 currentPage = pages[0];
+//                     navUl.style.background = `linear-gradient(to right, black , transparent 15%)`; 
+//                     // current[0].className = current[0].className.replace(' active-circ');
+//                     // this.className += ' active-circ';
+//                     break;
 
-            case currentPage = 3:
-                currentPage = pages.length[i] - 2;
-                    navUl.style.background = `linear-gradient(to right, black , transparent 80%)`;
-                    // current[2].className = current[2].className.replace(' active-circ');
-                    // this.className += ' active-circ';
-                    break;
+//             case currentPage = 1:
+               
+//                 currentPage = pages[1];
+//                     navUl.style.background = `linear-gradient(to right, black , transparent 80%)`;
+//                     // current[2].className = current[2].className.replace(' active-circ');
+//                     // this.className += ' active-circ';
+//                     break;
 
            
-            case currentPage = 2:
-                    currentPage = pages.length[i] - 1 ;
-                            navUl.style.background = `linear-gradient(to right, black , transparent 55%)`;
-                            // current[2].className = current[2].className.replace(' active-circ');
-                            // this.className += ' active-circ';
-                            break;
+//             case currentPage = 2:
+               
+//                     currentPage = pages[2];
+//                             navUl.style.background = `linear-gradient(to right, black , transparent 55%)`;
+//                             // current[2].className = current[2].className.replace(' active-circ');
+//                             // this.className += ' active-circ';
+//                             break;
         
 
             
-            case currentPage = 1:
-                currentPage = pages.length[i] - 1  ;
-                    navUl.style.background = `linear-gradient(to right, black , transparent 30%)`;
-                    // current[1].className = current[1].className.replace(' active-circ');
-                    // this.className += ' active-circ';
-                    break;
+//             case currentPage = 3:
+               
+//                 currentPage = pages[3];
+//                     navUl.style.background = `linear-gradient(to right, black , transparent 30%)`;
+//                     // current[1].className = current[1].className.replace(' active-circ');
+//                     // this.className += ' active-circ';
+//                     break;
 
-         }
+//          }
      
-  }
+//   }
 
 
 
@@ -128,10 +200,12 @@ const appearOnScroll = new IntersectionObserver
         
        
          entry.target.classList.toggle('appear', entry.isIntersecting)
+        
            
         
          })
-         navBarAnime();
+        //  circAnime();
+        //  navBarAnime();
          
      
 
@@ -170,15 +244,6 @@ sliders.forEach(slider => {
         // virgil2.classList.toggle('from-right')
     
     })
-
-
-
-
-   
-
-
-
-
 
 
 
