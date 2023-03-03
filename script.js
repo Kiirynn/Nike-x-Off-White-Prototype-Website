@@ -23,6 +23,7 @@ let currentItem = 0;
 let currentPage = 0;
 let i = 0;
 const pages = [page1, page2, page3, page4];
+const pageAll = document.querySelector('.page')
 
 
 //circles
@@ -50,6 +51,9 @@ let mainContainer = document.querySelector('.main-container')
 
 
 
+
+
+
 function darkCirc(){
 
     let current = document.getElementsByClassName('active-circ');
@@ -67,14 +71,21 @@ function darkCirc(){
       
 //     circles[i].addEventListener('click', darkCirc)
 
-//     circles[i].addEventListener('scroll', circAnime)
+//     // circles[i].addEventListener('scroll', circAnime)
     
     
     
 // }
 
+    document.querySelector(".proda").addEventListener("mouseover", ()=>{
+        document.querySelector('.dropDown-content').classList.add('dropDown-content-active')
+   })
+   
 
+setInterval(() => {
+    document.querySelector('.dropDown-content').classList.remove('dropDown-content-active')
 
+}, 3000);
    
     function scrollPage(){
         let winScroll = mainContainer.scrollTop
@@ -82,10 +93,17 @@ function darkCirc(){
         let percent = (winScroll / height1) * 100
     
         navUl.style.background = `linear-gradient(to right, black , transparent ${percent}%)`;
+        
         function circAnime(){
           
            
             if(percent <= 3.5){
+                
+                page1.classList.add('pointer-active')
+                
+                page2.classList.remove('pointer-active')
+                page3.classList.remove('pointer-active')
+                page4.classList.remove('pointer-active')
                 
                 circle1.classList.add('active-circ')
 
@@ -95,7 +113,14 @@ function darkCirc(){
         
             } 
             
-             if(percent = 30.3 && percent > 4 ){
+             if(percent <= 30.3 && percent > 4 ){
+
+                page2.classList.add('pointer-active')
+                
+                page1.classList.remove('pointer-active')
+                page3.classList.remove('pointer-active')
+                page4.classList.remove('pointer-active')
+
                 
                 circle2.classList.add('active-circ')
                 
@@ -106,6 +131,12 @@ function darkCirc(){
             } 
         
              if(percent <= 60.5 && percent > 34 ){
+
+                page3.classList.add('pointer-active')
+                
+                page1.classList.remove('pointer-active')
+                page2.classList.remove('pointer-active')
+                page4.classList.remove('pointer-active')
                 
                 circle3.classList.add('active-circ')
                 
@@ -116,6 +147,12 @@ function darkCirc(){
             }
         
             if(percent <= 90.7 && percent > 64){
+
+                page4.classList.add('pointer-active')
+                
+                page1.classList.remove('pointer-active')
+                page2.classList.remove('pointer-active')
+                page3.classList.remove('pointer-active')
                 
                 circle4.classList.add('active-circ')
 
@@ -130,7 +167,7 @@ function darkCirc(){
             circAnime()
 
        
-       console.log(percent)
+      
     }
    
 

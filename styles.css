@@ -8,17 +8,19 @@
     } */
 
     body{
-
+       
     }
 
     .main-container{
+        /* z-index: 1;
+        position: fixed; */
+        
         scroll-behavior: smooth;
         scroll-snap-type: y mandatory;
         overflow-y: scroll;
         /* overflow-y: visible; */
         height: 100vh;
-      
-        
+   
     }
 
 :root{
@@ -136,6 +138,7 @@
     section{
         scroll-snap-align: start;
         height: 111vh;
+        
         
     }
 
@@ -868,7 +871,7 @@ h1{
     box-shadow: black 4px 4px 7px;
     
 }
-.loginBtn:hover, .registerBtn:hover, .createAccountBtn:hover {
+.loginBtn:hover, .registerBtn:hover, .createAccountBtn:hover, .s:hover {
 
     transform: scale(0.95);
     transition: ease 0.3s;
@@ -924,7 +927,7 @@ width:700px;
     padding: 50px;
 }
 
-.order-div, .title-bag, .totaldiv, .purchasebtn, .removebtn, .shoe-info1, .purchase-message, .cart-items2, .createPrompt  {
+.order-div, .title-bag, .totaldiv, .purchasebtn, .removebtn, .shoe-info1, .purchase-message, .cart-items2, .createPrompt, .socials {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1215,12 +1218,57 @@ flex-direction: column;
 
   .promptBox, .createBox{
     padding: 5px;
-   
     background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 2px 2px 8px black;
     border-radius: 7px;
     backdrop-filter: blur(10px);
   }
 
+  .socials{
+     position: fixed;
+     flex-direction: column;
+     top: 75%;
+     left: 2%;
+  }
+
+  .s{
+    padding: 10px;
+  }
+
+  .dropDown{
+    position: relative;
+    top: calc(100% + 25rem);
+    margin-left: 50px;
+   
+  }
+
+  .dropDown-content{
+    position: absolute;
+    /* background-color: linear-gradient(to right, black , transparent 100%); */
+    background-color: rgba(0,0,0,.3) ;
+    width: 300px;
+    margin-top: 9px;
+    left: 0;
+    opacity: 0;
+    transition: ease .3s ;
+  
+   
+  }
+
+
+  .dropDown-content-active{
+    transition: ease .3s ;
+    opacity: 1;
+  }
+
+
+
+     .pointer-active{
+        
+        pointer-events: none;
+       
+     }
+
+    
 
 
