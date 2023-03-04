@@ -45,39 +45,7 @@ let currentPage = 0;
 
 
 
-const sneakerImages = [
-    {id:1,
-    shoe: src='Content/shoe 1.png',
-    subtitle: "Nike Air VaporMax" ,
-    info: "This sneaker features a black colourway with a clean, transparent VaporMax Air-Sole unit, matching black laces written ‘Shoe Laces’ in white, and a white Swoosh logo accented by a red zip tie. It has an exposed-foam tongue with a black Nike logo and orange Swoosh. To complete the look, the medial side of the shoe displays Abloh's signature ‘Off-White’ for Nike lettering.",
-    price: "$1524",
-},
-    {id:2,
-    shoe: src='Content/snkrs-special-off-white-dunk-5-e1623680402966.png',
-    subtitle: "Nike Dunk Low",
-    info: "The Nike Dunk Low Off-White Lot 1 features a white canvas upper with white leather overlays and silver Swooshes. From there, yellow soles with white  placquets, white overlaces with green eyelets, and orange detailing complete the design.",
-    price: "$1463",
-},
-    {id: 3,
-    shoe: src='Content/shoe 2 flip.png',
-    subtitle:"Nike Air Jordan IV" ,
-    info: "Jordan Brand and Virgil Abloh teamed up once again to release the third silhouette in their collaborative history with the women's Jordan 4 Retro Off-White Sail (W), now available on StockX. After teasing the release of the Off-White 4 with samples in his MCA exhibit and presenting them in his Off-White FW2020 Women’s Show, Virgil Abloh finally delivered what might be the most anticipated release of 2020. The Air Jordan 4 Sail features full-grain leather uppers with hits of mesh and translucent materials on the toebox and heel of the shoe. From there, hits of light blue on the tongue’s Jumpman and the outsole’s Nike Swoosh provide contrast to the sail colored sneaker. These women's sneakers released in July of 2020 and retailed for $200 USD.",
-    price: "$975",
-},
-    {id: 4,
-    shoe: src='Content/Vigil-Nike-Inline02-GQ-07022019_3x2 trans.png',
-    subtitle:"Nike Zoom Terra Kiger 5" ,
-    info: "The women's Nike Zoom Terra Kiger 5 Off-White Black is the product of a 2019 collaboration between Nike and Virgil Abloh called. The designer took inspiration from top athletes to design a women's collection that features vibrant colors and Abloh's classic look. Abloh gave the public their first glimpse of the Nike Zoom Terra Kiger 5 Off-White Black during Paris Fashion Week and the Coachella music festival. Nike released these sneakers, with their slim silhouettes and spiky cleats, with runners and track stars in mind.", 
-    price: "$2235",
-},
-    {id: 5,
-    shoe: src='Content/blue nike ow sneaker.png',
-    subtitle:"Nike Air Force 1 Low" ,
-    info:"Virgil Abloh added yet another colorway to his coveted selection of Off-White Air Force 1 iterations that will forever preserve his Figures of Speech exhibit in sneaker history. Having the first pair exclusively gifted to Serena Williams in May of 2019, these Air Force 1 Low Off-White MCA University Blues were one of Virgil's many highly anticipated releases of 2019. Between dropping via stash bots and through a super exclusive raffle at Chicago’s Museum of Contemporary Art, the shoe’s namesake, this Air Force 1 Low Off-White MCA University Blue is one of Virgil’s rarest grails.",
-    price: "$1735",
-} 
-    
-];
+
 
 
 
@@ -387,7 +355,39 @@ function updateCartTotal(){
 // }
 
 
-
+const sneakerImages = [
+    {id:1,
+    shoe: src='Content/shoe 1.png',
+    subtitle: "Nike Air VaporMax" ,
+    info: "This sneaker features a black colourway with a clean, transparent VaporMax Air-Sole unit, matching black laces written ‘Shoe Laces’ in white, and a white Swoosh logo accented by a red zip tie. It has an exposed-foam tongue with a black Nike logo and orange Swoosh. To complete the look, the medial side of the shoe displays Abloh's signature ‘Off-White’ for Nike lettering.",
+    price: "$1524",
+},
+    {id:2,
+    shoe: src='Content/snkrs-special-off-white-dunk-5-e1623680402966.png',
+    subtitle: "Nike Dunk Low",
+    info: "The Nike Dunk Low Off-White Lot 1 features a white canvas upper with white leather overlays and silver Swooshes. From there, yellow soles with white  placquets, white overlaces with green eyelets, and orange detailing complete the design.",
+    price: "$1463",
+},
+    {id: 3,
+    shoe: src='Content/shoe 2 flip.png',
+    subtitle:"Nike Air Jordan IV" ,
+    info: "Jordan Brand and Virgil Abloh teamed up once again to release the third silhouette in their collaborative history with the women's Jordan 4 Retro Off-White Sail (W), now available on StockX. After teasing the release of the Off-White 4 with samples in his MCA exhibit and presenting them in his Off-White FW2020 Women’s Show, Virgil Abloh finally delivered what might be the most anticipated release of 2020. The Air Jordan 4 Sail features full-grain leather uppers with hits of mesh and translucent materials on the toebox and heel of the shoe. From there, hits of light blue on the tongue’s Jumpman and the outsole’s Nike Swoosh provide contrast to the sail colored sneaker. These women's sneakers released in July of 2020 and retailed for $200 USD.",
+    price: "$975",
+},
+    {id: 4,
+    shoe: src='Content/Vigil-Nike-Inline02-GQ-07022019_3x2 trans.png',
+    subtitle:"Nike Zoom Terra Kiger 5" ,
+    info: "The women's Nike Zoom Terra Kiger 5 Off-White Black is the product of a 2019 collaboration between Nike and Virgil Abloh called. The designer took inspiration from top athletes to design a women's collection that features vibrant colors and Abloh's classic look. Abloh gave the public their first glimpse of the Nike Zoom Terra Kiger 5 Off-White Black during Paris Fashion Week and the Coachella music festival. Nike released these sneakers, with their slim silhouettes and spiky cleats, with runners and track stars in mind.", 
+    price: "$2235",
+},
+    {id: 5,
+    shoe: src='Content/blue nike ow sneaker.png',
+    subtitle:"Nike Air Force 1 Low" ,
+    info:"Virgil Abloh added yet another colorway to his coveted selection of Off-White Air Force 1 iterations that will forever preserve his Figures of Speech exhibit in sneaker history. Having the first pair exclusively gifted to Serena Williams in May of 2019, these Air Force 1 Low Off-White MCA University Blues were one of Virgil's many highly anticipated releases of 2019. Between dropping via stash bots and through a super exclusive raffle at Chicago’s Museum of Contemporary Art, the shoe’s namesake, this Air Force 1 Low Off-White MCA University Blue is one of Virgil’s rarest grails.",
+    price: "$1735",
+} 
+    
+];
 
 
 const shopItemAlt = document.querySelectorAll('.g');
@@ -420,45 +420,54 @@ function shopItemActive(){
 
 // const preShoeRight = document.querySelector('.preShoeRight')
 // const preShoeLeft = document.querySelector('.preShoeLeft')
-// const innerRight = document.querySelector('.innerRight')
-// const innerLeft = document.querySelector('.innerLeft')
-// const preShoePhoto = document.getElementsByClassName('preShoePhoto');
+const innerRight = document.querySelector('.innerRight')
+const innerLeft = document.querySelector('.innerLeft')
+const preShoePhoto = document.getElementsByClassName('preShoePhoto')[0];
+const preShoePhoto2 = document.getElementsByClassName('preShoePhoto2')[0];
 
-// const photoSrc = [{preShoePhoto: src='Content/shoe 1.png'}, {preShoePhoto: src='Content/snkrs-special-off-white-dunk-5-e1623680402966.png'}, {preShoePhoto: src='Content/shoe 2 flip.png'}, {preShoePhoto: src='Content/Vigil-Nike-Inline02-GQ-07022019_3x2 trans.png'}, {preShoePhoto: src='Content/blue nike ow sneaker.png'}]
+const photoSrc = ['Content/pngs-trans/vapormax front.png', 'Content/pngs-trans/dunk low front.png', 'Content/pngs-trans/jordan 4 front.png', 'Content/pngs-trans/terra kiger top.png', 'Content/pngs-trans/blue AF1 side.png']
+const photoSrc2 = ['Content/pngs-trans/vapormax back.png', 'Content/pngs-trans/dunk low back.png', 'Content/pngs-trans/off-white-air-jordan-4-sail-release-date-cv9388-100-pair.png',  'Content/pngs-trans/kiger side.png', 'Content/pngs-trans/blue af1 top.png']
 
-// function bkgdShoes(){
+function bkgdShoes(){
     
-//         let imgSrc1 = photoSrc.length[i] - 1;
-//         const preShoeHTMLLeft = `<img width="400px" class="preShoePhoto" src="${imgSrc1}" alt="">`
-//         innerLeft.innerHTML = preShoeHTMLLeft;
-//         preShoeLeft.append(innerLeft);
+        let imgSrc1 = photoSrc[i];
+        preShoePhoto.src = imgSrc1;
+
+        let imgSrc2 = photoSrc2[i];
+        preShoePhoto2.src = imgSrc2;
+       
+
+        
   
 
    
-//         let imgSrc2 = photoSrc.length[i] - 3;
-//         const preShoeHTMLRight = `<img width="400px" class="preShoePhoto" src="${imgSrc2}" alt="">`
-//         innerRight.innerHTML = preShoeHTMLRight;
-//         preShoeRight.append(innerRight);
+        // let imgSrc2 = photoSrc2.preShoePhoto.src ;
+        // const preShoeHTMLRight = `<img width="400px" class="preShoePhoto2" src="${imgSrc2}" alt="">`
+        // innerRight.innerHTML = preShoeHTMLRight;
+        // preShoeRight.append(innerRight);
+
+      
         
-// }
+}
 
 
 
 
-// function reFireAnime(animate){
-//     shoe.classList.remove('animate');
-//     subtitle.classList.remove('animate');
-//     info.classList.remove('animate');
+
+function reFireAnime(animate){
+    shoe.classList.remove('animate');
+    subtitle.classList.remove('animate');
+    info.classList.remove('animate');
     
    
-//   setTimeout(function (){
-//         shoe.classList.add('animate');
-//         subtitle.classList.add('animate');
-//         info.classList.add('animate');
+  setTimeout(function (){
+        shoe.classList.add('animate');
+        subtitle.classList.add('animate');
+        info.classList.add('animate');
         
         
-//     }, 0);
-// }
+    }, 0);
+}
 
 
 
@@ -473,8 +482,12 @@ prevArrow.addEventListener('click', () => {
     // showShoe(i);
     
     shopItemActive();
-    // bkgdShoes()
-   
+    
+    bkgdShoes()
+  
+  
+    // showAltShoe(i)
+    // setImg2()
     });
 
 
@@ -490,7 +503,12 @@ nextArrow.addEventListener('click', () => {
     // setImg();
     // showShoe(i);
      shopItemActive();
-    // bkgdShoes()
+   
+     bkgdShoes()
+   
+   
+    // showAltShoe(i)
+    // setImg2()
   
     
 });
@@ -499,4 +517,21 @@ nextArrow.addEventListener('click', () => {
 function setImg(){
     return shoe.setAttribute('src', sneakerImages[i]);
 }
+
+
+
+function showAltShoe(sneaker) {
+    const item = photoSrc[sneaker];
+       preShoePhoto.src = item.preShoePhoto;
+    //    subtitle.textContent = item.subtitle ;
+    //    info.textContent = item.info;
+       
+
+    }
+
+
+    function setImg2(){
+        return preShoePhoto.setAttribute('src', photoSrc[i]);
+    }
+
 

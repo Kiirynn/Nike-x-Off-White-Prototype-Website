@@ -460,10 +460,10 @@ nav{
     
     .preShoeRight, .preShoeLeft{
         position: fixed;
-      
+        filter: drop-shadow(10px 10px 10px black);
         width: 500px;
         height: 500px;
-        rotate: -25deg;
+        /* rotate: -25deg; */
         
       
 
@@ -482,7 +482,7 @@ nav{
 
    .preShoeLeft{
     top: 25%;
-    left: 15%;
+    left: 12%;
    
     }
 
@@ -492,9 +492,19 @@ nav{
         left: 15%; */
     }
 
-    .shoe{
-        margin-left: -30px;
+    #shoe1,#shoe2,#shoe3,#shoe4{
+        width: 650px;
+        margin-left: -120px;
+    }
+
+    #shoe5{
+        /* margin-left: 35px; */
         width: 500px;
+    }
+
+    .shoe{
+        
+       
         filter: drop-shadow(10px 10px 10px black);
         rotate: -25deg;
         transition: transform 1s;
@@ -543,6 +553,8 @@ nav{
         perspective: 100px;
        /* animation: scroll 40s linear infinite; */
     }
+
+  
 
     .sbtn-div{
         padding-top: 50px;
@@ -964,6 +976,19 @@ flex-direction: column;
    text-align: left; font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;
 }
 
+.cas{
+   position: fixed;
+    top: 13%;
+    left: 1.5%;
+    color: black;
+    
+    font-weight: bold;
+    text-align: left; font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 25px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;
+
+}
+
+
+
 .main-para{
     color: white;
     text-align: left;
@@ -1265,7 +1290,7 @@ flex-direction: column;
 
      .pointer-active{
         
-        pointer-events: none;
+        /* pointer-events: none; */
        
      }
 
