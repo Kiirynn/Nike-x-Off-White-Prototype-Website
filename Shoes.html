@@ -222,19 +222,32 @@ bagBtn.addEventListener('click', totalCartHTML)
 function totalCartHTML(){
     setTimeout(() => {
         let cartItems = document.querySelector('.cart-items');
-        let quantityInputs = document.querySelector('.quantity-input');
-        let quantityInputsNumber = quantityInputs.value;
+        
+        
+        let quantityInputs = document.getElementsByClassName('quantity-input')
+   
+        for(let i = 0 ; i < quantityInputs.length ; i++){
+         let QIValue = quantityInputs.value
+          localStorage.setItem("key2", QIValue) 
+         
+        }
+
+    console.log(QIValue)
+        
+        
+        
+        // let quantityInputsNumber = quantityInputs[i].value;
+       
         let cartHTML = cartItems.innerHTML;
         localStorage.setItem("key1", cartHTML) 
-        localStorage.setItem("key2", quantityInputsNumber) 
        
+        
     }, 0);
 
     
 
     }
-
-    
+  
     </script>
 </body>
 </html>

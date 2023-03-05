@@ -219,7 +219,7 @@ function addToCartClicked(event){
 }
 
 
-function addToBag(cartTitle, cartPrice, imgSrc ){
+function addToBag(cartTitle, cartPrice, imgSrc){
     let cartRow1 = document.createElement('div')
     cartRow1.classList.add('cart-row')
     let cartItems = document.getElementsByClassName('cart-items')[0]
@@ -311,9 +311,6 @@ function navCartSlide(){
   
 
 }
-
-
-
 
 
 function updateCartTotal(){
@@ -425,6 +422,7 @@ const innerLeft = document.querySelector('.innerLeft')
 const preShoePhoto = document.getElementsByClassName('preShoePhoto')[0];
 const preShoePhoto2 = document.getElementsByClassName('preShoePhoto2')[0];
 
+
 const photoSrc = ['Content/pngs-trans/vapormax front.png', 'Content/pngs-trans/dunk low front.png', 'Content/pngs-trans/jordan 4 front.png', 'Content/pngs-trans/terra kiger top.png', 'Content/pngs-trans/blue AF1 side.png']
 const photoSrc2 = ['Content/pngs-trans/vapormax back.png', 'Content/pngs-trans/dunk low back.png', 'Content/pngs-trans/off-white-air-jordan-4-sail-release-date-cv9388-100-pair.png',  'Content/pngs-trans/kiger side.png', 'Content/pngs-trans/blue af1 top.png']
 
@@ -435,35 +433,30 @@ function bkgdShoes(){
 
         let imgSrc2 = photoSrc2[i];
         preShoePhoto2.src = imgSrc2;
-       
 
-        
-  
-
-   
         // let imgSrc2 = photoSrc2.preShoePhoto.src ;
         // const preShoeHTMLRight = `<img width="400px" class="preShoePhoto2" src="${imgSrc2}" alt="">`
         // innerRight.innerHTML = preShoeHTMLRight;
         // preShoeRight.append(innerRight);
-
-      
-        
 }
 
 
 
 
-
-function reFireAnime(animate){
-    shoe.classList.remove('animate');
-    subtitle.classList.remove('animate');
-    info.classList.remove('animate');
+function reFireAnime(){
+    // shoe.classList.remove('animate');
+    // subtitle.classList.remove('animate');
+    // info.classList.remove('animate');
+    preShoePhoto.classList.remove('animate2')
+    preShoePhoto2.classList.remove('animate2')
     
    
   setTimeout(function (){
-        shoe.classList.add('animate');
-        subtitle.classList.add('animate');
-        info.classList.add('animate');
+        // shoe.classList.add('animate');
+        // subtitle.classList.add('animate');
+        // info.classList.add('animate');
+        preShoePhoto.classList.add('animate2')
+        preShoePhoto2.classList.add('animate2')
         
         
     }, 0);
@@ -477,17 +470,14 @@ prevArrow.addEventListener('click', () => {
      i = ws.length - 1;
     }
     
-    // reFireAnime();
+    reFireAnime();
+    shopItemActive();
+    bkgdShoes();
+
     // setImg();
     // showShoe(i);
     
-    shopItemActive();
-    
-    bkgdShoes()
-  
-  
-    // showAltShoe(i)
-    // setImg2()
+ 
     });
 
 
@@ -499,16 +489,18 @@ nextArrow.addEventListener('click', () => {
         i = 0;
     }
     
-    // reFireAnime();
+    reFireAnime();
+    shopItemActive();
+    bkgdShoes();
+
     // setImg();
     // showShoe(i);
-     shopItemActive();
+     
    
-     bkgdShoes()
+    
    
    
-    // showAltShoe(i)
-    // setImg2()
+   
   
     
 });
@@ -520,18 +512,6 @@ function setImg(){
 
 
 
-function showAltShoe(sneaker) {
-    const item = photoSrc[sneaker];
-       preShoePhoto.src = item.preShoePhoto;
-    //    subtitle.textContent = item.subtitle ;
-    //    info.textContent = item.info;
-       
 
-    }
-
-
-    function setImg2(){
-        return preShoePhoto.setAttribute('src', photoSrc[i]);
-    }
 
 

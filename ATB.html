@@ -191,7 +191,8 @@
    // const orderDiv = document.querySelector('.order-div');
    
         document.querySelector('.cart-items2').innerHTML = localStorage.getItem("key1");
-        document.querySelector('.quantity-input').value = localStorage.getItem("key2");
+       let quantityInput = document.getElementsByClassName('quantity-input').value
+       quantityInput = localStorage.getItem("key2");
       
 
       </script>

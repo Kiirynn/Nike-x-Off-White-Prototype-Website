@@ -47,24 +47,96 @@ const circlesContainer = document.getElementById('circBar');
 const circle = document.querySelectorAll('.circle');
 
 let mainContainer = document.querySelector('.main-container')
+const virgil1 = document.querySelector('.virgil1')
+const virgil2 = document.querySelector('.virgil2')
+  
 
 
+// function darkCirc(){
 
-
-
-
-
-function darkCirc(){
-
-    let current = document.getElementsByClassName('active-circ');
-    current[0].className = current[0].className.replace(' active-circ', ' ');
-    // color.target.classList.toggle('active-circ');
-    this.className += ' active-circ';
+//     let current = document.getElementsByClassName('active-circ');
+//     current[0].className = current[0].className.replace(' active-circ', ' ');
+//     // color.target.classList.toggle('active-circ');
+//     this.className += ' active-circ';
     
+// }
+
+// percent functions
+
+function page1Percent(){
+    page1.classList.add('pointer-active')
+                
+    page2.classList.remove('pointer-active')
+    page3.classList.remove('pointer-active')
+    page4.classList.remove('pointer-active')
+    
+    circle1.classList.add('active-circ')
+
+    circle2.classList.remove('active-circ')
+    circle3.classList.remove('active-circ')
+    circle4.classList.remove('active-circ')
+    
+    virgil1.classList.remove('from-left')
+    virgil2.classList.remove('from-right')
 }
 
-// -webkit-filter: brightness(10%);
-// transform: scale(1.2);
+function page2Percent(){
+    page2.classList.add('pointer-active')
+                
+    virgil1.classList.remove('off')
+    virgil2.classList.remove('off2')
+
+   
+    virgil1.classList.add('from-left')
+    virgil2.classList.add('from-right')
+  
+    
+    
+    page1.classList.remove('pointer-active')
+    page3.classList.remove('pointer-active')
+    page4.classList.remove('pointer-active')
+   
+    
+    circle2.classList.add('active-circ')
+    
+    circle1.classList.remove('active-circ')
+    circle3.classList.remove('active-circ')
+    circle4.classList.remove('active-circ')
+}
+
+function page3Percent(){
+    page3.classList.add('pointer-active')
+                
+    page1.classList.remove('pointer-active')
+    page2.classList.remove('pointer-active')
+    page4.classList.remove('pointer-active')
+    
+    circle3.classList.add('active-circ')
+    
+    circle1.classList.remove('active-circ')
+    circle2.classList.remove('active-circ')
+    circle4.classList.remove('active-circ')
+
+    virgil1.classList.remove('from-left')
+    virgil2.classList.remove('from-right')
+
+    virgil1.classList.add('off')
+    virgil2.classList.add('off2')
+}
+
+function page4Percent(){
+    page4.classList.add('pointer-active')
+                
+    page1.classList.remove('pointer-active')
+    page2.classList.remove('pointer-active')
+    page3.classList.remove('pointer-active')
+    
+    circle4.classList.add('active-circ')
+
+    circle1.classList.remove('active-circ')
+    circle2.classList.remove('active-circ')
+    circle3.classList.remove('active-circ')
+}
 
 
 // for(i = 0; i < circles.length; i++){
@@ -77,6 +149,9 @@ function darkCirc(){
     
 // }
 
+
+// nav drop down menu
+
     document.querySelector(".proda").addEventListener("mouseover", ()=>{
         document.querySelector('.dropDown-content').classList.add('dropDown-content-active')
    })
@@ -86,6 +161,8 @@ setInterval(() => {
     document.querySelector('.dropDown-content').classList.remove('dropDown-content-active')
 
 }, 3000);
+
+// scroll if/else percentage 
    
     function scrollPage(){
         let winScroll = mainContainer.scrollTop
@@ -96,81 +173,35 @@ setInterval(() => {
         
         function circAnime(){
           
-           
+           // page 1
             if(percent <= 3.5){
-                
-                page1.classList.add('pointer-active')
-                
-                page2.classList.remove('pointer-active')
-                page3.classList.remove('pointer-active')
-                page4.classList.remove('pointer-active')
-                
-                circle1.classList.add('active-circ')
-
-                circle2.classList.remove('active-circ')
-                circle3.classList.remove('active-circ')
-                circle4.classList.remove('active-circ')
-        
+                page1Percent();
+         
             } 
-            
+            // page 2
              if(percent <= 30.3 && percent > 4 ){
 
-                page2.classList.add('pointer-active')
-                
-                page1.classList.remove('pointer-active')
-                page3.classList.remove('pointer-active')
-                page4.classList.remove('pointer-active')
+                page2Percent()
 
-                
-                circle2.classList.add('active-circ')
-                
-                circle1.classList.remove('active-circ')
-                circle3.classList.remove('active-circ')
-                circle4.classList.remove('active-circ')
-        
             } 
-        
+          // page3
              if(percent <= 60.5 && percent > 34 ){
-
-                page3.classList.add('pointer-active')
                 
-                page1.classList.remove('pointer-active')
-                page2.classList.remove('pointer-active')
-                page4.classList.remove('pointer-active')
-                
-                circle3.classList.add('active-circ')
-                
-                circle1.classList.remove('active-circ')
-                circle2.classList.remove('active-circ')
-                circle4.classList.remove('active-circ')
-                
+                page3Percent()
+         
             }
-        
+        // page 4
             if(percent <= 90.7 && percent > 64){
 
-                page4.classList.add('pointer-active')
-                
-                page1.classList.remove('pointer-active')
-                page2.classList.remove('pointer-active')
-                page3.classList.remove('pointer-active')
-                
-                circle4.classList.add('active-circ')
+                page4Percent()
 
-                circle1.classList.remove('active-circ')
-                circle2.classList.remove('active-circ')
-                circle3.classList.remove('active-circ')
-               
             }
            
         }
-       
+
             circAnime()
 
-       
-      
     }
-   
-
    
 
 // function navBarAnime(){
@@ -274,11 +305,7 @@ sliders.forEach(slider => {
         appearOnScroll.observe(slider);
         
         
-        
-        // const virgil1 = document.querySelector('.virgil1')
-        // const virgil2 = document.querySelector('.virgil2')
-        // virgil1.classList.toggle('from-left')
-        // virgil2.classList.toggle('from-right')
+      
     
     })
 
@@ -363,10 +390,6 @@ const price = document.querySelector('.price');
 
 
 
-
-
-
-
 function showShoe(sneaker) {
     const item = sneakerImages[sneaker];
        shoe.src = item.shoe;
@@ -377,18 +400,6 @@ function showShoe(sneaker) {
     }
 
 
-// shoe nav
-
-// function reFireAnime3(){
-//     shoeBigger.classList.remove('animate')
-
-//     setTimeout(function (){
-        
-//         shoeBigger.classList.add('animate');
-     
-        
-//     }, 0);
-// }
 
 function reFireAnime(animate){
     shoe.classList.remove('animate');
