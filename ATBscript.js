@@ -239,7 +239,7 @@ function addToBag(cartTitle, cartPrice, imgSrc ){
    
     const navRowHTML = 
                
-           `<div class="cart-item cart-column">
+           `<div class="cart-items cart-column">
                 <img width="100px" src="${imgSrc}" alt="" class="cart-img">
                 <span class="cart-item-title">${cartTitle}</span>
                 <span class="item-price cart-column">${cartPrice}</span>

@@ -28,7 +28,6 @@ const pageAll = document.querySelector('.page')
 
 //circles
 
-
 const circle1 = document.querySelector('.g1');
 const circle2 = document.querySelector('.g2');
 const circle3 = document.querySelector('.g3');
@@ -173,29 +172,29 @@ setInterval(() => {
         
         function circAnime(){
           
-           // page 1
-            if(percent <= 3.5){
-                page1Percent();
-         
-            } 
-            // page 2
-             if(percent <= 30.3 && percent > 4 ){
-
-                page2Percent()
-
-            } 
-          // page3
-             if(percent <= 60.5 && percent > 34 ){
+                // page 1
+                    if(percent <= 3.5){
+                        page1Percent();
                 
-                page3Percent()
-         
-            }
-        // page 4
-            if(percent <= 90.7 && percent > 64){
+                    } 
+                // page 2
+                    if(percent <= 30.3 && percent > 4 ){
 
-                page4Percent()
+                        page2Percent()
 
-            }
+                    } 
+                // page3
+                    if(percent <= 60.5 && percent > 34 ){
+                        
+                        page3Percent()
+                
+                    }
+                // page 4
+                    if(percent <= 90.7 && percent > 64){
+
+                        page4Percent()
+
+                    }
            
         }
 

@@ -189,10 +189,24 @@
    
    <script>
    // const orderDiv = document.querySelector('.order-div');
-   
+        
         document.querySelector('.cart-items2').innerHTML = localStorage.getItem("key1");
-       let quantityInput = document.getElementsByClassName('quantity-input').value
-       quantityInput = localStorage.getItem("key2");
+        // document.querySelector('.quantity-input').value = localStorage.getItem("key2");
+        
+        
+
+        const quant1 = document.getElementsByClassName('quantity-input')
+        for(i = 0; i < quant1.length; i++){
+
+          let keyCount = i = 2; i < 6 ; i++;
+          localStorage.getItem(`key${keyCount++}`);
+        }
+        
+         
+
+        
+        
+        // const quanNum = quant1.value
       
 
       </script>

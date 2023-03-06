@@ -219,7 +219,7 @@ function addToCartClicked(event){
 }
 
 
-function addToBag(cartTitle, cartPrice, imgSrc){
+function addToBag(cartTitle, cartPrice, imgSrc ){
     let cartRow1 = document.createElement('div')
     cartRow1.classList.add('cart-row')
     let cartItems = document.getElementsByClassName('cart-items')[0]
