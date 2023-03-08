@@ -57,15 +57,18 @@
           </div>
            
           <div class="cart-items">
-  
-              
-                  </div>
+          
+          </div>
        
        <div class="cart-total">
               <strong class="total-title">TOTAL</strong>
               <span class="cart-total-price">$</span>
             </div>
             <div class="purchasebtn"><h1>PURCHASE</h1></div>
+
+            <div class="removebtn">
+              <h2>Remove All</h2>
+          </div>
 
             <div class="grand-total">
    
@@ -75,17 +78,18 @@
             <div class="purchase-message">
               
             </div>
-
+<!-- 
             <button class="testBtn">Test Btn</button>
-            <button class="clearBtn">clear Btn</button>
-           
-            <form action="ATB.html">
+            <button class="clearBtn">clear Btn</button> -->
 
-              <div class="bagBtn" onclick="seeBag()">SEE BAG</div>
-
-            </form>
-            
            
+           
+           <form action="ATB.html">
+
+            <div class="bagBtn" onclick="seeBag()">SEE BAG</div>
+
+            </form> 
+             
         </div>
 
       
@@ -226,35 +230,44 @@ bagBtn.addEventListener('click', totalCartHTML)
 
 // test/clear buttons
 
-const testBtn = document.querySelector('.testBtn')
- testBtn.addEventListener('click', () => {
+// const testBtn = document.querySelector('.testBtn')
+//  testBtn.addEventListener('click', () => {
 
-  let cartItems = document.querySelector('.cart-items');
-  let cartHTML = cartItems.innerHTML
-  localStorage.setItem("key1", cartHTML)
+//   let cartItems = document.querySelector('.cart-items');
+//   let cartHTML = cartItems.innerHTML
+//   localStorage.setItem("key1", cartHTML)
 
-  // let cartQuantity = document.querySelectorAll('.cart-quantity')
-  let quantityInputs = document.querySelectorAll('.quantity-input')
-  let quantityInputsNumber = quantityInputs.value;
-  let keyCount = i = 2 ; i < 6 ; i++;
   
-  quantityInputs.forEach( () => {
-          // let event = e.target
-          localStorage.setItem(`key${keyCount++}`, quantityInputsNumber)
-          
-        });
+//   let quantityInputs = cartItems.getElementsByClassName('quantity-input')
+//   let keyCount = i = 2 ; i < 6 ; i++;
+  
+  
+//   for(let i = 0; i < quantityInputs.length; i++){
+    
+//     let arr = []
+//     arr.push(quantityInputs[i].value)
+   
+   
+//     localStorage.setItem(`key${keyCount++}`, arr)
+//     console.log(arr)
+//   };
+  
 
      
-})
+// })
 
 // clear
+//   clear doesnt need a loop or specific key apparently
 
-const clearBtn = document.querySelector('.clearBtn').addEventListener('click', () =>{
-  localStorage.clear("key1")
-  localStorage.clear("key2")
-  localStorage.clear("key3")
+// const clearBtn = document.querySelector('.clearBtn').addEventListener('click', () =>{
+//   let keyCount = i = 2 ; i < 6 ; i++;
+//   for( let i = 0; i< localStorage.length; i++){
 
-})
+//     localStorage.clear()
+
+//   }
+
+// })
 
 
 
@@ -263,22 +276,28 @@ const clearBtn = document.querySelector('.clearBtn').addEventListener('click', (
 
 function totalCartHTML(){
     setTimeout(() => {
-        let keyCount = i = 2 ; i < 6 ; i++;
-        let quant = document.getElementsByClassName('cart-quantity')
+       
+        
         let cartItems = document.querySelector('.cart-items');
-        let quantityInputs = document.querySelectorAll('.quantity-input')
-       
-        let quantityInputsNumber = quantityInputs.value;
         let cartHTML = cartItems.innerHTML;
-
         localStorage.setItem("key1", cartHTML)
-        // localStorage.setItem("key2", quantityInputsNumber) 
-       
-        quantityInputs.forEach( () => {
-          // let event = e.target
-          localStorage.setItem(`key${keyCount++}`, quantityInputsNumber)
+        
+
+        let quantityInputs = cartItems.getElementsByClassName('quantity-input')
+        let keyCount = i = 2 ; i < 6 ; i++;
+        
+        
+        for(let i = 0; i < quantityInputs.length; i++){
           
-        });
+          let arr = []
+          arr.push(quantityInputs[i].value)
+        
+        
+          localStorage.setItem(`key${keyCount++}`, arr)
+         
+        };
+       
+     
 
         
     }, 0);

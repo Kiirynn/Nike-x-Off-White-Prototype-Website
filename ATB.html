@@ -188,25 +188,23 @@
    
    
    <script>
-   // const orderDiv = document.querySelector('.order-div');
-        
+   
+        let keyCount = i = 2; i < 6 ; i++;
         document.querySelector('.cart-items2').innerHTML = localStorage.getItem("key1");
         // document.querySelector('.quantity-input').value = localStorage.getItem("key2");
         
         
+        
+        let quantityInputs = document.getElementsByClassName('quantity-input')
+        
 
-        const quant1 = document.getElementsByClassName('quantity-input')
-        for(i = 0; i < quant1.length; i++){
-
-          let keyCount = i = 2; i < 6 ; i++;
-          localStorage.getItem(`key${keyCount++}`);
+        for(let i = 0; i < quantityInputs.length; i++){
+          
+          quantityInputs[i].value = localStorage.getItem(`key${keyCount++}`);
+          
         }
         
-         
-
-        
-        
-        // const quanNum = quant1.value
+      
       
 
       </script>

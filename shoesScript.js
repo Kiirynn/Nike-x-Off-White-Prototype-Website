@@ -16,6 +16,7 @@ const purchaseBtn = document.querySelector('.purchasebtn')
 // const purchaseBtnATB = document.querySelector('.purchasebtn')
 
 // const bagBtn = document.querySelector('.bagBtn')
+const removeAllBtn = document.querySelector('.removebtn')
 const atbBtn = document.querySelectorAll('.ATB');
 const animate = document.querySelector('.animate');
 const subtitle = document.getElementsByClassName('subtitle');
@@ -58,6 +59,7 @@ function ready(){
        
     }
     updateCartTotal();
+    removeAllBtn.addEventListener('click', removeAllCart)
 
     let quantityInputs = document.getElementsByClassName('quantity-input');
         for(let i = 0; i < quantityInputs.length; i++){
@@ -268,6 +270,19 @@ function addToBag(cartTitle, cartPrice, imgSrc ){
                   
                                 
 }
+
+// remove All items function 
+
+function removeAllCart(){
+   
+  
+    const cartItem = document.querySelectorAll('.cart-item')
+    cartItem.parentElement.remove()
+    localStorage.clear()
+    updateCartTotal();
+   
+}
+
 
 
 function removeCartItem(e){

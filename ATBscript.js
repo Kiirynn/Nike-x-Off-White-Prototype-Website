@@ -239,7 +239,7 @@ function addToBag(cartTitle, cartPrice, imgSrc ){
    
     const navRowHTML = 
                
-           `<div class="cart-items cart-column">
+           `<div class="cart-item cart-column">
                 <img width="100px" src="${imgSrc}" alt="" class="cart-img">
                 <span class="cart-item-title">${cartTitle}</span>
                 <span class="item-price cart-column">${cartPrice}</span>
@@ -279,8 +279,8 @@ function removeAllCart(){
    
     let cartItems2 = document.querySelector('.cart-items2');
     cartItems2.remove()
-    localStorage.clear("key1")
-    localStorage.clear("key2")
+    localStorage.clear()
+   
 }
 
 
