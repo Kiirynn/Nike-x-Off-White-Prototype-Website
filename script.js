@@ -459,7 +459,18 @@ function reFireAnime2(animate){
         
   setTimeout(function (){
         bkgdPhoto.classList.add('animateBkgd');
-       
+        
+        
+    }, 0);
+}
+
+function reFireAnime3(animate){
+    bkgdPhoto.classList.remove('animateBkgd2');
+   
+        
+  setTimeout(function (){
+        bkgdPhoto.classList.add('animateBkgd2');
+        
         
     }, 0);
 }
@@ -471,7 +482,7 @@ mPrevArrow.addEventListener('click', () => {
     if(i < 0){
      i = backgroundImages.length -1;
     }
-   
+    bkgdPhoto.classList.remove('animateBkgd2')
     reFireAnime2();
     setImg2();
     
@@ -486,7 +497,8 @@ mNextArrow.addEventListener('click', () => {
         i = 0;
     }
     
-    reFireAnime2();
+    bkgdPhoto.classList.remove('animateBkgd')
+    reFireAnime3();
     setImg2();
    
 });
@@ -499,9 +511,59 @@ function setImg2(){
 }
 
 
-// Choosing Sneakers Page 
+// contact btn prompt
+
+document.querySelector('#contact').addEventListener('click', () =>{
+    const cases = document.querySelectorAll('.case')
+
+    for(let i = 0; i < cases.length; i++){
+         cases[i].remove
+    }
+
+    const contactHTML = 
+    
+        
+
+    `<div class="case">
+            <h5>EMAIL</h5>
+            <input class="contact-email" type="text">
+        </div>
+        
+    <div class="case">
+            <h5>MESSAGE</h5>
+            <input class="email-message" type="text">
+        </div>
+
+    <div class="sendBtnCase">
+        <button class="sendBtn">Send</button> 
+
+        </div>`
+        
+
+    document.querySelector('.contact-container').innerHTML = contactHTML 
+})
 
 
+// send btn prompt
+setInterval(() => {
+    
+
+document.querySelector('.sendBtn').addEventListener('click', () =>{
+    const cases = document.querySelectorAll('.case')
+
+    for(let i = 0; i < cases.length; i++){
+         cases[i].remove
+    }
+
+    document.querySelector('.sendBtnCase').remove
+
+    const contactMessPrompt = 
+    `<div class="case">
+       <h5>We have received your email and will respond within the next 24 hours. Thank You</h5>
+    </div>` 
+    document.querySelector('.contact-container').innerHTML = contactMessPrompt;
+})
+}, 0);
 
 
 

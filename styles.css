@@ -29,7 +29,7 @@
 
     .bkgd-container{
       
-        background-image: linear-gradient(to left, #d9e3db, #949794 );
+        /* background-image: linear-gradient(to left, #d9e3db, #949794 ); */
         z-index: 2;
         height: 100vh;
         
@@ -42,7 +42,12 @@
   
 
     .animateBkgd{
-        animation: bkgdImageAnimate .3s ease backwards;
+        animation: bkgdImageAnimate .3s ease ;
+        
+    }
+
+    .animateBkgd2{
+        animation: bkgdImageAnimate2 .3s ease ;
         
     }
 
@@ -55,7 +60,25 @@
         }
         to{
            
-            transform: translateX(0);
+            transform: translateX(0%);
+            transition: opacity 250ms ease-in, transform 400ms ease-in;
+        }
+
+
+
+    }
+
+
+    @keyframes bkgdImageAnimate2{
+
+        from{
+           
+            transform: translateX(150%);
+            transition: opacity 250ms ease-in, transform 400ms ease-in;
+        }
+        to{
+           
+            transform: translateX(0%);
             transition: opacity 250ms ease-in, transform 400ms ease-in;
         }
 
@@ -421,7 +444,6 @@ nav{
 
 
 
-
 .circles{
     position: fixed;
     left: 45.3%;
@@ -450,12 +472,12 @@ nav{
         margin: 10px;
         margin-top: 90%;
         border-radius: 50%;
-        
+       
         opacity: 0.8;
         width: 20px;
         box-shadow: black 2px 2px 5px;
         
-       
+     
     }
 
 
@@ -579,7 +601,8 @@ nav{
         margin-left: 50px;
     }
 
-    .sbtn-div:hover, .cbtn-div:hover, .ATB:hover, .bagBtn:hover, .purchasebtn:hover, .removebtn:hover {
+    .sbtn-div:hover, .cbtn-div:hover, .ATB:hover, .bagBtn:hover, 
+    .purchasebtn:hover, .removebtn:hover, .sendBtn:hover, .BTSbtn:hover{
         transform: scale(0.95);
         transition: ease 0.3s;
     }
@@ -620,7 +643,10 @@ nav{
         padding: 5px;
         box-shadow: black 4px 4px 7px;
         text-decoration: none;
-        text-align: center; font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 25px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;
+        text-align: center; font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Candara, Calibri, Segoe, 
+            "Segoe UI", Optima, Arial, sans-serif; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 14px; 
+                font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } 
+                pre { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;
 
     }
 
@@ -779,7 +805,10 @@ h2{
         letter-spacing: 3px;
         font-style: normal;
       padding-bottom: 20px;
-        text-align: center; font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;
+        text-align: center; font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Candara, Calibri, Segoe, 
+            "Segoe UI", Optima, Arial, sans-serif; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 14px; 
+                font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } 
+                pre { font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;
 }
 
 .case h3, h5{
@@ -954,7 +983,8 @@ width:700px;
     padding: 50px;
 }
 
-.order-div, .title-bag, .totaldiv, .purchasebtn, .removebtn, .shoe-info1, .purchase-message, .cart-items2, .createPrompt, .socials {
+.order-div, .title-bag, .totaldiv, .purchasebtn, .removebtn, .shoe-info1, .purchase-message, 
+.cart-items2, .createPrompt, .socials, .contact-us, .contact-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1308,5 +1338,41 @@ flex-direction: column;
      }
 
     
+/* 
+contact page 4 */
 
 
+.email-message{
+height: 300px;
+}
+
+
+.sendBtnCase{
+   padding: 30px;
+}
+
+.sendBtn{
+    font-size: 1.5rem;
+    width: 200px;
+}
+
+.BTSbtn{
+    font-size: 1rem;
+    
+}
+.BTS{
+    padding: 30px;
+    display: flex;
+    justify-content:flex-start ;
+    align-items: flex-start;
+}
+ 
+
+
+.BTSbtn, .sendBtn{
+    padding:20px;
+    border-radius: 15px;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 3px 3px 8px black;
+}

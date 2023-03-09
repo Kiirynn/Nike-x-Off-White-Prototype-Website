@@ -275,9 +275,12 @@ function addToBag(cartTitle, cartPrice, imgSrc ){
 
 function removeAllCart(){
    
+  const cartRow1 = document.querySelectorAll('.cart-row')
   
-    const cartItem = document.querySelectorAll('.cart-item')
-    cartItem.parentElement.remove()
+    for(let i = 0; i < cartRow1.length; i++){
+        cartRow1[i].remove()
+    }
+    
     localStorage.clear()
     updateCartTotal();
    
@@ -511,13 +514,7 @@ nextArrow.addEventListener('click', () => {
     // setImg();
     // showShoe(i);
      
-   
-    
-   
-   
-   
-  
-    
+
 });
 
 
