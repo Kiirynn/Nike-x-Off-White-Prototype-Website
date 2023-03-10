@@ -1,3 +1,11 @@
+if(document.readyState = 'loading') {
+    document.addEventListener('DOMContentLoaded', ready)
+} else{
+    ready()
+}
+
+const purchaseBtn = document.querySelector('.purchasebtn')
+const removeAllBtn = document.querySelector('.removebtn')
 const page1 = document.getElementById("page1");
 const page2 = document.getElementById("page2");
 const page3 = document.getElementById("page3");
@@ -513,57 +521,334 @@ function setImg2(){
 
 // contact btn prompt
 
-document.querySelector('#contact').addEventListener('click', () =>{
-    const cases = document.querySelectorAll('.case')
+// document.querySelector('#contact').addEventListener('click', () =>{
+//     const cases = document.querySelectorAll('.case')
 
-    for(let i = 0; i < cases.length; i++){
-         cases[i].remove
-    }
+//     for(let i = 0; i < cases.length; i++){
+//          cases[i].remove
+//     }
 
-    const contactHTML = 
+//     const contactHTML = 
     
         
 
-    `<div class="case">
-            <h5>EMAIL</h5>
-            <input class="contact-email" type="text">
-        </div>
+//     `<div class="case">
+//             <h5>EMAIL</h5>
+//             <input class="contact-email" type="text">
+//         </div>
         
-    <div class="case">
-            <h5>MESSAGE</h5>
-            <input class="email-message" type="text">
-        </div>
+//     <div class="case">
+//             <h5>MESSAGE</h5>
+//             <input class="email-message" type="text">
+//         </div>
 
-    <div class="sendBtnCase">
-        <button class="sendBtn">Send</button> 
+//     <div class="sendBtnCase">
+//         <button class="sendBtn">Send</button> 
 
-        </div>`
+//         </div>`
         
 
-    document.querySelector('.contact-container').innerHTML = contactHTML 
-})
+//     document.querySelector('.contact-container').innerHTML = contactHTML 
+// })
 
 
-// send btn prompt
-setInterval(() => {
+// // send btn prompt
+// setInterval(() => {
     
 
-document.querySelector('.sendBtn').addEventListener('click', () =>{
-    const cases = document.querySelectorAll('.case')
+// document.querySelector('.sendBtn').addEventListener('click', () =>{
+//     const cases = document.querySelectorAll('.case')
 
-    for(let i = 0; i < cases.length; i++){
-         cases[i].remove
+//     for(let i = 0; i < cases.length; i++){
+//          cases[i].remove
+//     }
+
+//     document.querySelector('.sendBtnCase').remove
+
+//     const contactMessPrompt = 
+//     `<div class="case">
+//        <h5>We have received your email and will respond within the next 24 hours. Thank You</h5>
+//     </div>` 
+//     document.querySelector('.contact-container').innerHTML = contactMessPrompt;
+// })
+// }, 0);
+
+
+
+
+// nav cart added
+
+
+
+
+
+
+
+function ready(){
+    const removeBtns = document.getElementsByClassName('removeBtn');
+    for(let i = 0; i < removeBtns.length; i++ ){
+        let button1 = removeBtns[i];
+        button1.addEventListener('click', removeCartItem)
+       
+       
+    }
+    updateCartTotal();
+    removeAllBtn.addEventListener('click', removeAllCart)
+
+    let quantityInputs = document.getElementsByClassName('quantity-input');
+        for(let i = 0; i < quantityInputs.length; i++){
+            let input = quantityInputs[i];
+            input.addEventListener('change', quantityChanged)
+        }
+
+
+        let cartItemContainer = document.getElementsByClassName('cart-items')[0];    
+        let navCartRows = cartItemContainer.getElementsByClassName('cart-row');  
+        let navCartRow = navCartRows[i];
+
+    
+    purchaseBtn.addEventListener('click', purchaseClicked)
+    // purchaseBtnATB.addEventListener('click', purchaseClicked)
+
+    function purchaseClicked(){
+        let cartItemContainer = document.getElementsByClassName('cart-items')[0];
+        let navCartRows = cartItemContainer.getElementsByClassName('cart-row');
+        let total = 0;
+          
+        
+       for(let i = 0; i < navCartRows.length; i++){
+            let navCartRow = navCartRows[i];
+            const itemPrice = document.getElementsByClassName('item-price')[0];
+            const rowQuantity = document.getElementsByClassName('quantity-input')[i];
+           
+            let totalPrice = parseFloat(itemPrice.innerText.replace('$', ''));
+            let quantity = rowQuantity.value;
+            total = total + (totalPrice * quantity);
+       }
+    
+       document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total;
+       
+       // tax calc
+
+     
+
+       let salesTax = 0.15;
+       let prePrice =  total * (salesTax / 1)  ;
+       let add = prePrice + total;
+       const gTotalTitle = document.querySelector('.GtotalTitle')
+       const grandTotal = document.querySelector('.grand-total')
+       const grandInput = document.querySelector('.grand-input');
+    //    grandInput.innerHTML = '$' + add;
+
+       const grandTotalHTML = 
+       
+       `<strong class="Gtotal-title">GRAND TOTAL</strong>
+       <span class="grand-input">${'$' + add}</span>`
+       
+       const pMessage = document.querySelector('.purchase-message')
+       const thankYouMsg = `<h1>Thank you for your purchase !</h1>`
+       grandTotal.innerHTML = grandTotalHTML;
+       
+       setTimeout(() => {
+        
+        pMessage.innerHTML = thankYouMsg;
+       }, 200);
+       
+    }  
+
+}
+
+
+// ready()
+
+
+
+// nav functions
+
+
+
+function navCartSlideAtb(){
+   
+    const navCart = document.querySelector('.navCart');
+    navCart.classList.add('navCart-active');
+    
+ 
+}
+
+function seeBag(){
+    window.location.href="ATB.html"
+    
+}
+
+
+// atbBtn.forEach((event) => {
+//     event.addEventListener('click', addToCartClicked)
+//     event.addEventListener('click', navCartSlideAtb)
+
+// })
+
+// function addToCartClicked(event){
+
+
+//     let button2 = event.target;
+//     let shopItem = button2.parentElement.parentElement
+//     let cartTitle = subtitle[i].innerText
+//     let cartPrice = price[i].innerText
+//     let imgSrc = shoe[i].src;
+    
+    
+    
+//     addToBag(cartTitle, cartPrice, imgSrc)
+//     updateCartTotal();
+// }
+
+
+// function addToBag(cartTitle, cartPrice, imgSrc ){
+//     let cartRow1 = document.createElement('div')
+//     cartRow1.classList.add('cart-row')
+//     let cartItems = document.getElementsByClassName('cart-items')[0]
+//     let cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+//         for(let i = 0; i < cartItemNames.length; i++){    
+//             if(cartItemNames[i].innerText == cartTitle){
+//                 alert('this Item is already in your bag !')
+//                 return
+//             }
+       
+//     }
+   
+//     const navRowHTML = 
+               
+//            `<div class="cart-item cart-column">
+//                 <img src="${imgSrc}" alt="" class="cart-img">
+//                 <span class="cart-item-title">${cartTitle}</span>
+//                 <span class="item-price cart-column">${cartPrice}</span>
+//             </div>
+            
+
+
+//             <div class="cart-quantity cart-column">
+//                 <input type="number" value="1" class="quantity-input">
+//                 <button class="removeBtn">REMOVE</button>
+
+//             </div>`;
+//             cartRow1.innerHTML = navRowHTML;
+//             cartItems.append(cartRow1);
+                
+            
+//             const removeBtns = document.getElementsByClassName('removeBtn');
+//                 for(let i = 0; i < removeBtns.length; i++ ){
+//                     let button1 = removeBtns[i];
+//                     button1.addEventListener('click', removeCartItem)}
+
+//             let quantityInputs = document.getElementsByClassName('quantity-input');
+//                     for(let i = 0; i < quantityInputs.length; i++){
+//                         let input = quantityInputs[i];
+//                         input.addEventListener('change', quantityChanged)
+//                     }
+
+
+//         //    cartRow1.getElementsByClassName('quantity-input')[i].addEventListener('change', quantityChanged)  
+           
+                  
+                                
+// }
+
+// remove All items function 
+
+function removeAllCart(){
+   
+  const cartRow1 = document.querySelectorAll('.cart-row')
+  
+    for(let i = 0; i < cartRow1.length; i++){
+        cartRow1[i].remove()
+    }
+    
+    localStorage.clear()
+    updateCartTotal();
+   
+}
+
+
+
+function removeCartItem(e){
+    let buttonClicked = e.target;
+    buttonClicked.parentElement.parentElement.remove();
+    updateCartTotal();
+}
+
+function quantityChanged(e) {
+    let input = e.target;
+    if(isNaN(input.value) || input.value <= 0 ){
+        input.value = 1;
+       
+    }
+   
+    updateCartTotal();
+
+  
+
+}
+
+
+
+function showShoe(sneaker) {
+    const item = sneakerImages[sneaker];
+       shoe.src = item.shoe;
+       subtitle.textContent = item.subtitle;
+       info.textContent = item.info;
+       price.textContent = item.price;
+
     }
 
-    document.querySelector('.sendBtnCase').remove
 
-    const contactMessPrompt = 
-    `<div class="case">
-       <h5>We have received your email and will respond within the next 24 hours. Thank You</h5>
-    </div>` 
-    document.querySelector('.contact-container').innerHTML = contactMessPrompt;
-})
-}, 0);
+function navCartSlide(){
+   
+        const navCart = document.querySelector('.navCart');
+        navCart.classList.toggle('navCart-active');
+        
 
 
+}
+
+
+function updateCartTotal(){
+   
+        let cartItemContainer = document.getElementsByClassName('cart-items')[0];
+        let navCartRows = cartItemContainer.getElementsByClassName('cart-row');
+        let total = 0;
+          
+        
+       for(let i = 0; i < navCartRows.length; i++){
+            let navCartRow = navCartRows[i];
+            const itemPrice = document.getElementsByClassName('item-price')[0];
+            const rowQuantity = document.getElementsByClassName('quantity-input')[i];
+           
+            totalPrice = parseFloat(itemPrice.innerText.replace('$', ''));
+            let quantity = rowQuantity.value;
+            total = total + (totalPrice * quantity);
+       }
+    
+       document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total;
+  
+
+}
+
+
+
+//localstorage
+
+let keyCount = n = 2; n < 6 ; n++;
+document.querySelector('.cart-items').innerHTML = localStorage.getItem("key1");
+// document.querySelector('.quantity-input').value = localStorage.getItem("key2");
+
+
+
+let quantityInputs = document.getElementsByClassName('quantity-input')
+
+
+for(let i = 0; i < quantityInputs.length; i++){
+  
+  quantityInputs[i].value = localStorage.getItem(`key${keyCount++}`);
+  
+}
 

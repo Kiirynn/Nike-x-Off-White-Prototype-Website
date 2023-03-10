@@ -514,7 +514,13 @@ nextArrow.addEventListener('click', () => {
     // setImg();
     // showShoe(i);
      
-
+   
+    
+   
+   
+   
+  
+    
 });
 
 

@@ -109,11 +109,11 @@
             </p>
           </div>
 
+        
+
  <div class="main-bag">
 
-      <div class="BTS">
-        <a href="Shoes.html"><button class="BTSbtn">Back To Sneakers</button></a>
-      </div>
+    
             
             <div class="title-bag">
                 <h2>YOUR BAG</h2>
@@ -170,6 +170,10 @@
        </section>
      </div>
 
+     <div class="BTS">
+      <a href="Shoes.html"><button class="BTSbtn">Back To Sneakers</button></a>
+    </div>
+
     <div class="arrows">
       <img class="prev-arrow" style="visibility: hidden;" src="Content/pngkey.com-curvy-arrow-png-1982127 black.png" alt="">
       <img class="forward-arrow" style="visibility: hidden;" src="Content/pngkey.com-curvy-arrow-png-1982127 black.png" alt="">
@@ -180,8 +184,34 @@
    
    
    <script>
+
+setInterval(() => {
+       
+        
+       let cartItems = document.querySelector('.cart-items2');
+       let cartHTML = cartItems.innerHTML;
+       localStorage.setItem("key1", cartHTML)
+       
+
+       let quantityInputs = cartItems.getElementsByClassName('quantity-input')
+       let keyCount = n = 2 ; n < 6 ; n++;
+       
+       
+       for(let i = 0; i < quantityInputs.length; i++){
+         
+         let arr = []
+         arr.push(quantityInputs[i].value)
+       
+       
+         localStorage.setItem(`key${keyCount++}`, arr)
+        
+       };
+       
+   }, 0);
+
+ 
    
-        let keyCount = i = 2; i < 6 ; i++;
+        let keyCount = n = 2; n < 6 ; n++;
         document.querySelector('.cart-items2').innerHTML = localStorage.getItem("key1");
         // document.querySelector('.quantity-input').value = localStorage.getItem("key2");
         
@@ -196,8 +226,7 @@
           
         }
         
-      
-      
+     
 
       </script>
 </body>

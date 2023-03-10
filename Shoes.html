@@ -57,6 +57,9 @@
           </div>
            
           <div class="cart-items">
+
+
+
           
           </div>
        
@@ -224,7 +227,7 @@
     <script>
 const bagBtn = document.querySelector('.bagBtn')
 bagBtn.addEventListener('click', totalCartHTML)
-
+document.querySelector('.ATB').addEventListener('click', localATBBtn)
 
 
 
@@ -284,7 +287,7 @@ function totalCartHTML(){
         
 
         let quantityInputs = cartItems.getElementsByClassName('quantity-input')
-        let keyCount = i = 2 ; i < 6 ; i++;
+        let keyCount = n = 2 ; n < 6 ; n++;
         
         
         for(let i = 0; i < quantityInputs.length; i++){
@@ -296,16 +299,57 @@ function totalCartHTML(){
           localStorage.setItem(`key${keyCount++}`, arr)
          
         };
-       
-     
+
 
         
     }, 0);
 
-   
-    
 
-    }
+  }
+ 
+  // ATB set items
+
+  function localATBBtn(){
+
+    setInterval(() => {
+       
+        
+       let cartItems = document.querySelector('.cart-items');
+       let cartHTML = cartItems.innerHTML;
+       localStorage.setItem("key1", cartHTML)
+       
+
+       let quantityInputs = cartItems.getElementsByClassName('quantity-input')
+       let keyCount = n = 2 ; n < 6 ; n++;
+       
+       
+       for(let i = 0; i < quantityInputs.length; i++){
+         
+         let arr = []
+         arr.push(quantityInputs[i].value)
+       
+       
+         localStorage.setItem(`key${keyCount++}`, arr)
+        
+       };
+       
+   }, 0);
+
+  }
+
+// get items
+
+        
+        document.querySelector('.cart-items').innerHTML = localStorage.getItem("key1");
+        // document.querySelector('.quantity-input').value = localStorage.getItem("key2");
+  
+        let quantityInputs = document.getElementsByClassName('quantity-input')
+         for(let i = 0; i < quantityInputs.length; i++){
+          let keyCount = n = 2; n < 6 ; n++;
+          quantityInputs[i].value = localStorage.getItem(`key${keyCount++}`);
+          
+           }
+
 
 
   

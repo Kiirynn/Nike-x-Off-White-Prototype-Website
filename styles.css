@@ -1040,6 +1040,11 @@ flex-direction: column;
 .cart-items2{
     overflow-x: scroll;
     max-width: 1500px;
+   
+}
+
+.cart-items{
+   
 }
 
 .rmbuybtns{
@@ -1360,17 +1365,21 @@ height: 300px;
     font-size: 1rem;
     
 }
+
 .BTS{
+    position: fixed;
+    top: 15%;
+    left: 22%;
     padding: 30px;
-    display: flex;
+    /* display: flex;
     justify-content:flex-start ;
-    align-items: flex-start;
+    align-items: flex-start; */
 }
  
 
 
 .BTSbtn, .sendBtn{
-    padding:20px;
+    padding: 20px;
     border-radius: 15px;
     cursor: pointer;
     border: 2px solid white;
