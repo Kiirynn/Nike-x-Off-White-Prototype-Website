@@ -1071,8 +1071,13 @@ flex-direction: column;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 20px;
+}
 
-    padding-top: 100px;
+.extra-info{
+   position: fixed;
+   top: 18%;
+   right: 25%;
 }
 
 .title-bag{

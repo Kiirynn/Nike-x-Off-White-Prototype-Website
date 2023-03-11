@@ -38,6 +38,9 @@ const w4 = document.querySelector('.w4');
 const w5 = document.querySelector('.w5');
 
 const ws = [w1, w2, w3, w4, w5];
+const numberArr = [1,2,3,4,5,6,7,8,9]
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+const days = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th', '14th', '15th', '16th', '17th', '18th','19th', '20th', '21th','22th','23th','24th','25th','26th','27th','28th','29th','30th', '31st' ]
 
 
 let currentItem = 0;
@@ -150,13 +153,38 @@ updateCartTotal();
        const thankYouMsg = `<h1>Thank you for your purchase !</h1>`
        grandTotal.innerHTML = grandTotalHTML;
        
-       setTimeout(() => {
+    setTimeout(() => {
         
-        pMessage.innerHTML = thankYouMsg;
+        if(total >= 1){
+            pMessage.innerHTML = thankYouMsg;
+        } else {
+            const noItemsMsg = `<h1>There are no items in your cart !</h1>`
+            pMessage.innerHTML = noItemsMsg;
+        }
+      
        }, 200);
-       
+
+         // order number
+
+    let orderNumber = Math.floor(Math.random() * numberArr.length * 100000000) 
+
+    document.querySelector('.orderNum-input').innerHTML = orderNumber
+
+    
+    let randomMonth = Math.floor(Math.random() * months.length)
+    let randomDay =  Math.floor(Math.random() * days.length)
+    
+    let deliveryMonth = (randomMonth, months[randomMonth])
+    let deliveryDay = (randomDay, days[randomDay])
+
+
+    document.querySelector('.month-input').innerHTML = deliveryMonth
+    document.querySelector('.date-input').innerHTML = deliveryDay
+
     }  
 
+
+    
 }
 
 
