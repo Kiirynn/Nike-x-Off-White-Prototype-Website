@@ -72,7 +72,6 @@
     @keyframes bkgdImageAnimate2{
 
         from{
-           
             transform: translateX(150%);
             transition: opacity 250ms ease-in, transform 400ms ease-in;
         }

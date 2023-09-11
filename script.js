@@ -281,13 +281,7 @@ const appearOnScroll = new IntersectionObserver
          })
         //  circAnime();
         //  navBarAnime();
-         
-     
-
-       
-
-
-      
+ 
 }, appearOptions);
 
 
@@ -851,4 +845,19 @@ for(let i = 0; i < quantityInputs.length; i++){
   quantityInputs[i].value = localStorage.getItem(`key${keyCount++}`);
   
 }
+
+
+
+
+
+// for(let z = 0; z < 5; z++) {
+//     console.log(`the current value of z is -------------------${z}.`)
+//         for(let p = 0; p < 5; p++){
+//             console.log(`the current value of p is ${p * z}.`)   
+//         }
+// }
+
+    
+
+
 

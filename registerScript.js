@@ -2,7 +2,7 @@ const upperCaseLetters  = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"
 const lowerCaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 const numbers = [1,2,3,4,5,6,7,8,9,0]
 const symbols = ['~', '`', '!', '@' ,'#', '$', '%', '^' ,'&', '*', '(', ')' ,'-', '_', '=', '{' ,'}', '[', ']', '|' ,';', ':', '?', '>' ,'<', '.', ',', '/' ]
-const foulWords = ['fuck', 'shit', 'cunt', 'ass', 'bitch', 'fucker', 'cock', 'penis', 'vagina', 'nigger', 'nigga', 'pussy', 'cum', 'porn', 'blow', 'queer', 'fag', 'faggot','Fuck', 'Shit', 'Cunt', 'Ass', 'Bitch', 'Fucker', 'Cock', 'Penis', 'Vagina', 'Nigger', 'Nigga', 'Pussy', 'Cum', 'Porn', 'Blow', 'Queer', 'Fag', 'Faggot']
+const foulWords = ['bad words']
 const emailDomains = ['@gmail.com', '@outlook.com', '@hotmail.com', '@yahoo.com', 'aol.com']
 
 

@@ -531,5 +531,3 @@ function setImg(){
 
 
 
-
-
